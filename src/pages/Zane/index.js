@@ -6,6 +6,7 @@ export default function Zane () {
 	return (
 		<VaultHunter
       name = 'Zane'
+      discipline = 'Operative'
       skills = { skills }
     />
 	);

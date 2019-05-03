@@ -16,7 +16,7 @@ export default function App() {
       <main>
         <Router>
           <Home path="/" />
-          <Zane path="/Zane" />
+          <Zane path="/operative" />
         </Router>
       </main>
 
