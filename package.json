@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "pwa export --routes /about,/blog,/",
+    "start": "sirv build -s",
+    "watch": "pwa watch"
+  },
+  "dependencies": {
+    "preact": "^8.3.0",
+    "preact-compat": "^3.18.0",
+    "preact-router": "latest",
+    "sirv-cli": "^0.2.0"
+  },
+  "devDependencies": {
+    "@pwa/cli": "latest",
+    "@pwa/plugin-offline": "latest",
+    "@pwa/preset-preact": "latest"
+  },
+  "browserslist": [
+    ">0.25%",
+    "last 1 version",
+    "not ie_mob 11",
+    "not ie 11",
+    "not dead"
+  ]
+}

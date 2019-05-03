@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav a {
+  display: inline-block;
+  color: inherit;
+  padding: 0.5em;
+}
+
+.nav a:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}

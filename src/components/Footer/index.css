@@ -1,0 +1,45 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+	font-family: var(--font-header);
+	justify-content: center;
+	align-items: center;
+	display: flex;
+  line-height: 2;
+}
+
+.footer span a {
+	color: inherit;
+	transition: color var(--transition-duration);
+}
+
+.footer a:hover {
+	color: hsla(0, 100%, 50%, 1);
+}
+
+.heart {
+	width: 40px;
+	height: 40px;
+	background: transparent url(@assets/twitter_heart.png) no-repeat;
+	background-size: 2900%;
+	margin: 0 -8px;
+}
+
+.heart:hover {
+	background-position: right;
+	animation: moveHeart 800ms steps(28) forwards;
+}
+
+@keyframes moveHeart {
+	0% {
+		background-position: left;
+	}
+	50% {
+		background-position: right;
+	}
+	100% {
+		background-position: right;
+	}
+}
