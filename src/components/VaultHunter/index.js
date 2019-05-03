@@ -1,42 +1,33 @@
 import { useState } from 'preact/hooks';
-import SKILLS from '@constants/skills';
+import Skill from '@components/Skill';
 import style from './index.css';
 
-function getInitials (string) {
-  const initials = string.match(/\b\w/g) || [];
-  return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-}
+const initialState = {
+  invested: [12, 0, 20],
+};
 
-export default function VaultHunter ({ name = 'Unnamed', discipline = 'Classless', skills = {}, }) {
-  const [build] = useState(skills);
+export default function VaultHunter ({
+  name = 'Unnamed',
+  discipline = 'Classless',
+  skills = {},
+}) {
+  const [build] = useState(initialState);
   const trees =
-    Object.keys(build).map((treename, treeindex) =>
-      <div class={`${style.tree} ${[style.green, style.blue, style.red][treeindex]}`}>
+    Object.keys(skills).map((treename, treeindex) =>
+      <div
+        class={`${style.tree} ${[style.green, style.blue, style.red][treeindex]}`}
+        style={{ '--invested': build.invested[treeindex] }}
+      >
         <h2 class={style.treeName}>{ treename }</h2>
-        { Object.keys(build[treename]).map((tier, tierindex) =>
+        { Object.keys(skills[treename]).map((tier, tierindex) =>
           <div class={style.tier}>
-            { Object.keys(build[treename][tier]).map(skillname => {
-              const skill = build[treename][tier][skillname];
-              const isAugment = [
-                SKILLS.AUGMENT_CHEVRON,
-                SKILLS.AUGMENT_DIAMOND,
-                SKILLS.ACTION_SKILL,
-              ].includes(skill.type);
-              let shapeStyle = null;
-              if (skill.type === SKILLS.AUGMENT_CHEVRON) { shapeStyle = style.chevron; }
-              if (skill.type === SKILLS.AUGMENT_DIAMOND) { shapeStyle = style.diamond; }
-              if (skill.type === SKILLS.ACTION_SKILL) { shapeStyle = style.actionSkill; }
-              return (
-                <div class={[
-                  style.skill,
-                  isAugment ? style.augment : '',
-                  shapeStyle,
-                  skill.bought ? style.bought : '',
-                ].join(' ')}>
-                  { getInitials(skillname) }
-                </div>
-              );
-            }) }
+            { Object.keys(skills[treename][tier]).map(
+              skillname => <Skill
+                {...skills[treename][tier][skillname]}
+                name={skillname}
+                enabled={build.invested[treeindex] >= 5 * tierindex - 5}
+              />
+            ) }
           </div>
         ) }
       </div>

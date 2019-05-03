@@ -1,0 +1,83 @@
+.skill {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 auto;
+  margin: 0.5rem;
+  padding: 0rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  filter: brightness(50%);
+}
+
+.skill.enabled {
+  filter: brightness(100%);
+}
+
+.skill:before {
+  content: '';
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.skill.usable:before {
+  background-color: #A70;
+}
+
+.actionSkill:before {
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+}
+
+.chevron:before {
+  clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%);
+}
+
+.diamond:before {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);
+}
+
+.augment, .actionSkill {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  height: 3em;
+  width: 3em;
+}
+
+.augment {
+  outline: calc(0.25em + 1px) solid var(--themeColor);
+  background-color: var(--themeColor);
+}
+
+.augment:first-child {
+  position: absolute;
+  left: 0;
+}
+.augment:last-child {
+  position: absolute;
+  right: 0;
+}
+
+.augment:only-child {
+  position: relative;
+  background-color: transparent;
+  outline: none;
+}
+
+.ranks {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  font-size: 0.75em;
+  background-color: #333;
+  padding: 0.1em;
+}
