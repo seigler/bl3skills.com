@@ -2,11 +2,11 @@ import VaultHunter from '@components/VaultHunter';
 
 import skills from './skills.js';
 
-export default function Zane () {
+export default function Siren () {
 	return (
 		<VaultHunter
-      name = 'Zane'
-      discipline = 'Operative'
+      name = 'Amara'
+      discipline = 'Siren'
       skills = { skills }
     />
 	);

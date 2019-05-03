@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "h": "readonly"
+  },
+  "extends": [
+    "standard",
+    "standard-preact"
+  ],
+  "rules": {
+    "semi": [2, "always"],
+    "comma-dangle": ["error", "only-multiline"]
+  }
+}

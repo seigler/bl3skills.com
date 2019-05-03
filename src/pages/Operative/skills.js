@@ -1,13 +1,134 @@
 import SKILLS from '@constants/skills';
 
 const skills = {
+  "Under Cover": {
+    "0": {
+      "Barrier": {
+        text: "Drop a deployable Barrier that blocks incoming projectiles. Zane and his allies can shooter through the Barrier, dealing increased Gun Damage. Pressing LB or RB (controller) while Barrier is active picks up and holds the Barrier, but the size and bonuses are decreased.",
+        effect: rank => `Duration - 9 sec, Cooldown - 18 sec, Damage Amp +20%`,
+        type: SKILLS.ACTION_SKILL,
+        ranks: 0,
+      },
+    },
+    "1": {
+      "Adrenaline": {
+        text: "Zane gains increased Action Skill Cooldown Rate. This bonus is based on the amount of shield he has. The more percent full, the greater the bonus.",
+        ranks: 5,
+        effect: rank => `Action Skill Cooldown Rate - Up to +4%`,
+      },
+      "Hearty Stock": {
+        text: "Zane gains increased Maximum Shield Capacity.",
+        ranks: 5,
+        effect: rank => `Max Shield +6%`,
+      },
+      "Ready for Action": {
+        text: "Zane gains improved Shield Recharge Rate and Shield Recharge Delay.",
+        ranks: 5,
+        effect: rank => `Shield Recharge Rate +6%, Shield Recharge Delay -8%`,
+      },
+    },
+    "2": {
+      "Charged Relay": {
+        text: "Whenever Zane or an ally touches the Barrier, they gain increased Movement Speed and Fire Rate for a few seconds.",
+        ranks: 0,
+        effect: rank => `Fire Rate +13%, Movement Speed +11%, Duration 8 sec after moving away from barrier`,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Brainfreeze": {
+        text: "Whenever Zane scores a Critical Hit on an enemy, there's a chance they will be Slowed.",
+        ranks: 5,
+        effect: rank => `Slow Chance 2.5%`,
+      },
+      "Stiff Upper Lip": {
+        text: "Whenever Zane is damaged, he gains Damage Resistance against that damage type.",
+        ranks: 3,
+        effect: rank => `Damage Resistance +5%`,
+      },
+      "Rise to the Occasion": {
+        text: "Zane gains Health Regeneration. The lower his shield is, the higher the bonus. While Zane's shields are full, he does not receive any health regeneration.",
+        ranks: 5,
+        effect: rank => `Health Regeneration up to +1% of Max Health`,
+      },
+    },
+    "3": {
+      "Nanites or Some Shite": {
+        text: "Zane and his allies gain Health Regeneration, increased Reload Speed, and greatly improved Shield Recharge Delay while near his Barrier. The lower their health, the more health is regenerated.",
+        ranks: 0,
+        effect: rank => `Health Regeneration up to 4% of Max Health, Shield Recharge Delay -33%, Reload Speed +11%`,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Confident Competence": {
+        text: "While Zane's shields are active, he gains increased Gun Damage and Accuracy. This bonus is based on the amount of shields he has. The more percent full, the greater the bonus.",
+        ranks: 1,
+        effect: rank => `Gun Damage up to +10%, Accuracy up to +22%`,
+      },
+      "All-rounder": {
+        text: "Zane's Barrier becomes a dome, covering all sides.",
+        ranks: 0,
+        effect: rank => `Barrier cooldown +20%`,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+    },
+    "4": {
+      "Redistribution": {
+        text: "Zane and allies near the Barrier gain increased Gun Damage for a few seconds after the Barrier takes damage.",
+        ranks: 0,
+        effect: rank => `Gun Damage +9%, Duration 3 sec`,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Really Expensive Jacket": {
+        text: "Elemental damage over time effects applied to Zane have reduced duration.",
+        ranks: 1,
+        effect: `Elemental Effect Duration -50%`,
+      },
+      "Best Served Cold": {
+        text: "Whenever Zane kills an enemy, they create a Cryo Nova, dealing damage to all nearby enemies. This skill has a short cooldown.",
+        ranks: 5,
+        effect: rank => `Damage 3, Cooldown 3 sec`,
+      },
+      "Futility Belt": {
+        text: "Zane gains resistance to non-elemental damage. Kill Skill - All elemental damage Zane takes is converted to non-elemental damage.",
+        ranks: 1,
+        effect: rank => `Damage Reduction +22%, Duration 8 sec`,
+      },
+      "Deterrence Field": {
+        text: "Enemies that touch the Barrier take Shock Damage and are staggered.",
+        ranks: 0,
+        effect: rank => `Shock Damage 18`, // TODO level scaling?
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+    },
+    "5": {
+      "Refreshment": {
+        text: "Whenever Zane damages a frozen enemy with his weapon, he gains some of that damage back as health.",
+        ranks: 3,
+        effect: rank => `Life Steal 8% of damage dealt`,
+      },
+      "Calm, Cool, Collected": {
+        text: "Whenever Zane Freezes an enemy, his shield instantly begins recharging. If Zane's shields are already full, he regenerates health for a few seconds. If Zane's health is already full, his Action Skill Cooldowns and Durations are immediately reset.",
+        ranks: 1,
+        effect: rank => `Health Regeneration up to 4% max health, Regeneration Duration 3 sec`,
+      },
+      "Nerves of Steel": {
+        text: "Zane gains increasing Accuracy and Handling. The longer his shield is full, the greater the bonus.",
+        ranks: 3,
+        effect: rank => `Accuracy +2% per sec, Handling +2.5% per sec, 99 Max Stacks`,
+      },
+    },
+    "6": {
+      "Distributed Denial": {
+        text: "Zane's barrier gains the effects of his currently equipped Shield Mod. Additionally, shield effects are applied to all allies near the barrier. Bonuses to Zane are reduced.",
+        ranks: 1,
+      },
+    },
+  },
   "Hitman": {
     "0": {
       "SNTNL": {
         text: "Send into battle an automated SNTL drone that continually flies through the environment and attacks enemies with its Machine Guns. Pressing LB or RB (controller) while SNTNL is active causes it to attack the enemy under Zane's crosshairs, if any.",
         effect: rank => `Machine Gun Damage - 10, Duration - 24 sec, Cooldown - 36 sec`,
         type: SKILLS.ACTION_SKILL,
-        bought: true,
+        ranks: 0,
       }
     },
     "1": {
@@ -30,7 +151,7 @@ const skills = {
     "2": {
       "Winter's Drone": {
         text: "Converts SNTNL's primary weapons to Cryo Damage.",
-        ranks: 1,
+        ranks: 0,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Cool Hand": {
@@ -52,7 +173,7 @@ const skills = {
     "3": {
       "Bad Dose": {
         text: "SNTNL occasionally shoots out a beam of Radiation that weakens enemies and buffs Zane.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Fire Rate +3% per enemy, Movement Speed +6% per enemy, Damage 2, Duration 12 sec, Cooldown 8 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -61,7 +182,7 @@ const skills = {
       },
       "Static Field": {
         text: "SNTNL emits a static field that sends a Shock beam to nearby enemies, draining their shields and replenishing Zane's.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Shield Damage 2 per sec, Cooldown 2 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -69,7 +190,7 @@ const skills = {
     "4": {
       "Boomsday": {
         text: "SNTNL adds a rocket pod to its primary weapons, allowing it to shoot rockets as well as machine guns.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Rocket Damage 50`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -85,7 +206,7 @@ const skills = {
       },
       "Almighty Ordnance": {
         text: "Hold down LB or RB (controller) while SNTNL is deployed to paint a target area. SNTNL fires a missile barrage at that area, and if an enemy is killed, Almighty Ordnance's duration is reset. This can only be used once per Action Skill use.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Missile Damage 25, 5 Missiles per Barrage`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -111,7 +232,7 @@ const skills = {
         text: "Spawn a Digi-Clone of Zane. The clone stays in place, but distracts and fires at enemies. Pressing LB or RB (controller) while the Clone is active causes Zane and the Clone to swap places.",
         effect: rank => `Duration - 18 seconds, Cooldown - 26 sec`,
         type: SKILLS.ACTION_SKILL,
-        bought: true,
+        ranks: 0,
       },
     },
     "1": {
@@ -134,7 +255,7 @@ const skills = {
     "2": {
       "Binary System": {
         text: "Whenever Zane swaps places with his Clone, a Cryo Nova is triggered around Zane and his Clone.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Nova Damage 66`, // TODO scale with level?
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -157,7 +278,7 @@ const skills = {
     "3": {
       "Schadenfreude": {
         text: "Whenever the Clone takes damage, Zane's shield is restored by a portion of that damage.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Shields Restored +11% of damage`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -167,7 +288,7 @@ const skills = {
       },
       "Which One's Real?": {
         text: "Enemies are more likely to target the Clone for a few seconds after it's summoned and after swapping places.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Duration 6 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -175,7 +296,7 @@ const skills = {
     "4": {
       "Dopplebanger": {
         text: "Hold down LB or RB (controller) to end the action skill early. When Zane's Action Skill is ended, the Clone explodes, dealing Fire Damage to all nearby enemies. The more Action Skill time remaining, the greater the damage.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Damage Up to 1,326`, // TODO scale with level?
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -195,7 +316,7 @@ const skills = {
       },
       "Digital Distribution": {
         text: "If Zane takes health damage while the Clone is active, a portion of that damage is shared to his Clone instead.",
-        ranks: 1,
+        ranks: 0,
         effect: rank => `Shared Health Damage +75%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
@@ -222,127 +343,6 @@ const skills = {
         text: "The Clone is equipped with a copy of Zane's Current Weapon when activated. Swapping places with the Clone causes Zane and his clone to gain increased Gun Damage.",
         ranks: 1,
         effect: rank => `Gun Damage +10%, Item Duping +100%`,
-      },
-    },
-  },
-  "Under Cover": {
-    "0": {
-      "Barrier": {
-        text: "Drop a deployable Barrier that blocks incoming projectiles. Zane and his allies can shooter through the Barrier, dealing increased Gun Damage. Pressing LB or RB (controller) while Barrier is active picks up and holds the Barrier, but the size and bonuses are decreased.",
-        effect: rank => `Duration - 9 sec, Cooldown - 18 sec, Damage Amp +20%`,
-        type: SKILLS.ACTION_SKILL,
-        bought: true,
-      },
-    },
-    "1": {
-      "Adrenaline": {
-        text: "Zane gains increased Action Skill Cooldown Rate. This bonus is based on the amount of shield he has. The more percent full, the greater the bonus.",
-        ranks: 5,
-        effect: rank => `Action Skill Cooldown Rate - Up to +4%`,
-      },
-      "Hearty Stock": {
-        text: "Zane gains increased Maximum Shield Capacity.",
-        ranks: 5,
-        effect: rank => `Max Shield +6%`,
-      },
-      "Ready for Action": {
-        text: "Zane gains improved Shield Recharge Rate and Shield Recharge Delay.",
-        ranks: 5,
-        effect: rank => `Shield Recharge Rate +6%, Shield Recharge Delay -8%`,
-      },
-    },
-    "2": {
-      "Charged Relay": {
-        text: "Whenever Zane or an ally touches the Barrier, they gain increased Movement Speed and Fire Rate for a few seconds.",
-        ranks: 1,
-        effect: rank => `Fire Rate +13%, Movement Speed +11%, Duration 8 sec after moving away from barrier`,
-        type: SKILLS.AUGMENT_CHEVRON,
-      },
-      "Brainfreeze": {
-        text: "Whenever Zane scores a Critical Hit on an enemy, there's a chance they will be Slowed.",
-        ranks: 5,
-        effect: rank => `Slow Chance 2.5%`,
-      },
-      "Stiff Upper Lip": {
-        text: "Whenever Zane is damaged, he gains Damage Resistance against that damage type.",
-        ranks: 3,
-        effect: rank => `Damage Resistance +5%`,
-      },
-      "Rise to the Occasion": {
-        text: "Zane gains Health Regeneration. The lower his shield is, the higher the bonus. While Zane's shields are full, he does not receive any health regeneration.",
-        ranks: 5,
-        effect: rank => `Health Regeneration up to +1% of Max Health`,
-      },
-    },
-    "3": {
-      "Nanites or Some Shite": {
-        text: "Zane and his allies gain Health Regeneration, increased Reload Speed, and greatly improved Shield Recharge Delay while near his Barrier. The lower their health, the more health is regenerated.",
-        ranks: 1,
-        effect: rank => `Health Regeneration up to 4% of Max Health, Shield Recharge Delay -33%, Reload Speed +11%`,
-        type: SKILLS.AUGMENT_CHEVRON,
-      },
-      "Confident Competence": {
-        text: "While Zane's shields are active, he gains increased Gun Damage and Accuracy. This bonus is based on the amount of shields he has. The more percent full, the greater the bonus.",
-        ranks: 1,
-        effect: rank => `Gun Damage up to +10%, Accuracy up to +22%`,
-      },
-      "All-rounder": {
-        text: "Zane's Barrier becomes a dome, covering all sides.",
-        ranks: 1,
-        effect: rank => `Barrier cooldown +20%`,
-        type: SKILLS.AUGMENT_CHEVRON,
-      },
-    },
-    "4": {
-      "Redistribution": {
-        text: "Zane and allies near the Barrier gain increased Gun Damage for a few seconds after the Barrier takes damage.",
-        ranks: 1,
-        effect: rank => `Gun Damage +9%, Duration 3 sec`,
-        type: SKILLS.AUGMENT_CHEVRON,
-      },
-      "Really Expensive Jacket": {
-        text: "Elemental damage over time effects applied to Zane have reduced duration.",
-        ranks: 1,
-        effect: `Elemental Effect Duration -50%`,
-      },
-      "Best Served Cold": {
-        text: "Whenever Zane kills an enemy, they create a Cryo Nova, dealing damage to all nearby enemies. This skill has a short cooldown.",
-        ranks: 5,
-        effect: rank => `Damage 3, Cooldown 3 sec`,
-      },
-      "Futility Belt": {
-        text: "Zane gains resistance to non-elemental damage. Kill Skill - All elemental damage Zane takes is converted to non-elemental damage.",
-        ranks: 1,
-        effect: rank => `Damage Reduction +22%, Duration 8 sec`,
-      },
-      "Deterrence Field": {
-        text: "Enemies that touch the Barrier take Shock Damage and are staggered.",
-        ranks: 1,
-        effect: rank => `Shock Damage 18`, // TODO level scaling?
-        type: SKILLS.AUGMENT_CHEVRON,
-      },
-    },
-    "5": {
-      "Refreshment": {
-        text: "Whenever Zane damages a frozen enemy with his weapon, he gains some of that damage back as health.",
-        ranks: 3,
-        effect: rank => `Life Steal 8% of damage dealt`,
-      },
-      "Calm, Cool, Collected": {
-        text: "Whenever Zane Freezes an enemy, his shield instantly begins recharging. If Zane's shields are already full, he regenerates health for a few seconds. If Zane's health is already full, his Action Skill Cooldowns and Durations are immediately reset.",
-        ranks: 1,
-        effect: rank => `Health Regeneration up to 4% max health, Regeneration Duration 3 sec`,
-      },
-      "Nerves of Steel": {
-        text: "Zane gains increasing Accuracy and Handling. The longer his shield is full, the greater the bonus.",
-        ranks: 3,
-        effect: rank => `Accuracy +2% per sec, Handling +2.5% per sec, 99 Max Stacks`,
-      },
-    },
-    "6": {
-      "Distributed Denial": {
-        text: "Zane's barrier gains the effects of his currently equipped Shield Mod. Additionally, shield effects are applied to all allies near the barrier. Bonuses to Zane are reduced.",
-        ranks: 1,
       },
     },
   },

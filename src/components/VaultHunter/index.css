@@ -95,6 +95,12 @@
   right: 0;
 }
 
+.augment:only-child {
+  position: relative;
+  background-color: transparent;
+  outline: none;
+}
+
 .blue {
   --themeColor: #007;
 }
