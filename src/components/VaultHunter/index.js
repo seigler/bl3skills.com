@@ -3,7 +3,7 @@ import Skill from '@components/Skill';
 import style from './index.css';
 
 const initialState = {
-  invested: [12, 0, 20],
+  invested: [4, 5, 6],
 };
 
 export default function VaultHunter ({
@@ -19,17 +19,19 @@ export default function VaultHunter ({
         style={{ '--invested': build.invested[treeindex] }}
       >
         <h2 class={style.treeName}>{ treename }</h2>
-        { Object.keys(skills[treename]).map((tier, tierindex) =>
-          <div class={style.tier}>
-            { Object.keys(skills[treename][tier]).map(
-              skillname => <Skill
-                {...skills[treename][tier][skillname]}
-                name={skillname}
-                enabled={build.invested[treeindex] >= 5 * tierindex - 5}
-              />
-            ) }
-          </div>
-        ) }
+        <div class={style.skills}>
+          { Object.keys(skills[treename]).map((tier, tierindex) =>
+            <div class={style.tier}>
+              { Object.keys(skills[treename][tier]).map(
+                skillname => <Skill
+                  {...skills[treename][tier][skillname]}
+                  name={skillname}
+                  enabled={build.invested[treeindex] >= 5 * tierindex - 5}
+                />
+              ) }
+            </div>
+          ) }
+        </div>
       </div>
     );
 

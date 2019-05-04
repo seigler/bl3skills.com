@@ -9,19 +9,17 @@ import Siren from '@pages/Siren';
 
 // import style from './index.css';
 
-export default function App () {
-  return (
-    <div>
-      <Nav />
-      <main>
-        <Router>
-          <Home path='/' />
-          <Operative path='/operative' />
-          <Siren path='/siren' />
-        </Router>
-      </main>
+const App = () =>
+  [
+    <Nav />,
+    <main>
+      <Router>
+        <Home path='/' />
+        <Operative path='/operative' />
+        <Siren path='/siren' />
+      </Router>
+    </main>,
+    <Footer />
+  ];
 
-      <Footer />
-    </div>
-  );
-}
+export default App;

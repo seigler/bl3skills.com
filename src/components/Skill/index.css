@@ -11,27 +11,31 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: white;
-  filter: brightness(50%);
-}
-
-.skill.enabled {
-  filter: brightness(100%);
 }
 
 .skill:before {
   content: '';
-  background-color: #333;
+  background-image: linear-gradient(to bottom, #333, #555);
   position: absolute;
   bottom: 0;
   right: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
+  clip-path: polygon(0 15%, 15% 0, 100% 0, 100% 85%, 85% 100%, 0% 100%);
+  filter: brightness(50%);
 }
 
-.skill.usable:before {
-  background-color: #A70;
+.skill.enabled:before {
+  filter: brightness(100%);
+}
+
+.usable:before {
+  background-image: linear-gradient(to bottom, hsl(var(--themeHue),91%,50%), hsl(var(--themeHue),91%,30%));
+}
+.skill:hover:before {
+  background-image: linear-gradient(to bottom, hsl(30,100%,30%), hsl(30,100%,60%));
+  filter: brightness(100%);
 }
 
 .actionSkill:before {
@@ -60,17 +64,19 @@
 
 .augment:first-child {
   position: absolute;
-  left: 0;
+  right: 100%;
 }
 .augment:last-child {
   position: absolute;
-  right: 0;
+  left: 100%;
 }
 
 .augment:only-child {
   position: relative;
   background-color: transparent;
   outline: none;
+  left: initial;
+  right: initial;
 }
 
 .ranks {
