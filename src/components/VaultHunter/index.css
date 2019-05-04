@@ -5,6 +5,23 @@
   cursor: default;
 }
 
+.title {
+  display: block;
+  margin: 0 auto;
+  top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  color: hsl(51, 100%, 50%);
+  background-color: black;
+  padding: 0.2em;
+  line-height: 1;
+}
+.subtitle {
+  text-transform: uppercase;
+  font-size: 0.5em;
+}
+
 .trees, .tier {
   display: flex;
 }
@@ -19,6 +36,7 @@
 .tree {
   --themeColor: hsl(var(--themeHue),91%,22%);
   display: flex;
+  z-index: 1;
   flex-direction: column;
   margin: 1rem;
   padding: 0 3.5rem;

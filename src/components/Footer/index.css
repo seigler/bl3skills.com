@@ -1,9 +1,11 @@
 .footer {
+  align-self: stretch;
 	font-family: var(--font-header);
 	justify-content: center;
 	align-items: center;
 	display: flex;
   line-height: 2;
+  background-image: linear-gradient(to top, hsla(0,0%,0%,0.8), hsla(0,0%,0%,0));
 }
 
 .footer span a {
@@ -12,7 +14,7 @@
 }
 
 .footer a:hover {
-	color: hsla(0, 100%, 50%, 1);
+	color: #E2264D;
 }
 
 .heart {

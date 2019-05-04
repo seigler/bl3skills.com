@@ -37,7 +37,9 @@ export default function VaultHunter ({
 
   return (
     <div class={style.VaultHunter}>
-      <h2>{ name } the { discipline }</h2>
+      <h1 class={style.title}>{ name }
+        <div class={style.subtitle}>the { discipline }</div>
+      </h1>
       <div class={style.trees}>
         { trees }
       </div>

@@ -1,6 +1,7 @@
 .nav {
-  display: flex;
+  align-self: stretch;
   justify-content: center;
+  background-image: linear-gradient(to bottom, hsla(0,0%,0%,0.8), hsla(0,0%,0%,0));
 }
 
 .links {
@@ -16,7 +17,7 @@
   padding: 0.5em;
 }
 
-.nav a:hover {
-  background-color: var(--blue);
-  color: var(--white);
+.nav a:hover, .nav a:focus {
+  background-color: #FED600;
+  color: black;
 }

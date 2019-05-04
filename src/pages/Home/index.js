@@ -1,9 +1,9 @@
-import style from './index.css';
+// import style from './index.css';
 
 export default function () {
-	return (
-		<div>
+  return (
+    <div>
       Home
-		</div>
-	);
+    </div>
+  );
 }

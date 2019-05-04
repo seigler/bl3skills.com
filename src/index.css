@@ -1,11 +1,9 @@
 :root {
-	--radius: 2px;
-	--blue: #1E88E5;
-	--white: #FFFFFF;
-	--offwhite: #F8F8FA;
+  --radius: 2px;
+  --whiteText: hsla(0,0%,100%,0.8);
 	--transition-duration: 300ms;
 	--font-header: sans-serif;
-  --font-list: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-list: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 1.5vw;
 }
 
@@ -33,9 +31,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-	color: #333;
+	color: #F8F8FA;
 	font-family: var(--font-list);
   -webkit-font-smoothing: antialiased;
+  background-color: #333;
+  background-image: url('@assets/backgrounds/background2.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 a {
@@ -44,9 +46,10 @@ a {
 }
 
 a:hover {
+  color: #E2264D;
 	text-decoration: underline;
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: inherit;
 }
