@@ -44,7 +44,7 @@ const skills = {
         text: "After using Action Skill, Amara's arms remain active and grant Damage Reduction.",
         effect: rank => `Damage Reduction +${rank * 4}%, Duration 8 sec`,
       },
-      "Blight Tiger (Action Skill Element)": {
+      "Blight Tiger": {
         ranks: 0,
         text: "Converts Amara's Action Skill to Corrosive Damage. This does not take effect until after Amara uses her Action Skill.",
         effect: rank => ``,
@@ -52,7 +52,7 @@ const skills = {
       },
     },
     "3": {
-      "Fracture (Action Skill)": {
+      "Fracture": {
         ranks: 0,
         text: "Amara summons a Handful of Fists that erupt from the ground, dealing damage in front of Amara.",
         effect: rank => `Damage 124, Cooldown 26 sec`,
@@ -73,7 +73,7 @@ const skills = {
         text: "Killing an enemy with an Action Skill grants all allies increased Movement Speed, and can be stacked.",
         effect: rank => `Team Movement Speed +${rank * 2}%, Duration 8 sec`,
       },
-      "Revelation (Action Skill Augment)": {
+      "Revelation": {
         ranks: 0,
         text: "Amara's Action Skill now creates a Nova when it damages enemies, dealing damage to all nearby enemies.",
         effect: rank => `Nova Damage 41, Action Skill Damage -15%`,
@@ -81,7 +81,7 @@ const skills = {
       },
     },
     "4": {
-      "Downfall (Action Skill)": {
+      "Downfall": {
         ranks: 0,
         text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam.",
         effect: rank => `Damage 141, Beam Damage 21 per sec, Cooldown 36 sec`,
@@ -109,7 +109,7 @@ const skills = {
         text: "Upon entering Fight For Your Life, gain immediate Second Wind that restores health, and creates an Action Skill Elemental Nova that knocks back enemies.",
         effect: rank => `Max Health Restored 100% of Max Health, Cooldown 60 sec`,
       },
-      "Glamour (Action Skill Augment)": {
+      "Glamour": {
         ranks: 0,
         text: "Enemies damaged by Amara's Action Skill become confused and attack their allies, but Action Skill Cooldown is increased. If enemies are target of Phasegrasp, nearby enemies become confused.",
         effect: rank => `Damage -60%, Confuse Duration 6 sec, Cooldown +20%`,
@@ -166,7 +166,7 @@ const skills = {
         text: "Gain increased Action Skill Cooldown Rate.",
         effect: rank => `Cooldown Rate +${rank * 4}%`,
       },
-      "Soul Sap (Action Skill Augment)": {
+      "Soul Sap": {
         ranks: 0,
         text: "A portion of all damage dealt by Action Skills is returned to her or nearby allies as Health.",
         effect: rank => `Life Steal +30% of Skill damage dealt`,
@@ -174,7 +174,7 @@ const skills = {
       },
     },
     "3": {
-      "Reverberation (Action Skill)": {
+      "Reverberation": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself that damages everything in its path. Deals increased damage for every enemy hit.",
         effect: rank => `Damage 116, Damage Bonus +50% per enemy hit, Cooldown 24 sec`,
@@ -185,7 +185,7 @@ const skills = {
         text: "All Action Skill Augments gain increased effects.",
         effect: rank => `Soul Sap Lifesteal +20%, Allure Radius +100%, Glamour Duration +50%, Bright Star Damage +25%, Stillness of Mind breaks 0.75 sec after being damaged`,
       },
-      "Stillness of Mind (Action Skill Augment)": {
+      "Stillness of Mind": {
         ranks: 0,
         text: "Enemies damaged by Action Skills becomes Phaselocked until they are damaged or duration ends, but Action Skill Cooldown is increased. If an enemy is the target of Phasegrasp, nearby enemies are also Phaselocked.",
         effect: rank => `Damage -35%, Max Duration 6 sec, Cooldown +15%`,
@@ -193,7 +193,7 @@ const skills = {
       },
     },
     "4": {
-      "Deliverance (Action Skill)": {
+      "Deliverance": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself that deals damage to everything in its path. Upon hitting enemies, it releases homing Elemental Projectiles that trigger Action Skill Elemental Effect on enemies.",
         effect: rank => `Damage 124, Elemental Projectiles 3 per enemy hit, Cooldown 24 sec`,
@@ -226,7 +226,7 @@ const skills = {
         text: "Rush stacks gain increased effectiveness.",
         effect: rank => `Rush Stack Effectiveness +${rank * 10}%`,
       },
-      "Tandava (Action Skill)": {
+      "Tandava": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself that explodes when it hits a target, damaging all nearby enemies.",
         effect: rank => `Damage: 166, Cooldown 28 sec`,
@@ -283,14 +283,14 @@ const skills = {
         text: "Whenever Elemental Effects are applies to an enemy, increases chance to spread to a nearby enemy.",
         effect: rank => `Spread Chance ${rank * 8}%`,
       },
-      "Soulfire (Action Skill Element)": {
+      "Soulfire": {
         ranks: 0,
         text: "Converts Action Skill to Fire Damage. This does not take effect until after Action Skill is used.",
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
     "3": {
-      "The Eternal Fist (Action Skill)": {
+      "The Eternal Fist": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts into the ground and locks targeted enemy in place. If Grasped enemy is killed, up to 3 new targets can be Grasped as well.",
         effect: rank => `Bonus Targets up to +4, Cooldown 23 sec, Grasp Immune Damage 66`,
@@ -301,7 +301,7 @@ const skills = {
         text: "Gun Damage is increased after an enemy is Grasped. If a Grasped Enemy is killed, current weapon is instantly reloaded.",
         effect: rank => `Weapon Damage +10%, Duration 8 sec`,
       },
-      "Allure (Action Skill Augment)": {
+      "Allure": {
         ranks: 0,
         text: "Amara's Action Skill creates singularities that pull in enemies.",
         effect: rank => `Action Skill Damage -25%, Duration 2.5 sec`,
@@ -324,7 +324,7 @@ const skills = {
         text: "When Elemental Effect is applied on an enemy that dies, enemy explodes an deals attuned element damage along with any other inflicted elements.",
         effect: rank => `Damage ${rank * 13}, Cooldown 8 sec`, // TODO level scaling
       },
-      "Ties That Bind (Action Skill)": {
+      "Ties That Bind": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. Enemies near Grasped target are linked, and any damage dealt to a linked target is shared between all links.",
         effect: rank => `Link Damage 35% of damage dealt, Cooldown 17 sec, Grasp Immune Damage 80`,
@@ -332,7 +332,7 @@ const skills = {
       },
     },
     "5": {
-      "Fist Over Matter (Action Skill)": {
+      "Fist Over Matter": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. After Grasping, large fists appear to smash the area, dealing damage to nearby enemies.",
         effect: rank => `Damage 21, Cooldown 31 sec, Grasp Immune Damage 93`,

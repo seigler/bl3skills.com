@@ -5,7 +5,25 @@
 	align-items: center;
 	display: flex;
   line-height: 2;
-  background-image: linear-gradient(to top, hsla(0,0%,0%,0.8), hsla(0,0%,0%,0));
+  background-image: linear-gradient(
+    to top,
+    hsla(0, 0%, 0%, 0.5) 0%,
+    hsla(0, 0%, 0%, 0.494) 8.1%,
+    hsla(0, 0%, 0%, 0.476) 15.5%,
+    hsla(0, 0%, 0%, 0.448) 22.5%,
+    hsla(0, 0%, 0%, 0.412) 29%,
+    hsla(0, 0%, 0%, 0.37) 35.3%,
+    hsla(0, 0%, 0%, 0.324) 41.2%,
+    hsla(0, 0%, 0%, 0.275) 47.1%,
+    hsla(0, 0%, 0%, 0.225) 52.9%,
+    hsla(0, 0%, 0%, 0.176) 58.8%,
+    hsla(0, 0%, 0%, 0.13) 64.7%,
+    hsla(0, 0%, 0%, 0.088) 71%,
+    hsla(0, 0%, 0%, 0.052) 77.5%,
+    hsla(0, 0%, 0%, 0.024) 84.5%,
+    hsla(0, 0%, 0%, 0.006) 91.9%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
 }
 
 .footer span a {

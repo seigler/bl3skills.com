@@ -36,7 +36,6 @@
 .tree {
   --themeColor: hsl(var(--themeHue),91%,22%);
   display: flex;
-  z-index: 1;
   flex-direction: column;
   margin: 1rem;
   padding: 0 3.5rem;
@@ -54,7 +53,7 @@
 }
 
 .skills:before {
-  --gradientStop: calc((var(--invested) + 5) * 3.5rem / 5 + 1.65rem);
+  --gradientStop: calc(var(--invested)* 0.7rem + 3.5rem + 1.65rem);
   content: '';
   position: absolute;
   top: 1.85rem;
@@ -63,12 +62,10 @@
   right: 0.375rem;
   background-image: linear-gradient(
     to bottom,
-    hsla(0,0%,60%,1) calc(var(--gradientStop) - 1rem),
-    hsla(0,0%,90%,1) var(--gradientStop),
-    hsla(0,0%,25%,1) calc(var(--gradientStop) + 0.1px),
-    hsla(0,0%,40%,1) 120%
+    hsl(var(--themeHue),91%,30%) calc(var(--gradientStop) - 1rem),
+    hsl(var(--themeHue),91%,50%) var(--gradientStop),
+    hsl(var(--themeHue),91%,15%) calc(var(--gradientStop) + 1px)
   );
-  mix-blend-mode: overlay;
   border: 0.15rem solid hsla(0,0%,0%,0.8);
 }
 

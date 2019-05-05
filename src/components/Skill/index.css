@@ -1,6 +1,5 @@
 .skill {
   position: relative;
-  z-index: 1;
   flex: 0 1 auto;
   margin: 0.5rem;
   padding: 0rem;
@@ -11,6 +10,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  color: hsla(0, 0%, 100%, 0.5);
 }
 
 .skill:before, .skill:after {
@@ -24,14 +24,17 @@
 
 .skill:before {
   content: '';
-  z-index: -1;
-  background-image: linear-gradient(to bottom, #333, #555);
+  z-index: 2;
+  background-image: linear-gradient(to bottom, #111, #222);
   transform: scale(0.9);
-  filter: brightness(50%);
 }
 
-.skill.enabled:before {
-  filter: brightness(100%);
+.enabled {
+  color: var(--whiteText);
+}
+
+.enabled:before {
+  background-image: linear-gradient(to bottom, #333, #555);
 }
 
 .usable:before {
@@ -39,14 +42,13 @@
 }
 
 .usable:after {
-  z-index: -2;
+  z-index: 1;
   content: '';
   background-color: hsl(var(--themeHue),91%,70%);
 }
 
 .skill:hover:before {
   background-image: linear-gradient(to bottom, hsl(51, 100%, 40%), hsl(51, 100%, 50%));
-  filter: brightness(100%);
 }
 .skill:hover:after {
   background-color: black;
@@ -54,6 +56,13 @@
 
 .skill:hover {
   color: black;
+}
+
+.augment:before {
+  transform: scale(0.7);
+}
+.augment:after {
+  transform: scale(0.79);
 }
 
 .actionSkill:before, .actionSkill:after {
@@ -70,14 +79,13 @@
 }
 
 .augment, .actionSkill {
-  margin: 0.25rem;
-  padding: 0.25rem;
-  height: 3em;
-  width: 3em;
+  margin: 0;
+  padding: 0.5rem;
+  height: 3.5em;
+  width: 3.5em;
 }
 
 .augment {
-  outline: calc(0.25em + 1px) solid var(--themeColor);
   background-color: var(--themeColor);
 }
 
@@ -98,12 +106,35 @@
   right: initial;
 }
 
+.image {
+  z-index: 3;
+}
+
 .ranks {
   position: absolute;
   bottom: -0.25rem;
   right: -0.25rem;
+  z-index: 4;
   font-size: 0.75em;
   background-color: #333;
   color: var(--whiteText);
   padding: 0.1em;
+}
+
+.description {
+  display: none;
+  z-index: 10;
+}
+
+.skill:hover .description {
+  pointer-events: none;
+  font-size: 0.8em;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: var(--whiteText);
+  border: 0.15rem solid hsla(0,0%,0%,0.8);
+  display: block;
+  position: absolute;
+  bottom: 110%;
+  width: 20rem;
+  transform: translateX(calc((var(--tree-index) - 1) * -50%));
 }

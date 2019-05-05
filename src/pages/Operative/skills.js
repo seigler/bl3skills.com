@@ -14,17 +14,17 @@ const skills = {
       "Adrenaline": {
         text: "Zane gains increased Action Skill Cooldown Rate. This bonus is based on the amount of shield he has. The more percent full, the greater the bonus.",
         ranks: 5,
-        effect: rank => `Action Skill Cooldown Rate - Up to +4%`,
+        effect: rank => `Action Skill Cooldown Rate - Up to +${rank * 4}%`,
       },
       "Hearty Stock": {
         text: "Zane gains increased Maximum Shield Capacity.",
         ranks: 5,
-        effect: rank => `Max Shield +6%`,
+        effect: rank => `Max Shield +${rank * 6}%`,
       },
       "Ready for Action": {
         text: "Zane gains improved Shield Recharge Rate and Shield Recharge Delay.",
         ranks: 5,
-        effect: rank => `Shield Recharge Rate +6%, Shield Recharge Delay -8%`,
+        effect: rank => `Shield Recharge Rate +${rank * 6}%, Shield Recharge Delay -${rank * 8}%`,
       },
     },
     "2": {
@@ -37,17 +37,17 @@ const skills = {
       "Brainfreeze": {
         text: "Whenever Zane scores a Critical Hit on an enemy, there's a chance they will be Slowed.",
         ranks: 5,
-        effect: rank => `Slow Chance 2.5%`,
+        effect: rank => `Slow Chance ${rank * 2.5}%`,
       },
       "Stiff Upper Lip": {
         text: "Whenever Zane is damaged, he gains Damage Resistance against that damage type.",
         ranks: 3,
-        effect: rank => `Damage Resistance +5%`,
+        effect: rank => `Damage Resistance +${rank * 5}%`,
       },
       "Rise to the Occasion": {
         text: "Zane gains Health Regeneration. The lower his shield is, the higher the bonus. While Zane's shields are full, he does not receive any health regeneration.",
         ranks: 5,
-        effect: rank => `Health Regeneration up to +1% of Max Health`,
+        effect: rank => `Health Regeneration up to +${rank * 1}% of Max Health`,
       },
     },
     "3": {
@@ -79,12 +79,12 @@ const skills = {
       "Really Expensive Jacket": {
         text: "Elemental damage over time effects applied to Zane have reduced duration.",
         ranks: 1,
-        effect: `Elemental Effect Duration -50%`,
+        effect: rank => `Elemental Effect Duration -50%`,
       },
       "Best Served Cold": {
         text: "Whenever Zane kills an enemy, they create a Cryo Nova, dealing damage to all nearby enemies. This skill has a short cooldown.",
         ranks: 5,
-        effect: rank => `Damage 3, Cooldown 3 sec`,
+        effect: rank => `Damage ${rank * 3}, Cooldown 3 sec`, // TODO level scaling
       },
       "Futility Belt": {
         text: "Zane gains resistance to non-elemental damage. Kill Skill - All elemental damage Zane takes is converted to non-elemental damage.",
@@ -102,7 +102,7 @@ const skills = {
       "Refreshment": {
         text: "Whenever Zane damages a frozen enemy with his weapon, he gains some of that damage back as health.",
         ranks: 3,
-        effect: rank => `Life Steal 8% of damage dealt`,
+        effect: rank => `Life Steal ${rank * 8}% of damage dealt`,
       },
       "Calm, Cool, Collected": {
         text: "Whenever Zane Freezes an enemy, his shield instantly begins recharging. If Zane's shields are already full, he regenerates health for a few seconds. If Zane's health is already full, his Action Skill Cooldowns and Durations are immediately reset.",
@@ -112,7 +112,7 @@ const skills = {
       "Nerves of Steel": {
         text: "Zane gains increasing Accuracy and Handling. The longer his shield is full, the greater the bonus.",
         ranks: 3,
-        effect: rank => `Accuracy +2% per sec, Handling +2.5% per sec, 99 Max Stacks`,
+        effect: rank => `Accuracy +${rank * 2}% per sec, Handling +${rank * 2.5}% per sec, 99 Max Stacks`,
       },
     },
     "6": {
@@ -179,6 +179,7 @@ const skills = {
       },
       "Seein' Red": {
         text: "Activating an Action Skill automatically activates all of Zane's kill skills.",
+        ranks: 1,
       },
       "Static Field": {
         text: "SNTNL emits a static field that sends a Shock beam to nearby enemies, draining their shields and replenishing Zane's.",
