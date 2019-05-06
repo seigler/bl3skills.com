@@ -11,9 +11,12 @@
   justify-content: center;
   align-items: center;
   color: hsla(0, 0%, 100%, 0.5);
+  --saturation: 0;
+  --luminance: 0.5;
 }
 
 .skill:before, .skill:after {
+  content: '';
   position: absolute;
   bottom: 0;
   right: 0;
@@ -23,39 +26,35 @@
 }
 
 .skill:before {
-  content: '';
   z-index: 2;
-  background-image: linear-gradient(to bottom, #111, #222);
+  background-image: linear-gradient(to bottom,
+    hsl(var(--themeHue),calc(100% * var(--saturation)),calc(20% * var(--luminance))),
+    hsl(var(--themeHue),calc(100% * var(--saturation)),calc(36% * var(--luminance)))
+  );
   transform: scale(0.9);
 }
 
+.skill:after {
+  z-index: 1;
+  background-color: hsl(var(--themeHue),calc(100% * var(--saturation)),calc(65% * var(--luminance)));
+}
+
 .enabled {
+  --saturation: 0.0;
+  --luminance: 0.75;
   color: var(--whiteText);
 }
 
-.enabled:before {
-  background-image: linear-gradient(to bottom, #333, #555);
-}
-
-.usable:before {
-  background-image: linear-gradient(to bottom, hsl(var(--themeHue),91%,40%), hsl(var(--themeHue),91%,20%));
-}
-
-.usable:after {
-  z-index: 1;
-  content: '';
-  background-color: hsl(var(--themeHue),91%,70%);
-}
-
-.skill:hover:before {
-  background-image: linear-gradient(to bottom, hsl(51, 100%, 40%), hsl(51, 100%, 50%));
-}
-.skill:hover:after {
-  background-color: black;
+.usable {
+  --saturation: 0.91;
+  --luminance: 1;
 }
 
 .skill:hover {
-  color: black;
+  --themeHue: 51;
+  --saturation: 1;
+  --luminance: 1.2;
+  color: var(--whiteText);
 }
 
 .augment:before {
@@ -115,10 +114,20 @@
   bottom: -0.25rem;
   right: -0.25rem;
   z-index: 4;
-  font-size: 0.75em;
-  background-color: #333;
+  font-size: 0.6em;
+  font-style: italic;
   color: var(--whiteText);
-  padding: 0.1em;
+  font-weight: bold;
+  border: 0.15em solid;
+  padding: 0.1em 0.3em 0.1em 0.15em;
+  text-align: center;
+  text-shadow: 0 0 0.5em black;
+  border-radius: 0.4em 0.2em;
+  background-color: hsl(var(--themeHue),calc(100% * var(--saturation)),calc(30% * var(--luminance)));
+  border-color: hsl(var(--themeHue),calc(100% * var(--saturation)),calc(10% * var(--luminance)));
+}
+.usable .ranks {
+  color: hsl(var(--themeHue),91%,80%);
 }
 
 .skillTitle {

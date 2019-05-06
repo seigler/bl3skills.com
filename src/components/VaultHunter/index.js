@@ -5,6 +5,7 @@ import Nav from '@components/Nav';
 import Footer from '@components/Footer';
 import { getHash } from './hashHandler';
 import reducer from './reducer';
+import { getLevel } from './selectors';
 import style from './index.css';
 
 function contextKiller (event) {

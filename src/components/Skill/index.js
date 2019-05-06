@@ -18,7 +18,9 @@ export default function Skill ({
   text = 'Long description',
   ranks = 0,
   invested = 0,
-  effect = rank => `Rank ${rank} effect`,
+  tier = 0,
+  level = 1,
+  effect = (rank, level) => `Rank ${rank} effect`,
   type = null,
   enabled = true,
   onChange = (oldValue, newValue) => null,
@@ -62,9 +64,23 @@ export default function Skill ({
       <div class={style.description}>
         <h3 class={style.skillTitle}>{name}</h3>
         {text}
-        <div class={style.effect}>
-          {effect(Math.max(invested, 1))}
-        </div>
+        { invested > 0 &&
+          <div class={style.effect}>
+            Current Effect:<br />
+            {effect(invested, level)}
+          </div>
+        }
+        { type !== null &&
+          <div class={style.effect}>
+            {effect(1, level)}
+          </div>
+        }
+        { type == null && invested < ranks &&
+          <div class={style.effect}>
+            Next Rank:<br />
+            {effect(invested, level)}
+          </div>
+        }
       </div>
     </div>
   );

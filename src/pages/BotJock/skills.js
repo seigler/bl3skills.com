@@ -1,5 +1,6 @@
 import SKILLS from '@constants/skills';
 
+/* eslint-disable quotes */
 const skills = {
   "Tree One": {
     "0": {
@@ -7,7 +8,7 @@ const skills = {
         text: "?",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
-        effect: rank => `?`,
+        effect: (rank, level) => `?`,
       },
     },
   },
@@ -16,7 +17,7 @@ const skills = {
       "?": {
         text: "?",
         type: SKILLS.ACTION_SKILL,
-        effect: rank => `?`,
+        effect: (rank, level) => `?`,
       },
     },
   },
@@ -25,7 +26,7 @@ const skills = {
       "?": {
         text: "?",
         type: SKILLS.ACTION_SKILL,
-        effect: rank => `?`,
+        effect: (rank, level) => `?`,
       },
     },
   },
