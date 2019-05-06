@@ -1,25 +1,18 @@
 import { Router } from 'preact-router';
 
-import Nav from '@components/Nav';
-import Footer from '@components/Footer';
-
 import Home from '@pages/Home';
 import Operative from '@pages/Operative';
 import Siren from '@pages/Siren';
-
-// import style from './index.css';
+import Beastmaster from '@pages/Beastmaster';
+import BotJock from '@pages/BotJock';
 
 const App = () =>
-  [
-    <Nav />,
-    <main>
-      <Router>
-        <Home path='/' />
-        <Operative path='/operative' />
-        <Siren path='/siren' />
-      </Router>
-    </main>,
-    <Footer />
-  ];
+  (<Router>
+    <Home path='/' />
+    <Operative path='/operative' />
+    <Siren path='/siren' />
+    <Beastmaster path='/beastmaster' />
+    <BotJock path='/bot-jock' />
+  </Router>);
 
 export default App;

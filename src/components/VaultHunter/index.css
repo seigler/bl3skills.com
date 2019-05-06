@@ -19,7 +19,7 @@
 }
 .subtitle {
   text-transform: uppercase;
-  font-size: 0.5em;
+  font-size: 0.4em;
 }
 
 .trees, .tier {
@@ -50,6 +50,7 @@
 .skills {
   position: relative;
   user-select: none;
+  height: calc(3.5rem * 7)
 }
 
 .skills:before {
@@ -83,4 +84,8 @@
 }
 .red {
   --themeHue: 18;
+}
+
+a {
+  color: inherit;
 }

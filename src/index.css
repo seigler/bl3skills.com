@@ -27,29 +27,22 @@
 body {
 	position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 	color: #F8F8FA;
 	font-family: var(--font-list);
   -webkit-font-smoothing: antialiased;
   background-color: #333;
-  background-image: url('@assets/backgrounds/background2.jpg');
+  background-image: url('@assets/backgrounds/background.jpg');
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
-
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
-}
-
-a:hover {
-  color: #E2264D;
-	text-decoration: underline;
-}
-
-a:visited {
-	color: inherit;
+body > * {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
 }

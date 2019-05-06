@@ -31,7 +31,7 @@
 	transition: color var(--transition-duration);
 }
 
-.footer a:hover {
+.footer a:hover, .footer a:focus {
 	color: #E2264D;
 }
 

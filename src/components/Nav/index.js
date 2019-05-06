@@ -1,15 +1,21 @@
 import { Link } from 'preact-router';
 import style from './index.css';
 
-export default function Nav (props) {
+export default function Nav ({ path }) {
+  const pages = [
+    { name: 'Zane', path: '/operative' },
+    { name: 'Amara', path: '/siren' },
+    { name: 'FL4K', path: '/beastmaster' },
+    { name: 'Moze', path: '/bot-jock' },
+  ];
   return (
     <nav class={style.nav}>
       <ul class={style.links}>
-        <li><Link href='/'>Home</Link></li>
-        <li><Link href='/operative'>Zane</Link></li>
-        <li><Link href='/siren'>Amara</Link></li>
-        <li><Link href='/beastmaster'>FL4K</Link></li>
-        <li><Link href='/bot-jock'>Moze</Link></li>
+        { pages.map(page => {
+          return (<li class={`${style.link} ${path === page.path ? style.current : ''}`}>
+            <Link href={page.path}>{page.name}</Link>
+          </li>);
+        }) }
       </ul>
     </nav>
   );

@@ -1,0 +1,34 @@
+.splash {
+  margin: auto;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.link {
+  display: inline-block;
+  margin: 0.5rem;
+  background-color: black;
+  color: hsl(51, 100%, 50%);
+  padding: 0.25em;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.link:hover, .link:focus {
+  color: black;
+  background-color: hsl(51, 100%, 50%);
+}
+
+.name, .job {
+  text-transform: uppercase;
+}
+
+.job {
+  font-size: 0.4em;
+}

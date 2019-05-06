@@ -1,18 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "build": "pwa export --routes /about,/blog,/",
+    "build": "pwa build",
     "start": "sirv build -s",
-    "watch": "pwa watch"
+    "watch": "pwa watch",
+    "deploy": "npm run build && git-directory-deploy --directory build/"
   },
   "dependencies": {
     "deepmerge": "^3.2.0",
-    "preact": "^10.0.0-beta.1",
-    "preact-router": "^3.0.0",
+    "preact": "^8.4.2",
+    "preact-compat": "^3.18.5",
+    "preact-router": "^2.6.1",
+    "react-css-variables": "^2.0.1",
     "sirv-cli": "^0.2.0"
   },
   "devDependencies": {
-    "@pwa/cli": "latest",
+    "@pwa/cli": "^0.4.2",
     "@pwa/plugin-offline": "latest",
     "@pwa/preset-preact": "latest",
     "eslint": "^5.16.0",
@@ -22,7 +25,8 @@
     "eslint-plugin-node": "^9.0.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "git-directory-deploy": "^1.5.1"
   },
   "browserslist": [
     ">0.25%",

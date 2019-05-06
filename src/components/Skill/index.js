@@ -21,7 +21,7 @@ export default function Skill ({
   effect = rank => `Rank ${rank} effect`,
   type = null,
   enabled = true,
-  onChange = (oldValue, newValue) => console.log(`Skill from ${oldValue} to ${newValue}`),
+  onChange = (oldValue, newValue) => null,
 }) {
   const isAugment = [
     SKILLS.AUGMENT_CHEVRON,
@@ -60,7 +60,7 @@ export default function Skill ({
       <div class={style.image}>{getInitials(name)}</div>
       { enabled && ranks > 0 && <div class={style.ranks}>{invested}/{ranks}</div>}
       <div class={style.description}>
-        <h3>{name}</h3>
+        <h3 class={style.skillTitle}>{name}</h3>
         {text}
         <div class={style.effect}>
           {effect(Math.max(invested, 1))}

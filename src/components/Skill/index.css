@@ -121,20 +121,31 @@
   padding: 0.1em;
 }
 
+.skillTitle {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
 .description {
   display: none;
   z-index: 10;
+  text-align: left;
+}
+
+.effect {
+  margin-top: 0.5em;
 }
 
 .skill:hover .description {
   pointer-events: none;
   font-size: 0.8em;
-  background-color: hsla(0, 0%, 0%, 0.6);
+  background-color: hsl(0, 0%, 10%);
   color: var(--whiteText);
-  border: 0.15rem solid hsla(0,0%,0%,0.8);
+  border: 0.15rem solid black;
+  padding: 0.5rem;
   display: block;
   position: absolute;
   bottom: 110%;
   width: 20rem;
-  transform: translateX(calc((var(--tree-index) - 1) * -50%));
+  transform: translateX(calc((1 - var(--treeindex)) * 40%));
 }
