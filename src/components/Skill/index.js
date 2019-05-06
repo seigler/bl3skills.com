@@ -78,7 +78,7 @@ export default function Skill ({
         { type == null && invested < ranks &&
           <div class={style.effect}>
             Next Rank:<br />
-            {effect(invested, level)}
+            {effect(invested + 1, level)}
           </div>
         }
       </div>

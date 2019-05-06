@@ -4,7 +4,7 @@ function percent (rank, unit) {
   return Math.round(rank * unit * 10) / 10;
 }
 function flat (rank, level, unit) {
-  return Math.round(rank * unit * (level ** 1.09));
+  return Math.floor(rank * unit * (1.09 ** level));
 }
 
 /* eslint-disable quotes */
@@ -12,7 +12,7 @@ const skills = {
   "Under Cover": {
     "0": {
       "Barrier": {
-        text: "Drop a deployable Barrier that blocks incoming projectiles. Zane and his allies can shooter through the Barrier, dealing increased Gun Damage. Pressing LB or RB (controller) while Barrier is active picks up and holds the Barrier, but the size and bonuses are decreased.",
+        text: "Drop a deployable Barrier that blocks incoming projectiles. Zane and his allies can shoot through the Barrier, dealing increased Gun Damage. Pressing LB or RB (controller) while Barrier is active picks up and holds the Barrier, but the size and bonuses are decreased.",
         effect: (rank, level) => `Duration 9 sec, Cooldown 18 sec, Damage Amp +20%`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -182,7 +182,7 @@ const skills = {
       "Bad Dose": {
         text: "SNTNL occasionally shoots out a beam of Radiation that weakens enemies and buffs Zane.",
         ranks: 0,
-        effect: (rank, level) => `Fire Rate +3% per enemy, Movement Speed +6% per enemy, Damage 2, Duration 12 sec, Cooldown 8 sec`,
+        effect: (rank, level) => `Fire Rate +3% per enemy, Movement Speed +6% per enemy, Damage ${flat(rank, level, 2)}, Duration 12 sec, Cooldown 8 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Seein' Red": {
@@ -192,7 +192,7 @@ const skills = {
       "Static Field": {
         text: "SNTNL emits a static field that sends a Shock beam to nearby enemies, draining their shields and replenishing Zane's.",
         ranks: 0,
-        effect: (rank, level) => `Shield Damage 2 per sec, Cooldown 2 sec`,
+        effect: (rank, level) => `Shield Damage ${flat(rank, level, 2)} per sec, Cooldown 2 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
@@ -200,7 +200,7 @@ const skills = {
       "Boomsday": {
         text: "SNTNL adds a rocket pod to its primary weapons, allowing it to shoot rockets as well as machine guns.",
         ranks: 0,
-        effect: (rank, level) => `Rocket Damage 50`,
+        effect: (rank, level) => `Rocket Damage ${flat(rank, level, 50)}`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Violent Violence": {
@@ -216,7 +216,7 @@ const skills = {
       "Almighty Ordnance": {
         text: "Hold down LB or RB (controller) while SNTNL is deployed to paint a target area. SNTNL fires a missile barrage at that area, and if an enemy is killed, Almighty Ordnance's duration is reset. This can only be used once per Action Skill use.",
         ranks: 0,
-        effect: (rank, level) => `Missile Damage 25, 5 Missiles per Barrage`,
+        effect: (rank, level) => `Missile Damage ${flat(rank, level, 25)}, 5 Missiles per Barrage`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },

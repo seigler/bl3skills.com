@@ -1,5 +1,4 @@
 import { Link } from 'preact-router';
-import style from './index.css';
 
 export default function Nav ({ path }) {
   const pages = [
@@ -9,14 +8,12 @@ export default function Nav ({ path }) {
     { name: 'Moze', path: '/bot-jock' },
   ];
   return (
-    <nav class={style.nav}>
-      <ul class={style.links}>
-        { pages.map(page => {
-          return (<li class={`${style.link} ${path === page.path ? style.current : ''}`}>
-            <Link href={page.path}>{page.name}</Link>
-          </li>);
-        }) }
-      </ul>
+    <nav>
+      {
+        pages.map(page => (
+          path === page.path ? null : <Link href={page.path}>{page.name}</Link>
+        ))
+      }
     </nav>
   );
 }

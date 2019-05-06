@@ -139,6 +139,7 @@
   display: none;
   z-index: 10;
   text-align: left;
+  font-size: 0.9rem;
 }
 
 .effect {
@@ -154,7 +155,7 @@
   padding: 0.5rem;
   display: block;
   position: absolute;
-  bottom: 110%;
+  bottom: 100%;
   width: 20rem;
   transform: translateX(calc((1 - var(--treeindex)) * 40%));
 }

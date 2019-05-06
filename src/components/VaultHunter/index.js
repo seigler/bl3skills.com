@@ -3,7 +3,7 @@ import { Component } from 'preact';
 import Skill from '@components/Skill';
 import Nav from '@components/Nav';
 import Footer from '@components/Footer';
-import { getHash } from './hashHandler';
+import { getHash, setHash } from './hashHandler';
 import reducer from './reducer';
 import { getLevel } from './selectors';
 import style from './index.css';
@@ -32,7 +32,8 @@ export default class VaultHunter extends Component {
   render ({
     name = 'Unnamed',
     discipline = 'Classless',
-    path
+    path,
+    skills: initialSkills,
   }) {
     const skillChangeListenerFactory = (skillName, treeIndex, treeName, tierIndex) => {
       return (oldValue, newValue) => {
@@ -46,6 +47,14 @@ export default class VaultHunter extends Component {
           oldValue,
         }));
       };
+    };
+
+    const resetSkills = () => {
+      setHash(initialSkills);
+      this.setState({
+        invested: [0, 0, 0],
+        skills: initialSkills || {},
+      });
     };
 
     const trees =
@@ -62,6 +71,7 @@ export default class VaultHunter extends Component {
                       {...this.state.skills[treeName][tier][skillName]}
                       name={skillName}
                       enabled={this.state.invested[treeIndex] >= 5 * tierIndex - 5}
+                      level={getLevel(this.state)}
                       onChange={skillChangeListenerFactory(skillName, treeIndex, treeName, tierIndex)}
                     />
                   ) }
@@ -74,12 +84,18 @@ export default class VaultHunter extends Component {
 
     return (
       <div>
-        <Nav path={path} />
+        <div class={style.header}>
+          <h1 class={style.title}>{ name }
+            <div class={style.subtitle}>the { discipline }</div>
+          </h1>
+          <div class={style.sidepanel}>
+            <div class={style.level}>Level { getLevel(this.state) + 2 }</div>
+            <div class={style.reset}><a onClick={resetSkills}>Reset</a></div>
+          </div>
+          <Nav path={path} />
+        </div>
         <main>
           <div class={style.VaultHunter} onContextMenu={contextKiller}>
-            <h1 class={style.title}>{ name }
-              <div class={style.subtitle}>the { discipline }</div>
-            </h1>
             <div class={style.trees}>
               { trees }
             </div>

@@ -4,7 +4,7 @@ function percent (rank, unit) {
   return Math.round(rank * unit * 10) / 10;
 }
 function flat (rank, level, unit) {
-  return Math.round(rank * unit * (level ** 1.09));
+  return Math.floor(rank * unit * (1.09 ** level));
 }
 
 /* eslint-disable quotes */
@@ -62,7 +62,7 @@ const skills = {
       "Fracture": {
         ranks: 0,
         text: "Amara summons a Handful of Fists that erupt from the ground, dealing damage in front of Amara.",
-        effect: (rank, level) => `Damage 124, Cooldown 26 sec`,
+        effect: (rank, level) => `Damage ${flat(rank, level, 124)}, Cooldown 26 sec`,
         type: SKILLS.ACTION_SKILL,
       },
       "Mindfulness": {
@@ -83,7 +83,7 @@ const skills = {
       "Revelation": {
         ranks: 0,
         text: "Amara's Action Skill now creates a Nova when it damages enemies, dealing damage to all nearby enemies.",
-        effect: (rank, level) => `Nova Damage 41, Action Skill Damage -15%`,
+        effect: (rank, level) => `Nova Damage ${flat(rank, level, 41)}, Action Skill Damage -15%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
@@ -91,7 +91,7 @@ const skills = {
       "Downfall": {
         ranks: 0,
         text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam.",
-        effect: (rank, level) => `Damage 141, Beam Damage 21 per sec, Cooldown 36 sec`,
+        effect: (rank, level) => `Damage ${flat(rank, level, 141)}, Beam Damage ${flat(rank, level, 21)} per sec, Cooldown 36 sec`,
         type: SKILLS.ACTION_SKILL,
       },
       "Samsara": {
@@ -104,7 +104,7 @@ const skills = {
       "Do Unto Others": {
         ranks: 1,
         text: "Upon taking damage, automatically throw an Energy Orb back at enemy, dealing Action Skill Elemental Damage.",
-        effect: (rank, level) => `Projectile Damage 17, Cooldown 8 sec`,
+        effect: (rank, level) => `Projectile Damage ${flat(rank, level, 17)}, Cooldown 8 sec`,
       },
       "Jab Cross": {
         ranks: 5,
@@ -203,7 +203,7 @@ const skills = {
       "Deliverance": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself that deals damage to everything in its path. Upon hitting enemies, it releases homing Elemental Projectiles that trigger Action Skill Elemental Effect on enemies.",
-        effect: (rank, level) => `Damage 124, Elemental Projectiles 3 per enemy hit, Cooldown 24 sec`,
+        effect: (rank, level) => `Damage ${flat(rank, level, 124)}, Elemental Projectiles 3 per enemy hit, Cooldown 24 sec`,
         type: SKILLS.ACTION_SKILL,
       },
       "From Rest": {
@@ -236,7 +236,7 @@ const skills = {
       "Tandava": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself that explodes when it hits a target, damaging all nearby enemies.",
-        effect: (rank, level) => `Damage: 166, Cooldown 28 sec`,
+        effect: (rank, level) => `Damage: ${flat(rank, level, 166)}, Cooldown 28 sec`,
         type: SKILLS.ACTION_SKILL,
       },
     },
@@ -300,7 +300,7 @@ const skills = {
       "The Eternal Fist": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts into the ground and locks targeted enemy in place. If Grasped enemy is killed, up to 3 new targets can be Grasped as well.",
-        effect: (rank, level) => `Bonus Targets up to +4, Cooldown 23 sec, Grasp Immune Damage 66`,
+        effect: (rank, level) => `Bonus Targets up to +4, Cooldown 23 sec, Grasp Immune Damage ${flat(rank, level, 66)}`,
         type: SKILLS.ACTION_SKILL,
       },
       "Dread": {
@@ -334,7 +334,7 @@ const skills = {
       "Ties That Bind": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. Enemies near Grasped target are linked, and any damage dealt to a linked target is shared between all links.",
-        effect: (rank, level) => `Link Damage 35% of damage dealt, Cooldown 17 sec, Grasp Immune Damage 80`,
+        effect: (rank, level) => `Link Damage 35% of damage dealt, Cooldown 17 sec, Grasp Immune Damage ${flat(rank, level, 80)}`,
         type: SKILLS.ACTION_SKILL,
       },
     },
@@ -342,7 +342,7 @@ const skills = {
       "Fist Over Matter": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. After Grasping, large fists appear to smash the area, dealing damage to nearby enemies.",
-        effect: (rank, level) => `Damage 21, Cooldown 31 sec, Grasp Immune Damage 93`,
+        effect: (rank, level) => `Damage ${flat(rank, level, 21)}, Cooldown 31 sec, Grasp Immune Damage ${flat(rank, level, 93)}`,
         type: SKILLS.ACTION_SKILL,
       },
       "Sustainment": {

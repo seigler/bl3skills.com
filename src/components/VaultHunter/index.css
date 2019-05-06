@@ -5,6 +5,12 @@
   cursor: default;
 }
 
+.header {
+  display: flex;
+  align-items: stretch;
+  margin: 1rem auto;
+}
+
 .title {
   display: block;
   margin: 0 auto;
@@ -13,13 +19,56 @@
   text-align: center;
   font-size: 3rem;
   color: hsl(51, 100%, 50%);
-  background-color: black;
-  padding: 0.2em;
   line-height: 1;
 }
 .subtitle {
   text-transform: uppercase;
   font-size: 0.4em;
+}
+
+.sidepanel {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 5em;
+}
+.title, .level, .reset, .header > nav > a {
+  background-color: black;
+  padding: 0.5rem;
+}
+.level, .reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.reset {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+.reset:hover {
+  color: white;
+  background-color: red;
+}
+
+.header > nav {
+  display: flex;
+  align-items: stretch;
+}
+
+.header > nav > a {
+  margin-left: 0.5rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-decoration: none;
+  color: hsl(51, 100%, 50%);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.header > nav > a:hover {
+  background-color: hsl(51, 100%, 50%);
+  color: black;
 }
 
 .trees, .tier {
