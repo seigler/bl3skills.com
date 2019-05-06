@@ -4,7 +4,8 @@
     "build": "pwa build",
     "start": "sirv build -s",
     "watch": "pwa watch",
-    "deploy": "npm run build && git-directory-deploy --directory build/"
+    "deploy": "npm run build && mkdir build/operative build/siren build/beastmaster build/bot-jock && cp build/index.html build/operative/ && cp build/index.html build/siren/ && cp build/index.html build/beastmaster/ && cp build/index.html build/bot-jock/ && echo 'bl3skills.com' > build/CNAME && npm run push-gh-pages",
+    "push-gh-pages": "git-directory-deploy --directory build/"
   },
   "dependencies": {
     "deepmerge": "^3.2.0",
