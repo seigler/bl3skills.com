@@ -4,7 +4,7 @@ function percent (rank, unit) {
   return Math.round(rank * unit * 10) / 10;
 }
 function flat (rank, level, unit) {
-  return Math.floor(rank * unit * (1.09 ** level));
+  return Math.floor(rank * unit);
 }
 
 /* eslint-disable quotes */
