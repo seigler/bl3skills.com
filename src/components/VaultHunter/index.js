@@ -66,12 +66,13 @@ export default class VaultHunter extends Component {
             <div class={style.skills}>
               { Object.keys(this.state.skills[treeName]).map((tier, tierIndex) =>
                 <div class={style.tier}>
-                  { Object.keys(this.state.skills[treeName][tier]).map(skillName =>
+                  { Object.keys(this.state.skills[treeName][tier]).map((skillName, skillIndex) =>
                     <Skill
                       {...this.state.skills[treeName][tier][skillName]}
                       name={skillName}
                       enabled={this.state.invested[treeIndex] >= 5 * tierIndex - 5}
                       level={getLevel(this.state)}
+                      image={`../../assets/hunters/${discipline}/${treeIndex}${tierIndex}${skillIndex}.png`}
                       onChange={skillChangeListenerFactory(skillName, treeIndex, treeName, tierIndex)}
                     />
                   ) }

@@ -12,7 +12,7 @@
   align-items: center;
   color: hsla(0, 0%, 100%, 0.5);
   --saturation: 0;
-  --luminance: 0.5;
+  --luminance: 0.4;
 }
 
 .skill:before, .skill:after {
@@ -106,7 +106,17 @@
 }
 
 .image {
+  position: relative;
   z-index: 3;
+  mix-blend-mode: luminosity;
+}
+.image > img {
+  width: 2.3em;
+  opacity: 0.5;
+}
+
+.enabled .image > img, .skill:hover .image > img {
+  opacity: 1;
 }
 
 .ranks {
