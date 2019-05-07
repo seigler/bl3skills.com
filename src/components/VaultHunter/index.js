@@ -83,7 +83,7 @@ export default class VaultHunter extends Component {
         );
       });
 
-    const level = getLevel(this.state) + 2;
+    const level = getLevel(this.state);
 
     return (
       <div>

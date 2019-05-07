@@ -19,6 +19,6 @@ export default function investmentValidator (skills) {
     totalSpent += treeTotal;
     treeIndex += 1;
   };
-  if (totalSpent > (50 - 2) + 11 + 11) { return false; }
+  if (totalSpent > (50 - 3) + 11 + 11) { return false; }
   return treeTotals;
 }
