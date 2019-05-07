@@ -83,6 +83,8 @@ export default class VaultHunter extends Component {
         );
       });
 
+    const level = getLevel(this.state) + 2;
+
     return (
       <div>
         <div class={style.header}>
@@ -90,7 +92,7 @@ export default class VaultHunter extends Component {
             <div class={style.subtitle}>the { discipline }</div>
           </h1>
           <div class={style.sidepanel}>
-            <div class={style.level}>Level { getLevel(this.state) + 2 }</div>
+            <div class={`${style.level} ${level > 50 ? level > 61 ? style.overlevelB : style.overlevelA : ''}`}>Level { level }</div>
             <div class={style.reset}><a onClick={resetSkills}>Reset</a></div>
           </div>
           <Nav path={path} />

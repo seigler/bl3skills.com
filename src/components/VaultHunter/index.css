@@ -30,13 +30,14 @@
   margin-left: 0.5rem;
   display: flex;
   flex-direction: column;
-  width: 5em;
+  width: 6em;
 }
 .title, .level, .reset, .header > nav > a {
   background-color: black;
   padding: 0.5rem;
 }
 .level, .reset {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +51,28 @@
 .reset:hover {
   color: white;
   background-color: red;
+}
+.level:after {
+  position: absolute;
+  z-index: 1;
+  width: 10em;
+  top: 60%;
+  text-shadow: 0 0 0.2em black;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  pointer-events: none;
+  text-align: center;
+}
+.overlevelA:after {
+  content: 'Theoretical!';
+  color: #2D0;
+  transform: rotate(5deg);
+}
+.overlevelB:after {
+  content: 'Very theoretical!';
+  color: #E20;
+  transform: rotate(-5deg);
 }
 
 .header > nav {
