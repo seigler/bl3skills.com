@@ -13,7 +13,7 @@ export default function () {
     <div>
       <div class={style.splash}>
         <div class={style.wrapper}>
-          <h1>Borderlands 3 skill calculator</h1>
+          <h1><div class={style.disclaimer}>(Unofficial)</div>Borderlands 3 skill calculator</h1>
           { pages.map(page => {
             return (
               <Link class={style.link} href={page.path}>

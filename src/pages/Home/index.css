@@ -32,3 +32,12 @@
 .job {
   font-size: 0.4em;
 }
+
+.disclaimer {
+  position: absolute;
+  transform: translate(-100%, 50%) rotate(-14deg);
+  color: red;
+  font-size: 0.5em;
+  display: inline-block;
+  margin-right: 0;
+}
