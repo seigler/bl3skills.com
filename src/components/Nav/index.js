@@ -5,7 +5,7 @@ export default function Nav ({ path }) {
     { name: 'Zane', path: '/operative' },
     { name: 'Amara', path: '/siren' },
     { name: 'FL4K', path: '/beastmaster' },
-    { name: 'Moze', path: '/bot-jock' },
+    { name: 'Moze', path: '/gunner' },
   ];
   return (
     <nav>

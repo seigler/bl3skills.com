@@ -4,7 +4,7 @@ import Home from '@pages/Home';
 import Operative from '@pages/Operative';
 import Siren from '@pages/Siren';
 import Beastmaster from '@pages/Beastmaster';
-import BotJock from '@pages/BotJock';
+import Gunner from '@pages/Gunner';
 
 const App = () =>
   (<Router>
@@ -12,7 +12,7 @@ const App = () =>
     <Operative path='/operative' />
     <Siren path='/siren' />
     <Beastmaster path='/beastmaster' />
-    <BotJock path='/bot-jock' />
+    <Gunner path='/gunner' />
   </Router>);
 
 export default App;

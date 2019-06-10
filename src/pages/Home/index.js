@@ -7,7 +7,7 @@ export default function () {
     { name: 'Zane', job: 'the Operative', path: '/operative' },
     { name: 'Amara', job: 'the Siren', path: '/siren' },
     { name: 'FL4K', job: 'the Beastmaster', path: '/beastmaster' },
-    { name: 'Moze', job: 'the Bot Jock', path: '/bot-jock' },
+    { name: 'Moze', job: 'the Gunner', path: '/gunner' },
   ];
   return (
     <div>
