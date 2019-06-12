@@ -1,6 +1,18 @@
 import SKILLS from '@constants/skills';
 import style from './index.css';
 
+function getInitials (string) {
+  const numWords = (string.match(/\s/g) || []).length + 1;
+  switch (numWords) {
+    case 1:
+      return string.slice(0, 3);
+    case 2:
+      return (string.match(/^\w{1,2}|\s\w{1,2}/g) || []).join('').replace(/\s/g, '');
+    default:
+      return (string.match(/^\w|\s\w/g) || []).join('').replace(/\s/g, '');
+  }
+}
+
 export default function Skill ({
   name = '?',
   text = 'Long description',
@@ -48,7 +60,7 @@ export default function Skill ({
       onClick={clickListener}
       onContextMenu={clickListener}
     >
-      <div class={style.image}><img src={image} /></div>
+      <div class={style.image}><img src={image} alt={getInitials(name)} /></div>
       { enabled && ranks > 0 && <div class={style.ranks}>{invested}/{ranks}</div>}
       <div class={style.description}>
         <h3 class={style.skillTitle}>{name}</h3>
