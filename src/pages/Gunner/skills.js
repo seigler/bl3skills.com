@@ -309,6 +309,7 @@ const skills = {
       },
       "Full Can of Whoop-Ass": {
         text: "Entering Iron Bear causes Moze's and her allies' shields to immediately begin recharging at an increased Shield Recharge Rate.",
+        ranks: 1,
         effect: (rank, level) => `Shield Recharge Rate: +25%`,
       },
       "Experimental Munitions": {
