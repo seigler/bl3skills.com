@@ -6,7 +6,7 @@ export default function Gunner ({ path }) {
   return (
     <VaultHunter
       name='Moze'
-      discipline='Bot Jock'
+      discipline='Gunner'
       skills={skills}
       path={path}
     />
