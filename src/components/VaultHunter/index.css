@@ -32,11 +32,11 @@
   flex-direction: column;
   width: 6em;
 }
-.title, .level, .reset, .header > nav > a {
+.title, .level, .reset > a, .header > nav > a {
   background-color: black;
   padding: 0.5rem;
 }
-.level, .reset {
+.level, .reset, .reset > a {
   position: relative;
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@
   cursor: pointer;
   font-size: 0.8em;
 }
-.reset:hover {
+.reset > a:hover {
   color: white;
   background-color: red;
 }
