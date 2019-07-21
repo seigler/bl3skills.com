@@ -1,3 +1,3 @@
 export function getLevel (state) {
-  return state.invested.reduce((total, current) => total + current, 3);
+  return state.invested.reduce((total, current) => total + current, 2);
 };
