@@ -332,7 +332,7 @@ const skills = {
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
         ranks: 3,
-        effect: (rank, level) => `Shield Recharge Rate: +${percent(rank, 7)}%, Shield Recharge Rate: -${percent(rank, 8)}%`,
+        effect: (rank, level) => `Shield Recharge Rate: +${percent(rank, 7)}%, Shield Recharge Delay: -${percent(rank, 8)}%`,
       },
       "Desperate Measures": {
         text: "Moze's Gun Damage is increased depending on how low her health is. The lower her health, the greater the increase.",
