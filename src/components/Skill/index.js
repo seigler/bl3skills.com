@@ -29,12 +29,13 @@ export default function Skill ({
   const isAugment = [
     SKILLS.AUGMENT_CHEVRON,
     SKILLS.AUGMENT_DIAMOND,
-    SKILLS.ACTION_SKILL,
+    SKILLS.AUGMENT_ACTION_SKILL,
   ].includes(type);
   let shapeStyle = null;
+  if (type === SKILLS.ACTION_SKILL) { shapeStyle = style.actionSkill; }
   if (type === SKILLS.AUGMENT_CHEVRON) { shapeStyle = style.chevron; }
   if (type === SKILLS.AUGMENT_DIAMOND) { shapeStyle = style.diamond; }
-  if (type === SKILLS.ACTION_SKILL) { shapeStyle = style.actionSkill; }
+  if (type === SKILLS.AUGMENT_ACTION_SKILL) { shapeStyle = style.actionSkill; }
   function clickListener (event) {
     var newValue;
     if (event.type === 'click') {
