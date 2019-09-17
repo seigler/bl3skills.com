@@ -12,6 +12,7 @@
     "preact": "^8.4.2",
     "preact-compat": "^3.18.5",
     "preact-router": "^2.6.1",
+    "react": "^15.6.2",
     "react-css-variables": "^2.0.1",
     "sirv-cli": "^0.2.0"
   },
