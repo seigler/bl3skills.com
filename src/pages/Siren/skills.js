@@ -134,8 +134,8 @@ const skills = {
   "Mystical Assault": {
     "0": {
       "Phasecast": {
-        text: "Phasecast - Amara sends forward an Astral Projection of herself, dealing damage to everything in its path.",
-        effect: (rank, level) => `Damage ${flat(rank, level, 133)}, Cooldown: 22 Seconds`,
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path.",
+        effect: (rank, level) => `Damage ${flat(rank, level, 92)}, Cooldown: 28 Seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
       },
@@ -143,40 +143,40 @@ const skills = {
     "1": {
       "Do Harm": {
         ranks: 5,
-        text: "Grants Rush stacks after killing an enemy, which are consumed when using an Action Skill. Action Skill Damage is increased per stack of Rush consumed.",
-        effect: (rank, level) => `Action Skill Damage +${percent(rank, 0.6)}% per stack, 10 Max Rush Stacks, Duration 20 sec`,
+        text: "Killing an enemy grants Amara a stack of Rush. Activating her Action Skill consumes all Rush stacks. For every stack of Rush consumed, Amara's Action Skill Damage is temporarily increased.",
+        effect: (rank, level) => ` Action Skill Damage: +${percent(rank, 0.9)}% per stack consumed, Duration 20 seconds`,
       },
-      "Fast Hands": {
+      "Fast Hand(s)": {
         ranks: 3,
-        text: "Reload Speed, Weapon Swap Speed, and Mode Switch Speed are improved.",
-        effect: (rank, level) => `Reload Speed +${percent(rank, 4)}%, Weapon Swap Speed +${percent(rank, 22)}%, Mode Switch Speed +${percent(rank, 21)}%`,
+        text: "Amara's Reload Speed, Weapon Swap Speed, and Mode Switch Speed are improved.",
+        effect: (rank, level) => `Reload Speed: +${percent(rank, 7)}%, Weapon Swap Speed: +${percent(rank, 16)}%, Mode Switch Speed: +${percent(rank, 16)}%`,
       },
       "Violent Tapestry": {
         ranks: 5,
-        text: "Applying Elemental Effects grant Rush Stacks. For every stack of Rush consumed from an Action Skill, Elemental Effect Chance is increased.",
-        effect: (rank, level) => `Effect Chance +${percent(rank, 0.6)}%, 10 Max Rush Stacks, Duration 20 sec`,
+        text: "Applying a Status Effect grants Amara a stack of Rush. For every stack of Rush consumed, Amara's Status Effect Chance is temporarily increased.",
+        effect: (rank, level) => `Max Rush Stacks: 10, Effect Chance: +${percent(rank, 0.6)}%, Duration: 20 sec`,
       },
     },
     "2": {
       "Alacrity": {
         ranks: 5,
-        text: "Gain increased Reload Speed for every stack of Rush. For every stack of Rush consumed from an Action Skill, this bonus is increased.",
-        effect: (rank, level) => `Reload Speed +${percent(rank, 0.4)}% per stack (+${percent(rank, 0.6)}% after action skill), Duration 8 sec`,
+        text: "Amara gains increased Reload Speed for every stack of Rush. After consuming Rush stacks, this bonus is increased for a few seconds.",
+        effect: (rank, level) => `Reload Speed: +${percent(rank, 0.4)}% per stack, Reload Speed: (+${percent(rank, 0.6)}% after action skill use, Duration: 8 sec`,
       },
       "Transcend": {
         ranks: 3,
-        text: "Gain increased Accuracy and Critical Hit Bonus after activating an Action Skill.",
-        effect: (rank, level) => `Accuracy +${percent(rank, 11)}%, Critical Hit Bonus +${percent(rank, 9)}%, Duration 8 sec`,
+        text: "Amara gains increased Accuracy and Critical Hit Damage for a few seconds after activating her Action Skill.",
+        effect: (rank, level) => `Accuracy: +${percent(rank, 17)}%, Critical Hit Damage: +${percent(rank, 9)}%, Duration: 12 sec`,
       },
       "Restless": {
         ranks: 5,
-        text: "Gain increased Action Skill Cooldown Rate.",
-        effect: (rank, level) => `Cooldown Rate +${percent(rank, 4)}%`,
+        text: "Amara gains increased Action Skill Cooldown Rate.",
+        effect: (rank, level) => `Cooldown Rate: +${percent(rank, 5)}%`,
       },
       "Soul Sap": {
         ranks: 0,
-        text: "A portion of all damage dealt by Action Skills is returned to her or nearby allies as Health.",
-        effect: (rank, level) => `Life Steal +30% of Skill damage dealt`,
+        text: "A portion of all damage dealt by Amara's Action Skill is returned to her or a nearby ally as health.",
+        effect: (rank, level) => `Life Steal: 30% of Skill damage dealt`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
@@ -202,49 +202,49 @@ const skills = {
     "4": {
       "Deliverance": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself that deals damage to everything in its path. Upon hitting enemies, it releases homing Elemental Projectiles that trigger Action Skill Elemental Effect on enemies.",
-        effect: (rank, level) => `Damage ${flat(rank, level, 124)}, Elemental Projectiles 3 per enemy hit, Cooldown 24 sec`,
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies.",
+        effect: (rank, level) => `Cooldown: 28 seconds, Damage: ${flat(rank, level, 86)}, Elemental Projectiles: 3 per enemy hit`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "From Rest": {
         ranks: 3,
-        text: "Gain improved Fire Rate and Charge Time.",
-        effect: (rank, level) => `Fire Rate +${percent(rank, 4)}%, Charge Time +${percent(rank, 26)}%`,
+        text: "Amara gains improved Fire Rate and Charge Time.",
+        effect: (rank, level) => `Fire Rate: +${percent(rank, 4)}%, Charge Time: +${percent(rank, 21)}%`,
       },
       "Laid Bare": {
         ranks: 3,
-        text: "Enemies take increased damage from all sources after being damaged by your Action Skill.",
-        effect: (rank, level) => `Damage increase +${percent(rank, 5)}%, Duration 8 sec`,
+        text: "Enemies take increased damage from all sources for a few seconds after being damaged by Amara's Action Skill.",
+        effect: (rank, level) => `Damage Increase: +${percent(rank, 8.3)}%, Duration: 8 sec`,
       },
       "Wrath": {
         ranks: 3,
-        text: "Gain increased Gun Damage. Effect is increased after activating Action Skill",
-        effect: (rank, level) => `Gun Damage +${percent(rank, 3)}% (+${percent(rank, 5)}% after Action Skill Use), Duration 8 sec`,
+        text: "Amara gains increased Gun Damage. This effect is increased after she activates her action skill for a few seconds.",
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 6.7)}%, Gun Damage: +${percent(rank, 67)}% after action skill use, Duration: 8 seconds`,
       },
     },
     "5": {
       "Remnant": {
         ranks: 3,
-        text: "Creates a Homing Projectile after killing an enemy with a Gun or Action Skill, and deals Action Skill Elemental Damage plus Overkill Damage.",
-        effect: (rank, level) => `Remnant Damage ${flat(rank, level, 33)}`,
+        text: "When Amara kills an enemy with a Gun or Action Skill, she creates a homing projectile that seeks out a new enemy dealing her Action Skill Elemental Damage. Any Overkill Damage is added to the projectile's damage.",
+        effect: (rank, level) => `Remnant Damage ${flat(rank, level, 9)}`,
       },
       "Awakening": {
         ranks: 3,
-        text: "Rush stacks gain increased effectiveness.",
-        effect: (rank, level) => `Rush Stack Effectiveness +${percent(rank, 10)}%`,
+        text: "Amara's Rush stacks gain increased effectiveness.",
+        effect: (rank, level) => `Rush Stack Effectiveness: +${percent(rank, 10)}%`,
       },
       "Tandava": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself that explodes when it hits a target, damaging all nearby enemies.",
-        effect: (rank, level) => `Damage: ${flat(rank, level, 166)}, Cooldown 28 sec`,
+        text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies.",
+        effect: (rank, level) => `Damage: ${flat(rank, level, 91)}, Cooldown: 35 sec`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
     },
     "6": {
       "Avatar": {
         ranks: 1,
-        text: "Action Skills can be activated while cooling down. Can only be used once per completed cooldown. Increases Max Rush Stacks",
-        effect: (rank, level) => `Bonus Rush Stacks +10`,
+        text: "Amara's Action Skill can be activated while it's cooling down. This skill may only be used once per completed cooldown. Additionally, if Amara's Action Skill kills an enemy, it refunds half of her Rush stacks.",
+        effect: (rank, level) => `Bonus Rush Stacks: +10`,
       },
     },
   },
