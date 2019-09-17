@@ -54,7 +54,7 @@ const skills = {
       },
       "Salamander": {
         text: "The Salamander is a flamethrower that deals Fire Damage to enemies at close range. Though the Salamander has infinite ammo, it drains Fuel with use.",
-        type: SKILLS.ACTION_SKILL,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
         effect: (rank, level) => `Fire... for effect.`,
       },
     },
@@ -176,7 +176,7 @@ const skills = {
       },
       "Vanquisher Rocket Pod": {
         text: "The Vanquisher Rocket Pod is a rocket launcher capable of rapid-firing volleys of unguided explosive rockets.",
-        type: SKILLS.ACTION_SKILL,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
         effect: (rank, level) => `If you want guidance, get a sherpa. If you want explosions, get a Vladof.`,
       },
     },
@@ -297,7 +297,7 @@ const skills = {
       },
       "Bear Fist": {
         text: "The Bear Fist is a pneumatic-driven fist that deals massive damage to a single target at close range.",
-        type: SKILLS.ACTION_SKILL,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
         effect: (rank, level) => `Vladof supports the right to bear armored bear arms.`,
       },
     },
