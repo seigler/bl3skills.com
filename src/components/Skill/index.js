@@ -29,7 +29,7 @@ export default function Skill ({
   const isAugment = [
     SKILLS.AUGMENT_CHEVRON,
     SKILLS.AUGMENT_DIAMOND,
-    SKILLS.ACTION_SKILL,
+    //SKILLS.ACTION_SKILL,
   ].includes(type);
   let shapeStyle = null;
   if (type === SKILLS.AUGMENT_CHEVRON) { shapeStyle = style.chevron; }
