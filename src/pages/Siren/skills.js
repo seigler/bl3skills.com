@@ -181,10 +181,10 @@ const skills = {
       },
     },
     "3": {
-      "Reverberation": {
+      "Deliverance": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself that damages everything in its path. Deals increased damage for every enemy hit.",
-        effect: (rank, level) => `Damage 116, Damage Bonus +50% per enemy hit, Cooldown 24 sec`,
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies.",
+        effect: (rank, level) => `Cooldown: 28 seconds, Damage: ${flat(rank, level, 86)}, Elemental Projectiles: 3 per enemy hit`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Ascendant": {
@@ -200,10 +200,10 @@ const skills = {
       },
     },
     "4": {
-      "Deliverance": {
+      "Reverberation": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies.",
-        effect: (rank, level) => `Cooldown: 28 seconds, Damage: ${flat(rank, level, 86)}, Elemental Projectiles: 3 per enemy hit`,
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astra Projection deals increased damage for every enemy it hits.",
+        effect: (rank, level) => `Cooldown: 30 seconds, Damage Bonus: +50% per enemy hit, Damage: ${flat(rank, level, 88)}`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "From Rest": {
@@ -236,7 +236,7 @@ const skills = {
       "Tandava": {
         ranks: 0,
         text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies.",
-        effect: (rank, level) => `Damage: ${flat(rank, level, 91)}, Cooldown: 35 sec`,
+        effect: (rank, level) => `Cooldown: 35 seconds, Damage: ${flat(rank, level, 91)},`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
     },
