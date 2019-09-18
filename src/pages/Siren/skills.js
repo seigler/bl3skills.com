@@ -54,7 +54,7 @@ const skills = {
       "Blight Tiger": {
         ranks: 0,
         text: "Converts Amara's Action Skill to Corrosive Damage.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Converts to Corrossive Damage`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
@@ -251,8 +251,8 @@ const skills = {
   "Fist of the Elements": {
     "0": {
       "Phasegrasp": {
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies immune to being grasped take instant damage instead.",
-        effect: (rank, level) => `Skill Duration 7 sec, Cooldown 13 sec, Grasp Immune Damage ${flat(rank, level, 40)}`,
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Some enemies are immune to being Grasped and instantly take damage instead.",
+        effect: (rank, level) => `Skill Duration: 7 sec, Cooldown: 16 seconds, Grasp Immune Damage: ${flat(rank, level, 28)}`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
       },
@@ -260,107 +260,108 @@ const skills = {
     "1": {
       "Anima": {
         ranks: 5,
-        text: "Elemental Effects deal increased damage over time and increase duration. Action Skill Elemental Effects deal increased damage.",
-        effect: (rank, level) => `Elemental Effect Damage +${percent(rank, 2)}%, Elemental Effect Duration +${percent(rank, 10)}%, Action Skill Elemental Effect Damage +${percent(rank, 6)}%`,
+        text: "Amara's Status Effects deal increased damage over time and have increased duration. Her Action Skill Status Effect deals further increased damage.",
+        effect: (rank, level) => `Action Skill Status Effect Damage: +${percent(rank, 8)}%, Satus Effect Damage: +${percent(rank, 4)}%, Status Effect Duration: +${percent(rank, 20)}%`,
       },
       "Steady Hands": {
         ranks: 3,
-        text: "Gain increased Weapon Handling and Accuracy.",
-        effect: (rank, level) => `Handling +${percent(rank, 12)}%, Accuracy +${percent(rank, 10)}%`,
+        text: "Amara gains increased Weapon Handling and Accuracy.",
+        effect: (rank, level) => `Handling: +${percent(rank, 14)}%, Accuracy: +${percent(rank, 13)}%`,
       },
       "Infusion": {
         ranks: 5,
-        text: "Convert a portion of damage dealt by weapons into Action Skill Element.",
-        effect: (rank, level) => `Converted Damage ${percent(rank, 4)}%`,
+        text: "Convert a portion of damage dealt by Amara's weapons into Action Skill Element.",
+        effect: (rank, level) => `Converted Damage: ${percent(rank, 8)}%`,
       },
     },
     "2": {
       "Tempest": {
         ranks: 5,
-        text: "Deal increased Elemental Damage. Shock Damage is further increased.",
-        effect: (rank, level) => `Shock Damage +${percent(rank, 8)}%, Elemental Damage +${percent(rank, 4)}%`,
+        text: "Amara deals increased Elemental Damage. Shock Damage is further increased.",
+        effect: (rank, level) => `Shock Damage: +${percent(rank, 4)}%, Elemental Damage +${percent(rank, 6)}%`,
       },
       "Illuminated Fist": {
         ranks: 1,
-        text: "Gain increased Melee Damage, and Melee Damage is converted to Action Skill Element.",
-        effect: (rank, level) => `Melee Damage +28%`,
+        text: "Amara gains increased Melee Damage and her Melee Damage is converted to Action Skill Element.",
+        effect: (rank, level) => `Melee Damage: +75%`,
       },
       "Wildfire": {
         ranks: 5,
-        text: "Whenever Elemental Effects are applies to an enemy, increases chance to spread to a nearby enemy.",
-        effect: (rank, level) => `Spread Chance ${percent(rank, 8)}%`,
+        text: "Whenever Amara applies a Status Effect to an enemy, it has a chance to spread to a nearby enemy.",
+        effect: (rank, level) => `Spread Chance: ${percent(rank, 8)}%`,
       },
       "Soulfire": {
         ranks: 0,
-        text: "Converts Action Skill to Fire Damage. This does not take effect until after Action Skill is used.",
+        text: "Converts Amara's Action Skill to Incendiary Damage.",
+        effect: (rank, level) => `Converts to Incendiary Damage`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
     "3": {
       "The Eternal Fist": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts into the ground and locks targeted enemy in place. If Grasped enemy is killed, up to 3 new targets can be Grasped as well.",
-        effect: (rank, level) => `Bonus Targets up to +4, Cooldown 23 sec, Grasp Immune Damage ${flat(rank, level, 66)}`,
+        text: "Amara summons a giant fist that bursts into the ground and locks targeted enemy in place. Whenvever the Grasped enemy is killed, a new fist seeks out and Grasps a new target.",
+        effect: (rank, level) => `Bonus Targets: Up to +4, Cooldown: 20 sec, Grasp Immune Damage: ${flat(rank, level, 28)}`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Dread": {
         ranks: 1,
-        text: "Gun Damage is increased after an enemy is Grasped. If a Grasped Enemy is killed, current weapon is instantly reloaded.",
-        effect: (rank, level) => `Weapon Damage +10%, Duration 8 sec`,
+        text: "Amara's Gun Damage is increased for a few seconds after an enemy is Grasped. Whenever any player kills a Grasped Enemy, their current weapon is instantly reloaded.",
+        effect: (rank, level) => `Gun Damage +15%, Duration: 8 seconds`,
       },
       "Allure": {
         ranks: 0,
-        text: "Amara's Action Skill creates singularities that pull in enemies.",
-        effect: (rank, level) => `Action Skill Damage -25%, Duration 2.5 sec`,
+        text: "Amara's Action Skill creates a singularity that pull in enemies.",
+        effect: (rank, level) => `Action Skill Damage: -20%, Duration: 2.5 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "4": {
       "Indiscriminate": {
         ranks: 3,
-        text: "Bullets that damage enemies have a chance to ricochet and deal decreased damage to nearby enemies. Chance and Damage are increased if target is affected by Phasegrasp or Stillness of Mind.",
-        effect: (rank, level) => `Ricochet Chance ${percent(rank, 10)}%, Ricochet Damage -${60 - rank * 10}%, Action Skill Ricochet Chance ${percent(rank, 20)}%, Action Skill Ricochet Damage -${30 - rank * 5}%`, // TODO check this
+        text: "Amara's bullets that damage enemies have a chance to ricochet and deal decreased damage to other nearby enemies. Richochet Chance and Damage are increased if target is affected by Phasegrasp or Stillness of Mind.",
+        effect: (rank, level) => `Ricochet Chance: ${percent(rank, 10)}%, Ricochet Damage: -${50 - rank * 10}%, Action Skill Ricochet Chance: ${percent(rank, 20)}%, Action Skill Ricochet Damage: -${25 - rank * 5}%`, // TODO check this
       },
       "Deep Well": {
         ranks: 1,
-        text: "Gain increased Magazine Size with elemental weapons.",
-        effect: (rank, level) => `Magazine Size +20%`,
+        text: "Amara gains increased Magazine Size with elemental weapons.",
+        effect: (rank, level) => `Magazine Size: +20%`,
       },
       "Catharsis": {
         ranks: 3,
-        text: "When Elemental Effect is applied on an enemy that dies, enemy explodes and deals attuned element damage along with any other inflicted elements.",
-        effect: (rank, level) => `Damage ${flat(rank, level, 13)}, Cooldown 8 sec`,
+        text: "Whenrbrt Amara riggers an elemental effect on an enemy, when that enemy that dies the enemy explodes, dealing her attuned element damage along with any other element that is currently inflicted upon that enemy. This skill has a short cooldown.",
+        effect: (rank, level) => `Damage: ${flat(rank, level, 4)}, Cooldown: 8 seconds`,
       },
       "Ties That Bind": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. Enemies near Grasped target are linked, and any damage dealt to a linked target is shared between all links.",
-        effect: (rank, level) => `Link Damage 35% of damage dealt, Cooldown 17 sec, Grasp Immune Damage ${flat(rank, level, 80)}`,
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies near the Grasped target are linked, and any damage dealt to a linked target is shared between all other linked targets.",
+        effect: (rank, level) => `Link Damage: 35% of damage dealt, Cooldown: 18 sec, Grasp Immune Damage: ${flat(rank, level, 34)}`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
     },
     "5": {
       "Fist Over Matter": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks targeted enemy in place. After Grasping, large fists appear to smash the area, dealing damage to nearby enemies.",
-        effect: (rank, level) => `Damage ${flat(rank, level, 21)}, Cooldown 31 sec, Grasp Immune Damage ${flat(rank, level, 93)}`,
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place. After Grasping, large fists appear and constantly smash the area, dealing damage to nearby enemies.",
+        effect: (rank, level) => `Cooldown 28 seconds, Damage ${flat(rank, level, 35)}, Grasp Immune Damage ${flat(rank, level, 39)}`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Sustainment": {
         ranks: 5,
-        text: "Gain Life Steal whenever Elemental Damage is dealt with weapon.",
-        effect: (rank, level) => `Life Steal +${percent(rank, 4)}%`,
+        text: "Amara gains Life Steal whenever she deals Elemental Damage with her weapon.",
+        effect: (rank, level) => `Life Steal: +${percent(rank, 4)}% of damage dealt`,
       },
       "Conflux": {
         ranks: 5,
-        text: "When Elemental Effect is applied on an enemy, gain chance to randomly Electrocute, Burn, or Melt that enemy.",
-        effect: (rank, level) => `Extra Effect Chance ${percent(rank, 7)}%`,
+        text: "Whenever Ammara applies a Status Effect to an enemy, she gains a chance to randomly Electrocute, Ignite, or Melt that enemy.",
+        effect: (rank, level) => `Extra Effect Chance: ${percent(rank, 7)}%`,
       },
     },
     "6": {
       "Forceful Expression": {
         ranks: 1,
-        text: "Guns deal Bonus Elemental Damage based on Action Skill Element",
-        effect: (rank, level) => `Bonus Elemental Damage 11% of damage dealt`,
+        text: "Amara's guns deal Bonus Elemental Damage, based on her Action Skill Element.",
+        effect: (rank, level) => `Bonus Elemental Damage: 18% of Damage Dealt`,
       },
     },
   },
