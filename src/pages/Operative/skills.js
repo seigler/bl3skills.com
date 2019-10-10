@@ -185,9 +185,10 @@ const skills = {
         effect: (rank, level) => `Fire Rate +3% per enemy, Movement Speed +6% per enemy, Damage ${flat(rank, level, 2)}, Duration 12 sec, Cooldown 8 sec`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
-      "Seein' Red": {
-        text: "Activating an Action Skill automatically activates all of Zane's kill skills.",
+      "Death Follows Close": {
+        text: "All of Zane's kill skills gain increased effect and duration.",
         ranks: 1,
+        effect: (rank, level) => `Kill Skill Duration +7 sec, Kill Skill Bonus +25%`,
       },
       "Static Field": {
         text: "SNTNL emits a static field that sends a Shock beam to nearby enemies, draining their shields and replenishing Zane's.",
@@ -228,11 +229,10 @@ const skills = {
       },
     },
     "6": {
-      "Death Follows Close": {
-        text: "All of Zane's kill skills gain increased effect and duration.",
+      "Seein' Red": {
+        text: "Activating an Action Skill automatically activates all of Zane's kill skills.",
         ranks: 1,
-        effect: (rank, level) => `Kill Skill Effect +40%, Kill Skill Duration +4 sec`,
-      },
+      }
     }
   },
   "Doubled Agent": {
