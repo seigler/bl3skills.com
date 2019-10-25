@@ -329,7 +329,7 @@ const skills = {
       },
       "Catharsis": {
         ranks: 3,
-        text: "Whenrbrt Amara riggers an elemental effect on an enemy, when that enemy that dies the enemy explodes, dealing her attuned element damage along with any other element that is currently inflicted upon that enemy. This skill has a short cooldown.",
+        text: "Whenever Amara riggers an elemental effect on an enemy, when that enemy that dies the enemy explodes, dealing her attuned element damage along with any other element that is currently inflicted upon that enemy. This skill has a short cooldown.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 4)}, Cooldown: 8 seconds`,
       },
       "Ties That Bind": {
@@ -353,7 +353,7 @@ const skills = {
       },
       "Conflux": {
         ranks: 5,
-        text: "Whenever Ammara applies a Status Effect to an enemy, she gains a chance to randomly Electrocute, Ignite, or Melt that enemy.",
+        text: "Whenever Amara applies a Status Effect to an enemy, she gains a chance to randomly Electrocute, Ignite, or Melt that enemy.",
         effect: (rank, level) => `Extra Effect Chance: ${percent(rank, 7)}%`,
       },
     },
