@@ -125,7 +125,7 @@ const skills = {
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Brainfreeze": {
-        text: "Whenever Zane scores a Critical Hit on an enemy, there's a chance they will be Slowed. This effect stacks until the target is Frozen.",
+        text: "Whenever Zane scores a Critical Hit on an enemy, there is a chance they will be Slowed. This effect stacks until the target is Frozen.",
         ranks: 5,
         effect: (rank, level) => `Slow Chance: +${percent(rank, 4)}%`,
       },
@@ -202,7 +202,7 @@ const skills = {
       "Nerves of Steel": {
         text: "Zane gains increasing Accuracy and Handling. The longer his shield is full, the greater the bonuses.",
         ranks: 3,
-        effect: (rank, level) => `Accuracy: +${percent(rank, 2)}% per second, Handling: +${getNervesOfSteelHandling(rank)}% per second, Maximum Stacks: 15`,
+        effect: (rank, level) => `Accuracy: +${percent(rank, 2)}% per second, Handling: +${getNervesOfSteelHandling(rank)}% per second, Maximum Nerves of Steel Stacks: 15`,
       },
     },
     "6": {
