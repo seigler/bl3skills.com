@@ -289,7 +289,7 @@ const skills = {
       "Violent Violence": {
         text: "Kill Skill. After killing an enemy, Zane gains increased Fire Rate for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Fire Rate: +${percent(rank, 33)}%, Cooldown: 8 seconds`,
+        effect: (rank, level) => `Fire Rate: +${percent(rank, 3)}%, Cooldown: 8 seconds`,
       },
       "Playing Dirty": {
         text: "Kill Skill. After killing an enemy, Zane's next five shots all have a chance to fire an additional projectile.",
