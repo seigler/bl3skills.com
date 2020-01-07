@@ -80,8 +80,8 @@ function getScrappyModeSwitchSpeed(rank) {
   }
 }
 
-// Armored Infantry Damage Reduction
-function getArmoredInfantryDamageReduction(rank) {
+// Armored Infantry Damage Resistance
+function getArmoredInfantryDamageResistance(rank) {
   switch (rank) {
     case 1:
       return 3;
@@ -144,7 +144,7 @@ const skills = {
       "Cloud of Lead": {
         text: "Occasionally, Moze's and Iron Bear's shots will deal additional Incendiary Damage and won't consume ammo.",
         ranks: 5,
-        effect: (rank, level) => `Effects are triggered every ${9 - rank} shots, Bonus Incendiary Damage: +${percentTwoDecimals(rank, 2.25)}%`,
+        effect: (rank, level) => `Effects are triggered every ${9 - rank} shots\nBonus Incendiary Damage: +${percentTwoDecimals(rank, 2.25)}%`,
       },
       "Dakka Bear": {
         text: "Adds a manned turret to the back of Iron Bear.",
@@ -154,14 +154,14 @@ const skills = {
       "Matched Set": {
         text: "Moze's currently equipped weapon gains a stacking bonus to Magazine Size and Decreased Heat Per Shot for every piece of equipped gear that has a matching manufacturer.",
         ranks: 5,
-        effect: (rank, level) => `Magazine Size: +${percent(rank, 2)}%, Heat Per Shot: -${getMatchedSetHeatPerShot(rank)}%`,
+        effect: (rank, level) => `Magazine Size: +${percent(rank, 2)}% per matched gear\nHeat Per Shot: -${getMatchedSetHeatPerShot(rank)}% per matched gear`,
       },
     },
     "2": {
       "Let Off Some Steam": {
         text: "Minigun deals more damage as heat increases, and can be fired for longer before overheating.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Minigun Damage: Up to +80%, Minigun Heat Capacity: +35%`,
+        effect: (rank, level) => `Minigun Damage: Up to +80%\nMinigun Heat Capacity: +35%`,
       },
       "Stoke the Embers": {
         text: "Increases Moze and Iron Bear's Incendiary Damage.",
@@ -171,12 +171,12 @@ const skills = {
       "Redistribution": {
         text: "After Moze scores a Critical Hit, she regenerates ammo for a few seconds.",
         ranks: 1,
-        effect: (rank, level) => `Ammo Regeneration: +${percent(rank, 5)}% of Magazine Size, Duration: 3 seconds`,
+        effect: (rank, level) => `Ammo Regeneration: +${percent(rank, 5)}% of Magazine Size per second\nDuration: 3 seconds`,
       },
       "Scrappy": {
         text: "While moving, Moze's Handling, Weapon Swap and Mode Switch Speed are increased.",
         ranks: 5,
-        effect: (rank, level) => `Handling: +${getScrappyHandling(rank)}%, Weapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%, Mode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
+        effect: (rank, level) => `Handling: +${getScrappyHandling(rank)}%\nWeapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%\nMode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
       },
       "Salamander": {
         text: "The Salamander is a flamethrower that deals Incendiary Damage to enemies at close range. Though the Salamander has infinite ammo, it drains Fuel with use.",
@@ -188,7 +188,7 @@ const skills = {
       "General Winter": {
         text: "Minigun fires Cryo rounds which reduce Heat Gain and Fuel Drain, but deal reduced damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts to Cryo Damage, Fuel Drain: -40%, Minigun Damage: -30%, Cryo Efficiency: +20%`,
+        effect: (rank, level) => `Converts Minigun to Cryo Damage\nMinigun Fuel Drain: -40%\nMinigun Damage: -30%\nMinigun Cryo Efficiency: +20%`,
       },
       "Rushin' Offensive": {
         text: "Moze can sprint and shoot at the same time.",
@@ -198,19 +198,19 @@ const skills = {
       "Scorching RPM's": {
         text: "Moze gains increased Fire Rate and Critical Hit Damage. Iron Bear gains increased Hard Point damage.",
         ranks: 5,
-        effect: (rank, level) => `Fire Rate: +${percent(rank, 3)}%, Critical Hit Damage: +${percent(rank, 4)}%, Iron Bear Damage: +${percent(rank, 5)}%`,
+        effect: (rank, level) => `Fire Rate: +${percent(rank, 3)}%\nCritical Hit Damage: +${percent(rank, 4)}%\nIron Bear Damage: +${percent(rank, 5)}%`,
       },
       "Fuel Economy": {
         text: "Reduces Salamander's Fuel Drain. Additionally, Iron Bear's Movement Speed is increased after damaging an enemy with Salamander.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Fuel Drain: -25%, Movement Speed: +25%, Movement Speed Duration: 3 seconds`,
+        effect: (rank, level) => `Salamander Fuel Drain: -25%\nIron Bear Movement Speed: +25%\nMovement Speed Duration: 3 seconds`,
       },
     },
     "4": {
       "Exploding. Bullets.": {
         text: "Minigun fires Explosive Rounds that deal increased Splash Damage, but its Fire Rate is decreased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Minigun Fire Rate: -75%, Minigun Damage: +126%`,
+        effect: (rank, level) => `Minigun Damage: +126%\nMinigun Fire Rate: -75%`,
       },
       "The Iron Bank": {
         text: "Increases Moze's Magazine Size.",
@@ -225,7 +225,7 @@ const skills = {
       "Chemical Warfare": {
         text: "Salamander now deals Corrosive Damage. Additionally, Salamander's Melt Damage is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts to Corrosive Damage, Melt Damage: +50%`,
+        effect: (rank, level) => `Converts Salamander to Corrosive Damage\n Salamander Melt Damage: +50%`,
       },
     },
     "5": {
@@ -271,7 +271,7 @@ const skills = {
       "Deadlines": {
         text: "Firing Iron Bear Weapons drains less Fuel. Killing an enemy while Iron Bear is active increases Fuel. This skill has diminishing returns.",
         ranks: 3,
-        effect: (rank, level) => `Fuel Drain: -${percent(rank, 10)}%, Fuel Returned: Up to ${percent(rank, 2)}%`,
+        effect: (rank, level) => `Fuel Drain: -${percent(rank, 10)}%\nFuel Returned: Up to ${percent(rank, 2)}%`,
       },
       "Grizzled": {
         text: "Kill Skill. Killing an enemy reduces Moze's remaining Action Skill Cooldown Time. This skill has diminishing returns.",
@@ -283,22 +283,22 @@ const skills = {
       "Shaped Charge": {
         text: "Direct hits with the V-35 deal increased damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Direct Hit Damage: +35%`,
+        effect: (rank, level) => `V-35 Direct Hit Damage: +35%`,
       },
       "Means of Destruction": {
         text: "Whenever Moze deals Splash Damage, there is a chance to add ammo to her currently equipped weapon's magazine, with a smaller chance to return a grenade.",
         ranks: 3,
-        effect: (rank, level) => `Ammo Chance: +${percent(rank, 3.333)}%, Grenade Chance: +${percent(rank, 2)}%, Cooldown: 0.3 seconds`,
+        effect: (rank, level) => `Ammo Chance: +${percent(rank, 3.333)}%\nGrenade Chance: +${percent(rank, 2)}%\nCooldown: 0.3 seconds`,
       },
       "Torgue Cross-Promotion": {
         text: "All Splash Damage dealt by Moze has a chance to double in size.",
         ranks: 5,
-        effect: (rank, level) => `Chance to double Splash Radius: +${percent(rank, 3)}%`,
+        effect: (rank, level) => `Chance to Double Splash Radius: +${percent(rank, 3)}%`,
       },
       "Stainless Steel Bear": {
         text: "Iron Bear gains additional armor and increased Maximum Fuel.",
         ranks: 5,
-        effect: (rank, level) => `Iron Bear Armor: +${percent(rank, 6)}%, Maximum Fuel: +${percent(rank, 4)}%`,
+        effect: (rank, level) => `Iron Bear Armor: +${percent(rank, 6)}%\nMaximum Fuel: +${percent(rank, 4)}%`,
       },
       "Vanquisher Rocket Pod": {
         text: "The Vanquisher Rocket Pod is a rocket launcher capable of rapid-firing volleys of unguided explosive rockets.",
@@ -310,7 +310,7 @@ const skills = {
       "Musical Chairs": {
         text: "Occasionally, the V-35 fires a Singularity Grenade that pulls in nearby enemies before exploding.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Singularity: Every 7th grenade`,
+        effect: (rank, level) => `V-35 Singularity: Every 7th grenade`,
       },
       "Pull the Holy Pin": {
         text: "Moze's grenades have a chance to score a Critical Hit, dealing greatly increased damage. Sources of Critical Hit Damage do not affect grenade Critical Hits.",
@@ -337,7 +337,7 @@ const skills = {
       "Vampyr": {
         text: "Whenever Moze damages an enemy with a thrown grenade, for every enemy hit, she restores a portion of her missing health. Iron Bear also restores health whenever it deals Splash Damage.",
         ranks: 5,
-        effect: (rank, level) => `Moze Health Restored: ${percent(rank, 4)}% of Missing Health per enemy hit, Iron Bear Health Restored: ${percent(rank, 2)}% of Iron Bear Missing Health per enemy hit`,
+        effect: (rank, level) => `Moze Health Restored: ${percent(rank, 4)}% of Missing Health per enemy hit\nIron Bear Health Restored: ${percent(rank, 2)}% of Missing Health per enemy hit`,
       },
       "Why Can't I Carry All These Grenades": {
         text: "Increases Moze's grenade carrying capacity.",
@@ -347,7 +347,7 @@ const skills = {
       "Target Softening": {
         text: "The Vanquisher Rocket Pod deals greatly reduced damage per rocket, but fires in a 6-rocket spread. Additionally, enemies hit by Vanquisher Rocket Pod rockets take increased damage from all sources.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Vanquisher Damage: -74%, Enemy Damage Taken: +15%`,
+        effect: (rank, level) => `Vanquisher Damage: -74%\nEnemy Damage Taken: +15%`,
       },
     },
     "5": {
@@ -364,14 +364,14 @@ const skills = {
       "Hammerdown Protocol": {
         text: "Instead of a volley of conventional rockets, the Vanquisher Rocket Pod launches a single rocket with a nuclear warhead, dealing massive Radiation Damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Damage: +380%, Vanquisher Magazine Size: 1`,
+        effect: (rank, level) => `Vanquisher Damage: +380%\nVanquisher Magazine Size: 1`,
       },
     },
     "6": {
       "Short Fuse": {
         text: "Whenever Moze deals Gun Damage, there is a chance of a secondary explosion centered on the target.",
         ranks: 1,
-        effect: (rank, level) => `Secondary Explosion Chance: 20%, Secondary Explosion Damage: 75% of Gun Damage`,
+        effect: (rank, level) => `Secondary Explosion Chance: 20%\nSecondary Explosion Damage: 75% of Gun Damage`,
       },
     },
   },
@@ -387,39 +387,39 @@ const skills = {
       "Selfless Vengeance": {
         text: "Whenever Moze reloads, she loses a small portion of her health and grants additional Incendiary Damage to her and her allies' rounds for a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Current Health Removed: ${percent(rank, 1)}%, Bonus Incendiary Damage: +${percent(rank, 3)}% of damage dealt, Bonus Incendiary Damage Duration: 5 seconds`,
+        effect: (rank, level) => `Current Health Removed: ${percent(rank, 1)}%\nBonus Incendiary Damage: +${percent(rank, 3)}% of damage dealt\nDuration: 5 seconds`,
       },
       "Security Bear": {
         text: "Iron Bear gains a bubble shield that reduces damage taken. The shield deactivates if it sustains too much damage, reactivating after a short cooldown.",
         ranks: 1,
-        effect: (rank, level) => `50% of Iron Bear Maximum Health added as Shields, Bubble Recharge Delay: 5 seconds`,
+        effect: (rank, level) => `50% of Iron Bear Maximum Health added as Shields\nBubble Recharge Delay: 5 seconds`,
       },
       "Armored Infantry": {
-        text: "While Moze's shields are active, she gains Damage Reduction and increased Gun Damage.",
+        text: "While Moze's shields are active, she gains Damage Resistance and increased Gun Damage.",
         ranks: 5,
-        effect: (rank, level) => `Damage Reduction: +${getArmoredInfantryDamageReduction(rank)}%, Gun Damage: +${percent(rank, 3)}%`,
+        effect: (rank, level) => `Damage Resistance: +${getArmoredInfantryDamageResistance(rank)}%\nGun Damage: +${percent(rank, 3)}%`,
       },
     },
     "2": {
       "Hell on Rails": {
         text: "Railgun now fires superheated rounds that deal Incendiary Damge, but have increased Fuel Drain per shot.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Railgun to Incendiary Damage, Fuel Drain: +30%`,
+        effect: (rank, level) => `Converts Railgun to Incendiary Damage\nRailgun Fuel Drain: +30%`,
       },
       "Drowning in Brass": {
         text: "Kill Skill. Killing an enemy grants Moze a stack of Drowning in Brass. For each stack of Drowning in Brass, Moze's Fire Rate is reduced, but Gun Damage is increased for both her and her allies.",
         ranks: 5,
-        effect: (rank, level) => `Moze Fire Rate: -${percent(rank, 0.5)}% per stack, Gun Damage: +${percent(rank, 4)}% per stack, Maximum Drowning In Brass Stacks: 3, Duration: 15 seconds`,
+        effect: (rank, level) => `Moze Fire Rate: -${percent(rank, 0.5)}% per stack\nTeam Gun Damage: +${percent(rank, 4)}% per stack\nMaximum Stacks: 3\nDuration: 15 seconds`,
       },
       "Thin Red Line": {
         text: "A portion of Moze's health is Reserved and cannot be restored, but her Maximum Shield is increased by the same amount.",
         ranks: 3,
-        effect: (rank, level) => `+${percent(rank, 20)}% Maximum Health Reserved and Added to Maximum Shields`,
+        effect: (rank, level) => `${percent(rank, 20)}% Maximum Health Reserved and Added to Maximum Shields`,
       },
       "Vladof Ingenuity": {
         text: "Moze's Maximum Shield is increased, and she gains resistance to Shock Damage.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%, Shock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
+        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
       },
       "Bear Fist": {
         text: "The Bear Fist is a pneumatic-driven fist that deals massive damage to a single target at close range.",
@@ -431,12 +431,12 @@ const skills = {
       "Capacitive Armature": {
         text: "When Railgun hits an enemy, it chains to nearby enemies, dealing reduced Shock Damage to more targets.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Splinter Damage: -75%`,
+        effect: (rank, level) => `Splinter Damage: 25% of damage dealt`,
       },
       "Full Can of Whoop-Ass": {
         text: "Entering Iron Bear causes Moze's and her allies' shields to immediately begin recharging at an increased Shield Recharge Rate.",
         ranks: 1,
-        effect: (rank, level) => `Shield Recharge Rate: +25%`,
+        effect: (rank, level) => `Team Shield Recharge Rate: +25%`,
       },
       "Experimental Munitions": {
         text: "Whenever Moze and Iron Bear score a Critical Hit, they deal bonus Incendiary Damage.",
@@ -446,19 +446,19 @@ const skills = {
       "Wild Swing": {
         text: "Whenever Bear Fist hits an enemy, it deals random Bonus Elemental Damage to that enemy and all enemies nearby.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Bonus Elemental Damage: +35% of damage dealt`,
+        effect: (rank, level) => `Bear Fist Bonus Elemental Damage: +35% of damage dealt`,
       },
     },
     "4": {
       "Corrosive Sabot Round": {
         text: "Railgun now fires a specialty round that deals reduced damage and explodes after a short delay. Railgun shots have reduced Fuel Drain and the Magazine Size is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Railgun to Corrosive Damage, Railgun Damage: -50%, Fuel Drain: -50%, Railgun Magazine Size: +2`,
+        effect: (rank, level) => `Converts Railgun to Corrosive Damage\nRailgun Damage: -50%\nRailgun Fuel Drain: -50%\nRailgun Magazine Size: +2`,
       },
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
         ranks: 3,
-        effect: (rank, level) => `Shield Recharge Rate: +${percent(rank, 7)}%, Shield Recharge Delay: -${getBehindTheIronCurtainShieldRechargeDelay(rank)}%`,
+        effect: (rank, level) => `Shield Recharge Delay: -${getBehindTheIronCurtainShieldRechargeDelay(rank)}%\nShield Recharge Rate: +${percent(rank, 7)}%`,
       },
       "Desperate Measures": {
         text: "Moze's Gun Damage and Iron Bear's Damage is increased depending on how low their health is. The lower their health, the greater the increase.",
@@ -475,7 +475,7 @@ const skills = {
       "Phalanx Doctrine": {
         text: "Kill Skill. After killing an enemy, Moze gains a stack of Phalanx Doctrine. For every stack of Phalanx Doctrine, Moze's Maximum Shield and Gun Damage are increased. Each stack lasts 30 seconds. There is no stack limit.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Shield: +${percent(rank, 3)}% per stack, Gun Damage: +${percent(rank, 2)}% per stack, Duration: 30 seconds`,
+        effect: (rank, level) => `Maximum Shield: +${percent(rank, 3)}% per stack\nGun Damage: +${percent(rank, 2)}% per stack\nDuration: 30 seconds`,
       },
       "Force Feedback": {
         text: "Whenever Moze scores a Critical Kill, her shields immediately begin recharging.",
@@ -485,14 +485,14 @@ const skills = {
       "Shockhammer": {
         text: "Bear Fist is now capable of sustained rapid fire punching. Additionally, Bear Fist has reduced Fuel Drain and deals Bonus Shock Damage with each hit.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Bonus Shock Damage: +19% of damage dealt, Fuel Drain: -40%`,
+        effect: (rank, level) => `Bear Fist Bonus Shock Damage: +19% of damage dealt\nBear Fist Fuel Drain: -40%`,
       },
     },
     "6": {
       "Tenacious Defense": {
         text: "Whenever Moze's shield is fully depleted, she instantly restores a portion of her shield, and her Gun Damage is increased for a short time. This skill can only trigger after Moze's shields have fully recharged.",
         ranks: 1,
-        effect: (rank, level) => `Shields Restored: 40% of Maximum Shield, Gun Damage: +30%, Duration: 30 seconds`,
+        effect: (rank, level) => `Shields Restored: 40% of Maximum Shield\nGun Damage: +30%\nDuration: 30 seconds`,
       },
     },
   },
