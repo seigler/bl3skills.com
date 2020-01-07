@@ -224,7 +224,7 @@ const skills = {
   "Brawl": {
     "0": {
       "Phaseslam": {
-        text: "Amara leaps into the air and Slams the ground, dealing damage to all nearby enemies and knocking them up.",
+        text: "Amara leaps into the air and Slams the ground, dealing damage to all nearby enemies and knocking them up. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 98)} (increases with character level)\nCooldown: 35 Seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -273,7 +273,7 @@ const skills = {
     "3": {
       "Fracture": {
         ranks: 0,
-        text: "Amara summons a line of fists that erupt from the ground, dealing damage to enemies in front of Amara.",
+        text: "Amara summons a line of fists that erupt from the ground, dealing damage to enemies in front of Amara. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 88)} (increases with character level)\nCooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -302,7 +302,7 @@ const skills = {
     "4": {
       "Downfall": {
         ranks: 0,
-        text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam.",
+        text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam. Default element: Shock.",
         effect: (rank, level) => `Beam Damage: ${flat(rank, level, 14)} per second (increases with character level)\nSlam Damage: ${flat(rank, level, 95)} (increases with character level)\nCooldown: 47 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -346,7 +346,7 @@ const skills = {
   "Mystical Assault": {
     "0": {
       "Phasecast": {
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 92)}\nCooldown: 28 Seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -395,7 +395,7 @@ const skills = {
     "3": {
       "Deliverance": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 86)} (increases with character level)\nElemental Projectiles: 3 per enemy or object hit\nCooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -414,7 +414,7 @@ const skills = {
     "4": {
       "Reverberation": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astra Projection deals increased damage for every enemy it hits.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astra Projection deals increased damage for every enemy it hits. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 88)} (increases with character level)\nDamage Bonus: +50% per enemy hit\nCooldown: 30 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -447,7 +447,7 @@ const skills = {
       },
       "Tandava": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies.",
+        text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 91)} (increases with character level)\nCooldown: 35 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -463,7 +463,7 @@ const skills = {
   "Fist of the Elements": {
     "0": {
       "Phasegrasp": {
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Some enemies are immune to being Grasped and instantly take damage instead.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
         effect: (rank, level) => `Skill Duration: 7 seconds\nCooldown: 16 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -512,7 +512,7 @@ const skills = {
     "3": {
       "The Eternal Fist": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
         effect: (rank, level) => `Bonus Targets: Up to +4\nDuration: 7 seconds\nCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -546,7 +546,7 @@ const skills = {
       },
       "Ties That Bind": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies near the Grasped target are linked, and any damage dealt to a linked target is shared between all other linked targets.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies near the Grasped target are linked, and any damage dealt to a linked target is shared between all other linked targets. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
         effect: (rank, level) => `Linked Damage: 35% of damage dealt\nDuration: 7 seconds\nCooldown: 18 seconds\nGrasp Immune Damage: ${flat(rank, level, 34)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -554,7 +554,7 @@ const skills = {
     "5": {
       "Fist Over Matter": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. After Grasping the targeted enemy, large fists appear and constantly smash the area, dealing damage to nearby enemies.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. After Grasping the targeted enemy, large fists appear and constantly smash the area, dealing damage to nearby enemies. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 35)} (increases with character level)\nDuration: 7 seconds\nCooldown: 28 seconds\nGrasp Immune Damage: ${flat(rank, level, 39)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
