@@ -141,14 +141,14 @@ const skills = {
         text: "FL4K cloaks, turning invisible. FL4K can fire 3 shots while cloaked, and each shot is automatically a Critical Hit. While cloaked, FL4K has increased Movement Speed and Health Regeneration.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
-        effect: (rank, level) => `Fade Away Bonus Damage: 200% of damage dealt\nCloaked Movement Speed: +25%\nHealth Regeneration: +3% of Maximum Health per second\nDuration: 15 seconds\nCooldown: 45 seconds`,
+        effect: (rank, level) => `Fade Away Bonus Damage: 200% of damage dealt\nCloaked Movement Speed: +25%\nHealth Regeneration: +3% of Max Health per second\nDuration: 15 seconds\nCooldown: 45 seconds`,
       },
     },
     "1": {
       "Self-Repairing System": {
         text: "FL4K's Maximum Health is increased, and they constantly regenerate health.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Health: +${percent(rank, 6)}%\nHealth Regeneration: +${percent(rank, 0.3)}% of Maximum Health per second`,
+        effect: (rank, level) => `Maximum Health: +${percent(rank, 6)}%\nHealth Regeneration: +${percent(rank, 0.3)}% of Max Health/sec`,
       },
       "Sic'Em": {
         text: "Attack Command has lowered Cooldown and increased Damage.",
@@ -176,7 +176,7 @@ const skills = {
       "All My BFF's": {
         text: "Allies share a portion of FL4K's total Health Regeneration. FL4K's pet shares twice the amount of Health Regeneration.",
         ranks: 3,
-        effect: (rank, level) => `Allies' Health Regeneration: +${Math.round(percent(rank, 16.666))}% of Fl4k's Health Regeneration\nPet Health Regeneration: +${Math.round(percent(rank, 33.333))}% of Fl4k's Health Regeneration`,
+        effect: (rank, level) => `Allies' Health Regen: +${Math.round(percent(rank, 16.666))}% of FL4K's Health Regen\nPet Health Regen: +${Math.round(percent(rank, 33.333))}% of FL4K's Health Regen`,
       },
       "Overclocked": {
         text: "FL4K gains increased Fire Rate. FL4K gains even more Fire Rate after reloading.",
@@ -199,7 +199,7 @@ const skills = {
       "Turn Tail And Run": {
         text: "While moving, FL4K constantly regenerates health and gains Damage Resistance.\nWhile still, FL4K gains Gun Damage and Fire Rate.",
         ranks: 3,
-        effect: (rank, level) => `Damage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nHealth Regeneration: +${percent(rank, 0.3)}% of Maximum Health per second while moving\nGun Damage: +${percent(rank, 8.333)}% while still\nFire Rate: +${percent(rank, 4)}% while still`,
+        effect: (rank, level) => `Damage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nHealth Regen: +${percent(rank, 0.3)}% of Max Health/sec while moving\nGun Damage: +${percent(rank, 8.333)}% while still\nFire Rate: +${percent(rank, 4)}% while still`,
       },
       "Beefcake Jabber": {
         text: "FL4K's Jabber evolves into a Beefcake, discarding its pistol and equipping a Shotgun. While accompanied by the Beefcake, FL4K gains increased Movement Speed and Maximum Health. When FL4K issues an Attack Command, the Beefcake will summon a melee weapon to deliver a powerful attack that knocks enemies back.",
@@ -242,14 +242,14 @@ const skills = {
       "Rage And Recover": {
         text: "Kill Skill. After killing an enemy, FL4K and FL4K's pet regenerate health for a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Health Regeneration: +${percent(rank, 1.6)}% of Missing Health per second\nDuration: 3 seconds`,
+        effect: (rank, level) => `Health Regeneration: +${percent(rank, 1.6)}% of Missing Health/sec\nPet Health Regen: +${percent(rank, 1.6)}% of Missing Health/sec\nDuration: 3 seconds`,
       },
     },
     "6": {
       "The Power Inside": {
         text: "FL4K and FL4K's pet gain increased Damage when FL4K activates an Action Skill. If FL4K is at full health, the increased Damage is doubled.",
         ranks: 1,
-        effect: (rank, level) => `Damage: +25%\nDuration: 15 seconds`,
+        effect: (rank, level) => `Damage: +25%\nPet Damage: +25%\nDuration: 15 seconds`,
       },
     },
   },
@@ -295,7 +295,7 @@ const skills = {
       "Who Rescued Who?": {
         text: "Whenever FL4K's Pet deals damage, FL4K regenerates health for a few seconds. Whenever FL4K deals damage to an enemy, their Pet's health is restored for a portion of the damage dealt.",
         ranks: 5,
-        effect: (rank, level) => `Health Regeneration: +${percent(rank, 0.4)}% of Maximum Health per second\nPet Health Restored: +${percent(rank, 1)}% of damage dealt`,
+        effect: (rank, level) => `Health Regeneration: +${percent(rank, 0.4)}% of Max Health/sec\nPet Health Restored: +${percent(rank, 1)}% of damage dealt`,
       },
       "He Bites!": {
         text: "When FL4K's pet takes damage, the pet returns some of that damage to the attacker.",
@@ -347,7 +347,7 @@ const skills = {
       "Mutated Defenses": {
         text: "When FL4K's pet is at low health, it gains Damage Resistance and regenerates health. This skill has a long cooldown.",
         ranks: 1,
-        effect: (rank, level) => `Pet Damage Resistance: +30%\nPet Health Regeneration: +6.667% of Maximum Health per second\n Duration: 6 seconds\nCooldown: 15 seconds`,
+        effect: (rank, level) => `Pet Damage Resistance: +30%\nPet Health Regen: +6.667% of Max Health/sec\n Duration: 6 seconds\nCooldown: 15 seconds`,
       },
       "Eridian Skag": {
         text: "FL4K's Skag evolves into an Eridian Skag, which will increase FL4K's Damage and Fire Rate. When FL4K issues an Attack Command, their Eridian Skag pulls nearby enemies in by generating a Singularity.",
@@ -361,10 +361,10 @@ const skills = {
         text: "After using Gamma Burst, the Rift remains for the duration of the skill. While standing near the Rift, FL4K and their allies rapidly Regenerate Health.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Team Health Regeneration: +20% of Maximum Health per second`,
+        effect: (rank, level) => `Team Health Regeneration: +20% of Max Health/sec`,
       },
       "Pack Tactics": {
-        text: "All Damage dealt by FL4K and their Pet is increased. Additionally, the Maximum Health of both FL4K and their Pet is increased.",
+        text: "All damage dealt by FL4K and their Pet is increased. Additionally, the Maximum Health of both FL4K and their Pet is increased.",
         ranks: 3,
         effect: (rank, level) => `Damage: +${percent(rank, 7)}%\nMaximum Health: +${percent(rank, 5)}%\nPet Damage: +${percent(rank, 7)}%\nPet Maximum Health: +${percent(rank, 5)}%`,
       },
@@ -378,7 +378,7 @@ const skills = {
       "Dominance": {
         text: "Melee Override Skill. FL4K establishes dominance over an enemy, turning it into an ally for a short time. If the enemy is a Beast, the duration is doubled. While under the effects of Domiance, the enemy constantly loses health until it dies or the effect ends. Only one enemy can be dominated at a time. An enemy can only be dominated once.",
         ranks: 1,
-        effect: (rank, level) => `Target Loses 2% of Maximum Health per second\nDuration: 12 seconds`,
+        effect: (rank, level) => `Duration: 12 seconds\nTarget Loses 2% of Maximum Health per second`,
       },
     },
   },
@@ -388,13 +388,13 @@ const skills = {
         text: "FL4K is joined by a loyal Spiderant companion, which will cause FL4K to constant regenerate health. Hold [Pet Skill key] to issue an Attack Command, which will cause the Spiderant to charge into enemies.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
-        effect: (rank, level) => `Health Regeneration: 1% of Maximum Health per second`,
+        effect: (rank, level) => `Health Regeneration: 1% of Max Health per second`,
       },
       "Rakk Attack!": {
-        text: "FL4K sends forward 2 Rakk to dive-bomb enemies. This skill has multiple charges. Default element: Incendiary.",
+        text: "FL4K sends forward 2 Rakk to dive-bomb enemies. This skill has multiple charges. Element: Incendiary.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
-        effect: (rank, level) => `Damage: 35 (increases with character level)\nRakk Element Status Effect Chance: 100%\nCooldown: 18 seconds`,
+        effect: (rank, level) => `Damage: 35 (increases with character level)\nElement Status Effect Chance: 100%\nCooldown: 18 seconds`,
       },
     },
     "1": {
@@ -419,7 +419,7 @@ const skills = {
         text: "Converts FL4K's Rakk to Cryo Damage.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Rakk deal Cryo Damage.`,
+        effect: (rank, level) => `Rakk Attack! Element: Cryo`,
       },
       "Hunter's Eye": {
         text: "FL4K gains bonuses when fighting different types of enemies.",
@@ -453,7 +453,7 @@ const skills = {
         text: "FL4K's Spiderant evolves into a Scorcher, occasionally dealing Incendiary Damage to all enemies nearby. While accompanied by the Scorcher, FL4K constantly regenerates health and deals increased Elemental Damage. When FL4K issues an Attack Command, the Scorcher will charge enemies.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
-        effect: (rank, level) => `Health Regeneration: +1% of Maximum Health per second\nElemental Damage: +10%`,
+        effect: (rank, level) => `Health Regeneration: +1% of Max Health per second\nElemental Damage: +10%`,
       },
     },
     "4": {
@@ -477,7 +477,7 @@ const skills = {
         text: "FL4K's Spiderant evolves into a Countess, which will cause FL4K to constantly regenerate health and gain Damage Resistance. When FL4K issues an Attack Command, the Countess will burrow underground and then emerge dealing Corrosive Damage in an area.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
-        effect: (rank, level) => `Health Regeneration: +1% of Maximum Health per second\nDamage Resistance: +5%`,
+        effect: (rank, level) => `Health Regeneration: +1% of Max Health per second\nDamage Resistance: +5%`,
       },
     },
     "5": {
