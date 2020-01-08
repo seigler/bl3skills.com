@@ -109,7 +109,7 @@ const skills = {
       "Hearty Stock": {
         text: "Zane gains increased Maximum Shield Capacity.",
         ranks: 3,
-        effect: (rank, level) => `Maximum Shield Capacity: +${percent(rank, 10)}%`,
+        effect: (rank, level) => `Maximum Shield: +${percent(rank, 10)}%`,
       },
       "Ready for Action": {
         text: "Zane gains improved Shield Recharge Rate and Shield Recharge Delay.",
@@ -137,14 +137,14 @@ const skills = {
       "Rise to the Occasion": {
         text: "Zane gains Health Regeneration. The lower his shield is, the higher the bonus.",
         ranks: 5,
-        effect: (rank, level) => `Health Regeneration: Up to +${percent(rank, 1)}% of Maximum Health per second`,
+        effect: (rank, level) => `Health Regeneration: Up to +${percent(rank, 1)}% of Max Health/sec`,
       },
     },
     "3": {
       "Nanites or Some Shite": {
         text: "Zane and his allies gain Health Regeneration, increased Reload Speed, and greatly improved Shield Recharge Delay while near his Barrier. The lower their health, the more health is regenerated.",
         ranks: 0,
-        effect: (rank, level) => `Health Regeneration: Up to +4% of Maximum Health per second\nShield Recharge Delay: -33%\nReload Speed: +11%`,
+        effect: (rank, level) => `Team Health Regen: Up to +4% of Max Health/sec\nTeam Shield Recharge Delay: -33%\nTeam Reload Speed: +11%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Confident Competence": {
@@ -163,7 +163,7 @@ const skills = {
       "Redistribution": {
         text: "Zane and allies near the Barrier gain increased Gun Damage for a few seconds after the Barrier takes damage.",
         ranks: 0,
-        effect: (rank, level) => `Gun Damage: +10%\nDuration: 3 seconds`,
+        effect: (rank, level) => `Team Gun Damage: +10%\nDuration: 3 seconds`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Really Expensive Jacket": {
@@ -174,7 +174,7 @@ const skills = {
       "Best Served Cold": {
         text: "Kill Skill. Whenever Zane kills an enemy, they create a Cryo Nova, dealing damage to all nearby enemies. This skill has a short cooldown.",
         ranks: 5,
-        effect: (rank, level) => `Damage: ${flat(rank, level, 2)} (increases with character level)\nCooldown: 3 seconds`,
+        effect: (rank, level) => `Cryo Damage: ${flat(rank, level, 2)} (increases with character level)\nCooldown: 3 seconds`,
       },
       "Futility Belt": {
         text: "Zane gains resistance to non-elemental damage.\nKill Skill. After killing an enemy, all elemental damage Zane takes is converted to non-elemental damage.",
@@ -197,7 +197,7 @@ const skills = {
       "Calm, Cool, Collected": {
         text: "Whenever Zane Freezes an enemy, his shield instantly begins recharging.\nIf Zane's shields are already full, he regenerates health for a few seconds.\nIf Zane's health is already full, his Action Skill Cooldowns and Durations are immediately reset.",
         ranks: 1,
-        effect: (rank, level) => `Health Regeneration: +3% of Maximum Health per second,\nHealth Regeneration Duration: 3 seconds`,
+        effect: (rank, level) => `Health Regeneration: +3% of Max Health per second\nHealth Regeneration Duration: 3 seconds`,
       },
       "Nerves of Steel": {
         text: "Zane gains increasing Accuracy and Handling. The longer his shield is full, the greater the bonuses.",
@@ -215,7 +215,7 @@ const skills = {
   "Hitman": {
     "0": {
       "SNTNL": {
-        text: "Send into battle an automated SNTL drone that continually flies through the environment and attacks enemies with its Machine Guns. Pressing [Action Skill key] while SNTNL is active causes it to attack the enemy under Zane's crosshairs, if any.",
+        text: "Send into battle an automated SNTNL drone that continually flies through the environment and attacks enemies with its Machine Guns. Pressing [Action Skill key] while SNTNL is active causes it to attack the enemy under Zane's crosshairs, if any. Machine Gun Element: Non-Elemental.",
         effect: (rank, level) => `Machine Gun Damage: ${flat(rank, level, 6)} (increases with character level)\nDuration: 24 seconds\nCooldown: 60 seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -225,7 +225,7 @@ const skills = {
       "Violent Speed": {
         text: "Kill Skill. After killing an enemy, Zane gains increased Movement Speed for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Movement Speed: +${percent(rank, 4)}%\nDuration: 8 seconds`,
+        effect: (rank, level) => `Movement Speed: +${percent(rank, 4)}%\nDuration: 8 seconds\nMaximum Stacks: 2`,
       },
       "Cold Bore": {
         text: "Zane gains increased Weapon Swap Speed. The next shot fired after swapping weapons deals Bonus Cryo Damage.",
@@ -243,11 +243,12 @@ const skills = {
         text: "Converts SNTNL's primary weapons to Cryo Damage.",
         ranks: 0,
         type: SKILLS.AUGMENT_CHEVRON,
+        effect: (rank, level) => `SNTNL Weapons Element: Cryo`,
       },
       "Cool Hand": {
         text: "Zane gains increased Reload Speed.\nKill Skill. After killing an enemy, Zane's Reload Speed is increased for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Reload Speed: +${getCoolHandPassiveReloadSpeed(rank)}%\nAdditional Reload Speed: +${getCoolHandAfterKillReloadSpeed(rank)}% after kill\nDuration: 8 seconds `,
+        effect: (rank, level) => `Reload Speed: +${getCoolHandPassiveReloadSpeed(rank)}%\nAdditional Reload Speed: +${getCoolHandAfterKillReloadSpeed(rank)}%\nDuration: 8 seconds\nMaximum Stacks: 2`,
       },
       "Drone Delivery": {
         text: "SNTRY will occasionally drop a free grenade based on your current grenade mod while attacking enemies.",
@@ -275,13 +276,13 @@ const skills = {
       "Static Field": {
         text: "SNTNL emits a static field that sends a Shock Beam to nearby enemies, draining their shields and replenishing Zane's.",
         ranks: 0,
-        effect: (rank, level) => `Shield Damage: ${flat(rank, level, 2)} per second\nCooldown: 2 seconds`,
+        effect: (rank, level) => `Shield Damage: 2/sec (increases with character level)\nCooldown: 2 seconds`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "4": {
       "Boomsday": {
-        text: "SNTNL adds a rocket pod to its primary weapons, allowing it to shoot rockets as well as machine guns.",
+        text: "SNTNL adds a rocket pod to its primary weapons, allowing it to shoot rockets as well as machine guns. Element: Non-Elemental.",
         ranks: 0,
         effect: (rank, level) => `Rocket Damage: ${flat(rank, level, 32)} (increases with character level)`,
         type: SKILLS.AUGMENT_CHEVRON,
@@ -289,7 +290,7 @@ const skills = {
       "Violent Violence": {
         text: "Kill Skill. After killing an enemy, Zane gains increased Fire Rate for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Fire Rate: +${percent(rank, 3)}%\nCooldown: 8 seconds`,
+        effect: (rank, level) => `Fire Rate: +${percent(rank, 3)}%\nCooldown: 8 seconds\nMaximum Stacks: 2`,
       },
       "Playing Dirty": {
         text: "Kill Skill. After killing an enemy, Zane's next five shots all have a chance to fire an additional projectile.",
@@ -307,7 +308,7 @@ const skills = {
       "Good Misfortune": {
         text: "Kill Skill. Killing an enemy increases Zane's Action Skill Duration. This skill has diminishing returns.",
         ranks: 3,
-        effect: (rank, level) => `Action Skill Duration: Up to +${percent(rank, 4)}% of Maximum Action Skill Duration`,
+        effect: (rank, level) => `Action Skill Duration Returned: +${percent(rank, 4)}% of Max Duration`,
       },
     },
     "6": {
@@ -335,7 +336,7 @@ const skills = {
       "Praemunitus": {
         text: "Zane and his Dig-Clone gain increased Magazine Size.",
         ranks: 3,
-        effect: (rank, level) => `Magazine Size: +${percent(rank, 8.333)}%`,
+        effect: (rank, level) => `Magazine Size: +${percent(rank, 8.333)}%\nDigi-Clone Magazine Size: +${percent(rank, 8.333)}%`,
       },
       "Borrowed Time": {
         text: "Zane gains increased Action Skill Duration for each active Action Skill.",
@@ -347,13 +348,13 @@ const skills = {
       "Binary System": {
         text: "Whenever Zane swaps places with his Digi-Clone, a Cryo Nova is triggered around Zane and his Digi-Clone.",
         ranks: 0,
-        effect: (rank, level) => `Nova Damage: ${flat(rank, level, 46)} (increases with character level)`,
+        effect: (rank, level) => `Cryo Damage: ${flat(rank, level, 46)} (increases with character level)`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Donnybrook": {
         text: "Kill Skill. Whenever Zane kills an enemy, he and his Digi-Clone receive increased Gun Damage and gain Health Regeneration for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nHealth Regeneration: +${percent(rank, 0.5)}% of Missing Health per second\nDuration: 8 seconds`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\Health Regeneration: +${percent(rank, 0.5)}% of Missing Health/sec\nDigi-Clone Gun Damage: +${percent(rank, 3)}%\nDigi-Clone Health Regen: +${percent(rank, 0.5)}% Missing Health/sec\nDuration: 8 seconds\nMaximum Stacks: 2`,
       },
       "Fractal Frags": {
         text: "The Digi-Clone throws a copy of Zane's current grenade mod when it is first activated. If the Digi-Clone is killed, it drops a free grenade. Killing an enemy while the Digi-Clone is active gives the Digi-Clone a chance to throw a grenade.",
@@ -370,13 +371,13 @@ const skills = {
       "Schadenfreude": {
         text: "Whenever the Digi-Clone takes damage, Zane's shield is restored by a portion of that damage.",
         ranks: 0,
-        effect: (rank, level) => `Shields Restored: +100% of damage taken by Digi-Clone`,
+        effect: (rank, level) => `Shields Restored: 100% of damage taken by Digi-Clone`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Quick Breather": {
         text: "Whenever Zane swaps places with his Digi-Clone, his shield immediately begins recharging. The Digi-Clone also immediately restores health.",
         ranks: 1,
-        effect: (rank, level) => `Digi-Clone Heal: Up to 50% of Digi-Clone's Maximum Health`,
+        effect: (rank, level) => `Digi-Clone Health Restored: 50% of Max Health`,
       },
       "Which One's Real?": {
         text: "Enemies are more likely to target the Digi-Clone for a few seconds after it's summoned and after swapping places.",
@@ -410,7 +411,7 @@ const skills = {
       "Digital Distribution": {
         text: "If Zane takes health damage while the Digi-Clone is active, a portion of that damage is inflicted on his Digi-Clone instead.",
         ranks: 0,
-        effect: (rank, level) => `Shared Damage: 75%`,
+        effect: (rank, level) => `Damage Shared: 75%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
@@ -418,7 +419,7 @@ const skills = {
       "Like a Ghost": {
         text: "Zane and his Digi-Clone gain a chance to ignore bullets. This chance is increased for a few seconds after activating an Action Skill. This effect stacks.",
         ranks: 3,
-        effect: (rank, level) => `Ignore Bullet Chance: +${percent(rank, 2)}%\nAdditional Ignore Bullet Chance: +${percent(rank, 3)}% after activating Action Skill\nDuration: 8 seconds`,
+        effect: (rank, level) => `Ignore Bullet Chance: +${percent(rank, 2)}%\nAdditional Ignore Bullet Chance: +${percent(rank, 3)}%\nDuration: 8 seconds`,
       },
       "Boom. Enhance.": {
         text: "Whenever Zane summons his Digi-Clone, it consumes up to 3 grenades. For every grenade consumed, the Digi-Clone gains increased Gun Damage, Maximum Health, Fire Rate, Reload Speed, and Digi-Clone Duration.",
@@ -435,7 +436,7 @@ const skills = {
       "Double Barrel": {
         text: "The Digi-Clone is equipped with a copy of Zane's Current Weapon when activated. Swapping places with the Digi-Clone causes Zane and his Digi-Clone to gain increased Gun Damage.",
         ranks: 1,
-        effect: (rank, level) => `Item Duping: +100%, Gun Damage: +25%`,
+        effect: (rank, level) => `Item Duping: +100%\nGun Damage: +25%\nDigi-Clone Gun Damage: +25%`,
       },
     },
   },
