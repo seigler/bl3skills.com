@@ -135,7 +135,7 @@ const skills = {
   "Bottomless Mags": {
     "0": {
       "Minigun": {
-        text: "The Minigun is capable of sustained rapid fire. Firing for long periods causes the Minigun to overheat, rendering it inoperable for a few seconds.",
+        text: "The Minigun is capable of sustained rapid fire. Firing for long periods causes the Minigun to overheat, rendering it inoperable for a few seconds. Element: Non-Elemental.",
         type: SKILLS.ACTION_SKILL,
         effect: (rank, level) => `Put a little lead in the air and see what falls over.`,
       },
@@ -171,7 +171,7 @@ const skills = {
       "Redistribution": {
         text: "After Moze scores a Critical Hit, she regenerates ammo for a few seconds.",
         ranks: 1,
-        effect: (rank, level) => `Ammo Regeneration: +${percent(rank, 5)}% of Magazine Size per second\nDuration: 3 seconds`,
+        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec\nDuration: 3 seconds`,
       },
       "Scrappy": {
         text: "While moving, Moze's Handling, Weapon Swap and Mode Switch Speed are increased.",
@@ -188,7 +188,7 @@ const skills = {
       "General Winter": {
         text: "Minigun fires Cryo rounds which reduce Heat Gain and Fuel Drain, but deal reduced damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Minigun to Cryo Damage\nMinigun Fuel Drain: -40%\nMinigun Damage: -30%\nMinigun Cryo Efficiency: +20%`,
+        effect: (rank, level) => `Minigun Element: Cryo\nMinigun Fuel Drain: -40%\nMinigun Damage: -30%\nMinigun Cryo Efficiency: +20%`,
       },
       "Rushin' Offensive": {
         text: "Moze can sprint and shoot at the same time.",
@@ -225,7 +225,7 @@ const skills = {
       "Chemical Warfare": {
         text: "Salamander now deals Corrosive Damage. Additionally, Salamander's Melt Damage is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Salamander to Corrosive Damage\n Salamander Melt Damage: +50%`,
+        effect: (rank, level) => `Salamander Element: Corrosive\nSalamander Melt Damage: +50%`,
       },
     },
     "5": {
@@ -249,14 +249,14 @@ const skills = {
       "Forge": {
         text: "Moze constantly regenerates ammo for her currently equipped weapon.",
         ranks: 1,
-        effect: (rank, level) => `Ammo Regeneration: +${percent(rank, 5)}% of Magazine Size per second`,
+        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec`,
       },
     },
   },
   "Demolition Woman": {
     "0": {
       "V-35 Grenade Launcher": {
-        text: "The V-35 is a semi-automatic grenade launcher. Its grenades are not affected by Moze's equipped grenade mod.",
+        text: "The V-35 is a semi-automatic grenade launcher. Its grenades are not affected by Moze's equipped grenade mod. Element: Non-Elemental.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
         effect: (rank, level) => `For when the V-34 just isn't enough`,
@@ -271,12 +271,12 @@ const skills = {
       "Deadlines": {
         text: "Firing Iron Bear Weapons drains less Fuel. Killing an enemy while Iron Bear is active increases Fuel. This skill has diminishing returns.",
         ranks: 3,
-        effect: (rank, level) => `Fuel Drain: -${percent(rank, 10)}%\nFuel Returned: Up to ${percent(rank, 2)}%`,
+        effect: (rank, level) => `Fuel Drain: -${percent(rank, 10)}%\nFuel Returned: ${percent(rank, 2)}% of Maximum Fuel`,
       },
       "Grizzled": {
         text: "Kill Skill. Killing an enemy reduces Moze's remaining Action Skill Cooldown Time. This skill has diminishing returns.",
         ranks: 5,
-        effect: (rank, level) => `Iron Bear Cooldown Time: -${rank * 1} seconds`,
+        effect: (rank, level) => `Iron Bear Cooldown: Time -${rank * 1} seconds`,
       },
     },
     "2": {
@@ -298,10 +298,10 @@ const skills = {
       "Stainless Steel Bear": {
         text: "Iron Bear gains additional armor and increased Maximum Fuel.",
         ranks: 5,
-        effect: (rank, level) => `Iron Bear Armor: +${percent(rank, 6)}%\nMaximum Fuel: +${percent(rank, 4)}%`,
+        effect: (rank, level) => `Iron Bear Maximum Health: +${percent(rank, 6)}%\nMaximum Fuel: +${percent(rank, 4)}%`,
       },
       "Vanquisher Rocket Pod": {
-        text: "The Vanquisher Rocket Pod is a rocket launcher capable of rapid-firing volleys of unguided explosive rockets.",
+        text: "The Vanquisher Rocket Pod is a rocket launcher capable of rapid-firing volleys of unguided explosive rockets. Element: Non-Elemental.",
         type: SKILLS.AUGMENT_ACTION_SKILL,
         effect: (rank, level) => `If you want guidance, get a sherpa. If you want explosions, get a Vladof.`,
       },
@@ -335,7 +335,7 @@ const skills = {
         effect: (rank, level) => `V-35 Reload Speed: +25%`,
       },
       "Vampyr": {
-        text: "Whenever Moze damages an enemy with a thrown grenade, for every enemy hit, she restores a portion of her missing health. Iron Bear also restores health whenever it deals Splash Damage.",
+        text: "Whenever Moze damages an enemy with a thrown grenade, for every enemy hit, she restores a portion of her missing health. Iron Bear restores health for every enemy it deals Splash Damage to.",
         ranks: 5,
         effect: (rank, level) => `Moze Health Restored: ${percent(rank, 4)}% of Missing Health per enemy hit\nIron Bear Health Restored: ${percent(rank, 2)}% of Missing Health per enemy hit`,
       },
@@ -364,7 +364,7 @@ const skills = {
       "Hammerdown Protocol": {
         text: "Instead of a volley of conventional rockets, the Vanquisher Rocket Pod launches a single rocket with a nuclear warhead, dealing massive Radiation Damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Vanquisher Damage: +380%\nVanquisher Magazine Size: 1`,
+        effect: (rank, level) => `Vanquisher Element: Raditation\nVanquisher Damage: +380%\nVanquisher Magazine Size: 1`,
       },
     },
     "6": {
@@ -387,7 +387,7 @@ const skills = {
       "Selfless Vengeance": {
         text: "Whenever Moze reloads, she loses a small portion of her health and grants additional Incendiary Damage to her and her allies' rounds for a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Current Health Removed: ${percent(rank, 1)}%\nBonus Incendiary Damage: +${percent(rank, 3)}% of damage dealt\nDuration: 5 seconds`,
+        effect: (rank, level) => `Health Removed: ${percent(rank, 1)}% of Current Health\nTeam Bonus Incendiary Damage: +${percent(rank, 3)}% of dmg dealt\nDuration: 5 seconds`,
       },
       "Security Bear": {
         text: "Iron Bear gains a bubble shield that reduces damage taken. The shield deactivates if it sustains too much damage, reactivating after a short cooldown.",
@@ -404,7 +404,7 @@ const skills = {
       "Hell on Rails": {
         text: "Railgun now fires superheated rounds that deal Incendiary Damge, but have increased Fuel Drain per shot.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Railgun to Incendiary Damage\nRailgun Fuel Drain: +30%`,
+        effect: (rank, level) => `Railgun Element: Incendiary\nRailgun Fuel Drain: +30%`,
       },
       "Drowning in Brass": {
         text: "Kill Skill. Killing an enemy grants Moze a stack of Drowning in Brass. For each stack of Drowning in Brass, Moze's Fire Rate is reduced, but Gun Damage is increased for both her and her allies.",
@@ -414,7 +414,7 @@ const skills = {
       "Thin Red Line": {
         text: "A portion of Moze's health is Reserved and cannot be restored, but her Maximum Shield is increased by the same amount.",
         ranks: 3,
-        effect: (rank, level) => `${percent(rank, 20)}% Maximum Health Reserved and Added to Maximum Shields`,
+        effect: (rank, level) => `${percent(rank, 20)}% Max Health Reserved and Added to Max Shield`,
       },
       "Vladof Ingenuity": {
         text: "Moze's Maximum Shield is increased, and she gains resistance to Shock Damage.",
@@ -422,7 +422,7 @@ const skills = {
         effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
       },
       "Bear Fist": {
-        text: "The Bear Fist is a pneumatic-driven fist that deals massive damage to a single target at close range.",
+        text: "The Bear Fist is a pneumatic-driven fist that deals massive damage to a single target at close range. Element: Non-Elemental.",
         type: SKILLS.AUGMENT_ACTION_SKILL,
         effect: (rank, level) => `Vladof supports the right to bear armored bear arms.`,
       },
@@ -453,7 +453,7 @@ const skills = {
       "Corrosive Sabot Round": {
         text: "Railgun now fires a specialty round that deals reduced damage and explodes after a short delay. Railgun shots have reduced Fuel Drain and the Magazine Size is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Converts Railgun to Corrosive Damage\nRailgun Damage: -50%\nRailgun Fuel Drain: -50%\nRailgun Magazine Size: +2`,
+        effect: (rank, level) => `Railgun Element:Corrosive\nRailgun Damage: -50%\nRailgun Fuel Drain: -50%\nRailgun Magazine Size: +2`,
       },
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
