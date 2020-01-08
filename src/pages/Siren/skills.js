@@ -414,7 +414,7 @@ const skills = {
     "4": {
       "Reverberation": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astra Projection deals increased damage for every enemy it hits. Element: Shock.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astral Projection deals increased damage for every enemy it hits. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 88)} (increases with character level)\nDamage Bonus: +50% per enemy hit\nCooldown: 30 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
