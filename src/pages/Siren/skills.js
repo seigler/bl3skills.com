@@ -224,7 +224,7 @@ const skills = {
   "Brawl": {
     "0": {
       "Phaseslam": {
-        text: "Amara leaps into the air and Slams the ground, dealing damage to all nearby enemies and knocking them up. Default element: Shock.",
+        text: "Amara leaps into the air and Slams the ground, dealing damage to all nearby enemies and knocking them up. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 98)} (increases with character level)\nCooldown: 35 Seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -244,7 +244,7 @@ const skills = {
       "Clarity": {
         ranks: 5,
         text: "Amara constantly regenerates health. The lower her health, the more powerful the regeneration. After using an Action Skill, this bonus is doubled for a few seconds.",
-        effect: (rank, level) => `Health Regeneration: Up to +${percent(rank, 1)}% of Missing Health per second\nAdditional Health Regeneration: Up to +${percent(rank, 1)}% of Missing Health per second\nDuration: 5 seconds`,
+        effect: (rank, level) => `Health Regen: Up to +${percent(rank, 1)}% of Missing Health/sec\nAdditional Regen: Up to +${percent(rank, 1)}% of Missing Health/sec\nDuration: 5 seconds`,
       },
     },
     "2": {
@@ -256,7 +256,7 @@ const skills = {
       "Samsara": {
         ranks: 3,
         text: "Whenever Amara deals damage to an enemy with her Action Skill, she adds a stack of Samsara. For every stack of Samsara, Amara gains increased Gun Damage and Health Regeneration for a few seconds. Stacks decay after a few seconds.",
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 1.7)}% per stack\nHealth Regeneration: +${percent(rank, 1.7)}% of Missing Health per second per stack\nMaximum Stacks: 5\nDuration: 20 seconds`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 1.7)}% per stack\nHealth Regen: +${percent(rank, 1.7)}% of Missing Health/sec per stack\nMaximum Stacks: 5\nDuration: 20 seconds`,
       },
       "Helping Hand(s)": {
         ranks: 5,
@@ -266,14 +266,14 @@ const skills = {
       "Blight Tiger": {
         ranks: 0,
         text: "Converts Amara's Action Skill to Corrosive Damage.",
-        effect: (rank, level) => `Action Skill deals Corrosive Damage.`,
+        effect: (rank, level) => `Action Skill Element: Corrosive.`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
     "3": {
       "Fracture": {
         ranks: 0,
-        text: "Amara summons a line of fists that erupt from the ground, dealing damage to enemies in front of Amara. Default element: Shock.",
+        text: "Amara summons a line of fists that erupt from the ground, dealing damage to enemies in front of Amara. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 88)} (increases with character level)\nCooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -302,7 +302,7 @@ const skills = {
     "4": {
       "Downfall": {
         ranks: 0,
-        text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam. Default element: Shock.",
+        text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam. Element: Shock.",
         effect: (rank, level) => `Beam Damage: ${flat(rank, level, 14)} per second (increases with character level)\nSlam Damage: ${flat(rank, level, 95)} (increases with character level)\nCooldown: 47 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -321,12 +321,12 @@ const skills = {
       "Jab Cross": {
         ranks: 5,
         text: "Whenever Amara deals melee damage to an enemy, she gains increased Action Skill Damage and increased Gun Damage for a few seconds.",
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nAction Skill Damage: +${percent(rank, 15)}%\nDuration: 10 seconds`,
+        effect: (rank, level) => `Action Skill Damage: +${percent(rank, 15)}%\nGun Damage: +${percent(rank, 3)}%\nDuration: 10 seconds`,
       },
       "Guardian Angel": {
         ranks: 1,
         text: "When Amara enters Fight For Your Life, she immediately gains a Second Wind, restores her health, and creates an Action Skill Elemental Nova that may knock back nearby enemies. This skill has a long cooldown.",
-        effect: (rank, level) => `Maximum Health Restored: 50% of Maximum Health\nCooldown: 120 seconds`,
+        effect: (rank, level) => `Health Restored: 50% of Maximum Health\nCooldown: 120 seconds`,
       },
       "Glamour": {
         ranks: 0,
@@ -346,7 +346,7 @@ const skills = {
   "Mystical Assault": {
     "0": {
       "Phasecast": {
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Default element: Shock.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 92)}\nCooldown: 28 Seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -356,7 +356,7 @@ const skills = {
       "Do Harm": {
         ranks: 5,
         text: "Killing an enemy grants Amara a stack of Rush. Activating her Action Skill consumes all Rush stacks. For every stack of Rush consumed, Amara's Action Skill Damage is temporarily increased.",
-        effect: (rank, level) => `Action Skill Damage: +${percent(rank, 0.9)}% per Rush stack consumed\nMaximum Rush Stacks: 10\nDuration: 20 seconds`,
+        effect: (rank, level) => `Action Skill Dmg: +${percent(rank, 0.9)}% per Rush stack consumed\nMaximum Rush Stacks: 10\nDuration: 20 seconds`,
       },
       "Fast Hand(s)": {
         ranks: 3,
@@ -366,14 +366,14 @@ const skills = {
       "Violent Tapestry": {
         ranks: 5,
         text: "Applying a Status Effect grants Amara a stack of Rush. Activating her Action Skill consumes all Rush stacks. For every stack of Rush consumed, Amara's Status Effect Chance is temporarily increased.",
-        effect: (rank, level) => `Status Effect Chance: +${percent(rank, 0.6)}% per Rush stack consumed\nMaximum Rush Stacks: 10\nDuration: 20 seconds`,
+        effect: (rank, level) => `StatusEffect Chance: +${percent(rank, 0.6)}% per Rush stack consumed\nMaximum Rush Stacks: 10\nDuration: 20 seconds`,
       },
     },
     "2": {
       "Alacrity": {
         ranks: 5,
         text: "Amara gains increased Reload Speed for every stack of Rush. After consuming Rush stacks, this bonus is increased for a few seconds.",
-        effect: (rank, level) => `Reload Speed: +${percent(rank, 0.4)}% per Rush stack\Additional Reload Speed: +${getAlacrityReloadSpeedAfterActionSkill(rank)}% per Rush stack consumed\nDuration: 8 seconds`,
+        effect: (rank, level) => `Reload Speed: +${percent(rank, 0.4)}% per Rush stack\nAdditional Reload Speed: +${getAlacrityReloadSpeedAfterActionSkill(rank)}% per Rush stack consumed\nDuration: 8 seconds`,
       },
       "Transcend": {
         ranks: 3,
@@ -388,21 +388,21 @@ const skills = {
       "Soul Sap": {
         ranks: 0,
         text: "A portion of all damage dealt by Amara's Action Skill is returned to her or a nearby ally as health.",
-        effect: (rank, level) => `Life Steal: 30% of Action Skill damage dealt`,
+        effect: (rank, level) => `Action Skill Life Steal: 30% of damage dealt`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "3": {
       "Deliverance": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies. Default element: Shock.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Whenever Amara's Astral Projection damages an enemy or object, it releases homing Elemental Projectiles that trigger her Action Skill Elemental Effect on enemies. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 86)} (increases with character level)\nElemental Projectiles: 3 per enemy or object hit\nCooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Ascendant": {
         ranks: 1,
         text: "All Action Skill Augments gain increased effects.",
-        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nStillness of Mind: Breaks 0.75 seconds after taking damage\nRevelation Damage: +25%`,
+        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nStillness of Mind: Breaks 0.75 sec after taking dmg\nRevelation Damage: +25%`,
       },
       "Stillness of Mind": {
         ranks: 0,
@@ -414,7 +414,7 @@ const skills = {
     "4": {
       "Reverberation": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astra Projection deals increased damage for every enemy it hits. Default element: Shock.",
+        text: "Amara sends forward an Astral Projection of herself, dealing damage to everything in its path. Astral Projection deals increased damage for every enemy it hits. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 88)} (increases with character level)\nDamage Bonus: +50% per enemy hit\nCooldown: 30 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -447,7 +447,7 @@ const skills = {
       },
       "Tandava": {
         ranks: 0,
-        text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies. Default element: Shock.",
+        text: "Amara sends forward an Astral Projection of herself. When it hits a target, it explodes, damaging all nearby enemies. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 91)} (increases with character level)\nCooldown: 35 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -463,7 +463,7 @@ const skills = {
   "Fist of the Elements": {
     "0": {
       "Phasegrasp": {
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
         effect: (rank, level) => `Skill Duration: 7 seconds\nCooldown: 16 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
@@ -505,14 +505,14 @@ const skills = {
       "Soulfire": {
         ranks: 0,
         text: "Converts Amara's Action Skill to Incendiary Damage.",
-        effect: (rank, level) => `Action Skill deals Incendiary Damage.`,
+        effect: (rank, level) => `Action Skill Element: Incendiary.`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
     "3": {
       "The Eternal Fist": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
         effect: (rank, level) => `Bonus Targets: Up to +4\nDuration: 7 seconds\nCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -546,7 +546,7 @@ const skills = {
       },
       "Ties That Bind": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies near the Grasped target are linked, and any damage dealt to a linked target is shared between all other linked targets. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Enemies near the Grasped target are linked, and any damage dealt to a linked target is shared between all other linked targets. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
         effect: (rank, level) => `Linked Damage: 35% of damage dealt\nDuration: 7 seconds\nCooldown: 18 seconds\nGrasp Immune Damage: ${flat(rank, level, 34)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -554,19 +554,19 @@ const skills = {
     "5": {
       "Fist Over Matter": {
         ranks: 0,
-        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. After Grasping the targeted enemy, large fists appear and constantly smash the area, dealing damage to nearby enemies. Some enemies are immune to being Grasped and instantly take damage instead. Default element: Shock.",
+        text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. After Grasping the targeted enemy, large fists appear and constantly smash the area, dealing damage to nearby enemies. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
         effect: (rank, level) => `Damage: ${flat(rank, level, 35)} (increases with character level)\nDuration: 7 seconds\nCooldown: 28 seconds\nGrasp Immune Damage: ${flat(rank, level, 39)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Sustainment": {
         ranks: 5,
         text: "Amara gains Life Steal whenever she deals Elemental Damage with her weapon.",
-        effect: (rank, level) => `Life Steal: +${percent(rank, 4)}% of damage dealt`,
+        effect: (rank, level) => `Elemental Weapon Life Steal: +${percent(rank, 4)}% of damage dealt`,
       },
       "Conflux": {
         ranks: 5,
         text: "Whenever Amara applies a Status Effect to an enemy, she gains a chance to randomly Electrocute, Ignite, or Melt that enemy.",
-        effect: (rank, level) => `Extra Effect Chance: +${percent(rank, 7)}%`,
+        effect: (rank, level) => `Extra Status Effect Chance: +${percent(rank, 7)}%`,
       },
     },
     "6": {
