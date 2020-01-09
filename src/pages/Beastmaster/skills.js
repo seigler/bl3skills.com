@@ -156,7 +156,7 @@ const skills = {
         effect: (rank, level) => `Attack Command Damage: +${percent(rank, 10)}%\nAttack Command Cooldown: -${percent(rank, 10)}%`,
       },
       "Furious Attack": {
-        text: "Hunter Skill. After shooting an enemy, FL4K gains a stack of Furious Attack. For each stack of Furious Attack, FL4K's Handling and Gun Damage are increased, and their Pet gains increased Damage per stack. Stacks decay after a few seconds.",
+        text: "Hunter Skill. After shooting an enemy, FL4K gains a stack of Furious Attack. For each stack of Furious Attack, FL4K's Handling and Gun Damage are increased, and their pet gains increased Damage per stack. Stacks decay after a few seconds.",
         ranks: 5,
         effect: (rank, level) => `Gun Damage: +${percent(rank, 0.4)}% per stack\nHandling: +${getFuriousAttackHandling(rank)}% per stack\nPet Damage: +${percent(rank, 0.6)}% per stack\nMaximum Stacks: 10\nDuration: 4 seconds`,
       },
@@ -216,7 +216,7 @@ const skills = {
         effect: (rank, level) => `Duration: 10 seconds after Fade Away ends`,
       },
       "The Fast And The Furryous": {
-        text: "While above half health, FL4K's Gun Damage and Movement Speed are increased, and their pet gains increased Damage",
+        text: "While above half health, FL4K's Gun Damage and Movement Speed are increased, and their pet gains increased Damage.",
         ranks: 3,
         effect: (rank, level) => `Gun Damage: +${Math.round(percent(rank, 8.333))}%\nMovement Speed: +${percent(rank, 3.333)}%\nPet Damage: +${percent(rank, 10)}%`,
       },
@@ -262,7 +262,7 @@ const skills = {
         effect: (rank, level) => `Damage: +5%`,
       },
       "Gamma Burst": {
-        text: "FL4K creates a Rift at a target location, teleporting their pet through the Rift and dealing Radiation Damage to nearby enemies. Additionally, FL4K's pet becomes irradiated, growing in size and dealing bonus Radiation Damage when it attacks. Using Gamma Burst while FL4K's Pet is downed or dead will revive the pet at the targeted location with 30% of its health, but will double Action Skill Cooldown Time.",
+        text: "FL4K creates a Rift at a target location, teleporting their pet through the Rift and dealing Radiation Damage to nearby enemies. Additionally, FL4K's pet becomes irradiated, growing in size and dealing bonus Radiation Damage when it attacks. Using Gamma Burst while FL4K's pet is downed or dead will revive the pet at the targeted location with 30% of its health, but will double Action Skill Cooldown Time.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
         effect: (rank, level) => `Damage 56: (increases with character level)\nDuration: 20 seconds\nCooldown: 30 seconds`,
@@ -316,7 +316,7 @@ const skills = {
         effect: (rank, level) => `Damage: +20%`,
       },
       "Psycho Head On A Stick": {
-        text: "Hunter Kill Skill. Whenever FL4K kills an enemy, their Pet gains increased Movement Speed and Damage for a few seconds.",
+        text: "Hunter Kill Skill. Whenever FL4K kills an enemy, their pet gains increased Movement Speed and Damage for a few seconds.",
         ranks: 1,
         effect: (rank, level) => `Pet Damage: +20%\nPet Movement Speed: +12%\nDuration: 8 seconds`,
       },
@@ -334,7 +334,7 @@ const skills = {
     },
     "4": {
       "Endurance": {
-        text: "When FL4K or FL4K's Pet kills an enemy while Gamma Burst is active, the duration of Gamma Burst is extended and pet damage is increased. These effects can stack up to 5 times.",
+        text: "When FL4K or FL4K's pet kills an enemy while Gamma Burst is active, the duration of Gamma Burst is extended and pet damage is increased. These effects can stack up to 5 times.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
         effect: (rank, level) => `Gamma Burst Duration: +3 seconds per kill\nPet Damage: +10% per kill\nMaximum Stacks: 5`,
@@ -364,7 +364,7 @@ const skills = {
         effect: (rank, level) => `Team Health Regeneration: +20% of Max Health/sec`,
       },
       "Pack Tactics": {
-        text: "All damage dealt by FL4K and their Pet is increased. Additionally, the Maximum Health of both FL4K and their Pet is increased.",
+        text: "All damage dealt by FL4K and their pet is increased. Additionally, the Maximum Health of both FL4K and their pet is increased.",
         ranks: 3,
         effect: (rank, level) => `Damage: +${percent(rank, 7)}%\nMaximum Health: +${percent(rank, 5)}%\nPet Damage: +${percent(rank, 7)}%\nPet Maximum Health: +${percent(rank, 5)}%`,
       },
@@ -493,7 +493,7 @@ const skills = {
         effect: (rank, level) => `Critical Hit Damage: +15%`,
       },
       "Grim Harvest": {
-        text: "FL4K gains increased Gun Damage and Action Skill Damage. FL4K's Pet gains increased Damage.",
+        text: "FL4K gains increased Gun Damage and Action Skill Damage. FL4K's pet gains increased Damage.",
         ranks: 5,
         effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nAction Skill Damage: +${percent(rank, 5)}%\nPet Damage: +${percent(rank, 7)}%`,
       },
