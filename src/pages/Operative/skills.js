@@ -354,7 +354,7 @@ const skills = {
       "Donnybrook": {
         text: "Kill Skill. Whenever Zane kills an enemy, he and his Digi-Clone receive increased Gun Damage and gain Health Regeneration for a few seconds. This effect stacks twice.",
         ranks: 5,
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\Health Regeneration: +${percent(rank, 0.5)}% of Missing Health/sec\nDigi-Clone Gun Damage: +${percent(rank, 3)}%\nDigi-Clone Health Regen: +${percent(rank, 0.5)}% Missing Health/sec\nDuration: 8 seconds\nMaximum Stacks: 2`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nHealth Regeneration: +${percent(rank, 0.5)}% of Missing Health/sec\nDigi-Clone Gun Damage: +${percent(rank, 3)}%\nDigi-Clone Health Regen: +${percent(rank, 0.5)}% Missing Health/sec\nDuration: 8 seconds\nMaximum Stacks: 2`,
       },
       "Fractal Frags": {
         text: "The Digi-Clone throws a copy of Zane's current grenade mod when it is first activated. If the Digi-Clone is killed, it drops a free grenade. Killing an enemy while the Digi-Clone is active gives the Digi-Clone a chance to throw a grenade.",
