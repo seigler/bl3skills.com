@@ -276,7 +276,7 @@ const skills = {
       "Grizzled": {
         text: "Kill Skill. Killing an enemy reduces Moze's remaining Action Skill Cooldown Time. This skill has diminishing returns.",
         ranks: 5,
-        effect: (rank, level) => `Iron Bear Cooldown: Time -${rank * 1} seconds`,
+        effect: (rank, level) => `Iron Bear Cooldown: -${rank * 1} seconds`,
       },
     },
     "2": {
