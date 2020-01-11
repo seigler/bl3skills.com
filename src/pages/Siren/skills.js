@@ -532,7 +532,7 @@ const skills = {
       "Indiscriminate": {
         ranks: 3,
         text: "Amara's bullets that damage enemies have a chance to ricochet and deal decreased damage to other nearby enemies. Ricochet Chance and Damage are increased if target is affected by Phasegrasp or Stillness of Mind.",
-        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: -50%\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: -25%`,
+        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: 50% of damage dealt\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: 75% of damage dealt`,
       },
       "Deep Well": {
         ranks: 1,
