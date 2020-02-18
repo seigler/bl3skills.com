@@ -64,16 +64,6 @@
   pointer-events: none;
   text-align: center;
 }
-.overlevelA:after {
-  content: 'Theoretical!';
-  color: #2D0;
-  transform: rotate(5deg);
-}
-.overlevelB:after {
-  content: 'Very theoretical!';
-  color: #E20;
-  transform: rotate(-5deg);
-}
 
 .header > nav {
   display: flex;
