@@ -376,7 +376,7 @@ const skills = {
     },
     "6": {
       "Dominance": {
-        text: "Melee Override Skill. FL4K establishes dominance over an enemy, turning it into an ally for a short time. If the enemy is a Beast, the duration is doubled. While under the effects of Domiance, the enemy constantly loses health until it dies or the effect ends. Only one enemy can be dominated at a time. An enemy can only be dominated once.",
+        text: "Melee Override Skill. FL4K establishes dominance over an enemy, turning it into an ally for a short time. If the enemy is a Beast, the duration is doubled. While under the effects of Dominance, the enemy constantly loses health until it dies or the effect ends. Only one enemy can be dominated at a time. An enemy can only be dominated once.",
         ranks: 1,
         effect: (rank, level) => `Duration: 12 seconds\nTarget Loses 2% of Maximum Health per second`,
       },
