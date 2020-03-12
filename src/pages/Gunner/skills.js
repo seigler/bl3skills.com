@@ -404,7 +404,7 @@ const skills = {
       "Hell on Rails": {
         text: "Railgun now fires superheated rounds that deal Incendiary Damge, but have increased Fuel Drain per shot.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Railgun Element: Incendiary\nRailgun Fuel Drain: +30%`,
+        effect: (rank, level) => `Railgun Element: Incendiary\nRailgun Fuel Drain: +8%`,
       },
       "Drowning in Brass": {
         text: "Kill Skill. Killing an enemy grants Moze a stack of Drowning in Brass. For each stack of Drowning in Brass, Moze's Fire Rate is reduced, but Gun Damage is increased for both her and her allies.",
@@ -453,7 +453,7 @@ const skills = {
       "Corrosive Sabot Round": {
         text: "Railgun now fires a specialty round that deals reduced damage and explodes after a short delay. Railgun shots have reduced Fuel Drain and the Magazine Size is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Railgun Element:Corrosive\nRailgun Damage: -50%\nRailgun Fuel Drain: -50%\nRailgun Magazine Size: +2`,
+        effect: (rank, level) => `Railgun Element:Corrosive\nRailgun Damage: -33%\nRailgun Fuel Drain: -33%\nRailgun Magazine Size: +2`,
       },
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
