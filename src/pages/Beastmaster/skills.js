@@ -197,9 +197,9 @@ const skills = {
         effect: (rank, level) => `Pet Damage: +30%\nDuration: 60 seconds`,
       },
       "Turn Tail And Run": {
-        text: "While moving, FL4K constantly regenerates health and gains Damage Resistance.\nWhile still, FL4K gains Gun Damage and Fire Rate.",
+        text: "While moving, FL4K constantly regenerates health and gains Damage Resistance. While still, FL4K gains Gun Damage and Fire Rate.",
         ranks: 3,
-        effect: (rank, level) => `Damage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nHealth Regen: +${percent(rank, 0.3)}% of Max Health/sec while moving\nGun Damage: +${percent(rank, 8.333)}% while still\nFire Rate: +${percent(rank, 4)}% while still`,
+        effect: (rank, level) => `Damage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nHealth Regen: +${percent(rank, 0.3)}% Max Health/sec while moving\nGun Damage: +${percent(rank, 8.333)}% while still\nFire Rate: +${percent(rank, 4)}% while still`,
       },
       "Beefcake Jabber": {
         text: "FL4K's Jabber evolves into a Beefcake, discarding its pistol and equipping a Shotgun. While accompanied by the Beefcake, FL4K gains increased Movement Speed and Maximum Health. When FL4K issues an Attack Command, the Beefcake will summon a melee weapon to deliver a powerful attack that knocks enemies back.",
