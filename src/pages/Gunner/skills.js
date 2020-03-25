@@ -296,9 +296,9 @@ const skills = {
         effect: (rank, level) => `Chance to Double Splash Radius: +${percent(rank, 3)}%`,
       },
       "Stainless Steel Bear": {
-        text: "Iron Bear gains additional armor and increased Maximum Fuel.",
+        text: "Iron Bear gains additional armor, increased Maximum Fuel, and increased Damage.",
         ranks: 5,
-        effect: (rank, level) => `Iron Bear Maximum Health: +${percent(rank, 6)}%\nMaximum Fuel: +${percent(rank, 4)}%`,
+        effect: (rank, level) => `Iron Bear Damage: +${percent(rank, 4)}%\nIron Bear Armor: +${percent(rank, 6)}%\nMaximum Fuel: +${percent(rank, 4)}%`,
       },
       "Vanquisher Rocket Pod": {
         text: "The Vanquisher Rocket Pod is a rocket launcher capable of rapid-firing volleys of unguided explosive rockets. Element: Non-Elemental.",
@@ -335,9 +335,9 @@ const skills = {
         effect: (rank, level) => `V-35 Reload Speed: +25%`,
       },
       "Vampyr": {
-        text: "Whenever Moze damages an enemy with a thrown grenade, for every enemy hit, she restores a portion of her missing health. Iron Bear restores health for every enemy it deals Splash Damage to.",
+        text: "Whenever Moze damages an enemy with a thrown grenade, for every enemy hit, she restores a portion of her missing health. Iron Bear restores armor for every enemy it deals Splash Damage to.",
         ranks: 5,
-        effect: (rank, level) => `Moze Health Restored: ${percent(rank, 4)}% of Missing Health per enemy hit\nIron Bear Health Restored: ${percent(rank, 2)}% of Missing Health per enemy hit`,
+        effect: (rank, level) => `Moze Health Restored: ${percent(rank, 4)}% of Missing Health per enemy hit\nIron Bear Armor Restored: ${percent(rank, 2)}% of Missing Armor per enemy hit`,
       },
       "Why Can't I Carry All These Grenades": {
         text: "Increases Moze's grenade carrying capacity.",
@@ -387,12 +387,12 @@ const skills = {
       "Selfless Vengeance": {
         text: "Whenever Moze reloads, she loses a small portion of her health and grants additional Incendiary Damage to her and her allies' rounds for a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Health Removed: ${percent(rank, 1)}% of Current Health\nTeam Bonus Incendiary Damage: +${percent(rank, 3)}% of dmg dealt\nDuration: 5 seconds`,
+        effect: (rank, level) => `Team Bonus Incendiary Damage: +${percent(rank, 3)}% of dmg dealt\nHealth Removed: ${percent(rank, 1)}% of Current Health\nDuration: 5 seconds`,
       },
       "Security Bear": {
         text: "Iron Bear gains a bubble shield that reduces damage taken. The shield deactivates if it sustains too much damage, reactivating after a short cooldown.",
         ranks: 1,
-        effect: (rank, level) => `50% of Iron Bear Maximum Health added as Shields\nBubble Recharge Delay: 5 seconds`,
+        effect: (rank, level) => `50% of Iron Bear Maximum Armor added as Shields\nBubble Recharge Delay: 5 seconds`,
       },
       "Armored Infantry": {
         text: "While Moze's shields are active, she gains Damage Resistance and increased Gun Damage.",
