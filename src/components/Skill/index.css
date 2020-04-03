@@ -170,3 +170,8 @@
   width: 20rem;
   transform: translateX(calc((1 - var(--treeindex)) * 40%));
 }
+
+.actionSkill:hover .description {
+  bottom: auto;
+  top: 100%;
+}
