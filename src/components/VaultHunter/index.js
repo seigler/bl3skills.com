@@ -35,11 +35,11 @@ export default class VaultHunter extends Component {
     path,
     skills: initialSkills,
   }) {
-    const skillChangeListenerFactory = (skillName, treeIndex, treeName, tierIndex) => {
+    const skillChangeListenerFactory = (skillIndex, treeIndex, treeName, tierIndex) => {
       return (oldValue, newValue) => {
         this.setState(reducer(this.state, {
           type: 'skillChange',
-          skillName,
+          skillIndex,
           treeIndex,
           treeName,
           tierIndex,
@@ -64,20 +64,23 @@ export default class VaultHunter extends Component {
             <style>{`.${style.tree}:nth-child(${treeIndex + 1}) { --invested: ${this.state.invested[treeIndex]}; --treeindex: ${treeIndex};}`}</style>
             <h2 class={style.treeName}>{ treeName }</h2>
             <div class={style.skills}>
-              { Object.keys(this.state.skills[treeName]).map((tier, tierIndex) =>
+              { Object.entries(this.state.skills[treeName]).map(([tierIndex, tier]) => (
                 <div class={style.tier}>
-                  { Object.keys(this.state.skills[treeName][tier]).map((skillName, skillIndex) =>
-                    <Skill
-                      {...this.state.skills[treeName][tier][skillName]}
-                      name={skillName}
-                      enabled={this.state.invested[treeIndex] >= 5 * tierIndex - 5}
-                      level={getLevel(this.state)}
-                      image={`../../assets/hunters/${discipline}/${treeIndex}${tierIndex}${skillIndex}.png`}
-                      onChange={skillChangeListenerFactory(skillName, treeIndex, treeName, tierIndex)}
-                    />
-                  ) }
+                  { Object.entries(tier).map(([skillIndex, skill]) => {
+                    return skill ? (
+                      <Skill
+                        {...skill}
+                        enabled={this.state.invested[treeIndex] >= 5 * tierIndex - 5}
+                        level={getLevel(this.state)}
+                        image={`../../assets/hunters/${discipline}/${treeIndex}${tierIndex}${skillIndex}.png`}
+                        onChange={skillChangeListenerFactory(skillIndex, treeIndex, treeName, tierIndex)}
+                      />
+                    ) : (
+                      <div class={style.space} />
+                    );
+                  }) }
                 </div>
-              ) }
+              )) }
             </div>
           </div>
         );

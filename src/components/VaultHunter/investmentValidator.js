@@ -8,8 +8,10 @@ export default function investmentValidator (skills) {
     for (let tier of Object.values(tree)) {
       let tierTotal = 0;
       for (let skill of Object.values(tier)) {
-        if (skill.invested < 0 || skill.invested > skill.ranks) { return false; }
-        tierTotal += skill.invested || 0;
+        if (skill) {
+          if (skill.invested < 0 || skill.invested > skill.ranks) { return false; }
+          tierTotal += skill.invested || 0;
+        }
       };
       if (tierTotal > 0 && treeTotal + 5 < tierIndex * 5) { return false; }
       treeTotal += tierTotal;
