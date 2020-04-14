@@ -220,12 +220,12 @@ const skills = {
       "Specialist Bear": {
         text: "Equipping two of the same Weapons on Iron Bear increases the damage they deal.",
         ranks: 1,
-        effect: (rank, level) => `Iron Bear Damage: +${percent(rank, 25)}%`,
+        effect: (rank, level) => `Iron Bear Damage: +${percent(rank, 60)}%`,
       },
       "Chemical Warfare": {
         text: "Salamander now deals Corrosive Damage. Additionally, Salamander's Melt Damage is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Salamander Element: Corrosive\nSalamander Melt Damage: +50%`,
+        effect: (rank, level) => `Salamander Element: Corrosive\nSalamander Melt Damage: +125%`,
       },
     },
     "5": {
@@ -237,7 +237,7 @@ const skills = {
       "Click, Click...": {
         text: "Moze gains increased Gun Damage as her magazine empties. The less ammo there is remaining, the greater the increase. If Moze has a COV gun equipped, she gains Gun Damage as her gun's heat increases.",
         ranks: 3,
-        effect: (rank, level) => `Gun Damage: Up to +${percent(rank, 12)}%`,
+        effect: (rank, level) => `Gun Damage: Up to +${percent(rank, 20)}%`,
       },
       "Molten Roar": {
         text: "The Salamander burst-fires 3 projectiles with increased Fuel Drain, the first of which leaves a large Incendiary area.",
@@ -264,7 +264,7 @@ const skills = {
     },
     "1": {
       "Fire in the Skag Den": {
-        text: "Whenever Moze deals Splash Damage, she deals bonus Incendiary Damage.",
+        text: "Whenever Moze and Iron Bear deal Splash Damage, they deal bonus Incendiary Damage.",
         ranks: 5,
         effect: (rank, level) => `Bonus Incendiary Damage: +${percent(rank, 3)}% of damage dealt`,
       },
@@ -359,12 +359,12 @@ const skills = {
       "Explosive Punctuation": {
         text: "When Moze deals Splash Damage, her Action Skill Cooldown Rate is briefly increased.",
         ranks: 5,
-        effect: (rank, level) => `Action Skill Cooldown Rate: +${percent(rank, 5)}%`,
+        effect: (rank, level) => `Action Skill Cooldown Rate: +${percent(rank, 8)}%`,
       },
       "Hammerdown Protocol": {
         text: "Instead of a volley of conventional rockets, the Vanquisher Rocket Pod launches a single rocket with a nuclear warhead, dealing massive Radiation Damage.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Vanquisher Element: Raditation\nVanquisher Damage: +380%\nVanquisher Magazine Size: 1`,
+        effect: (rank, level) => `Vanquisher Element: Raditation\nVanquisher Damage: +600%\nVanquisher Magazine Size: 1`,
       },
     },
     "6": {
@@ -431,7 +431,7 @@ const skills = {
       "Capacitive Armature": {
         text: "When Railgun hits an enemy, it chains to nearby enemies, dealing reduced Shock Damage to more targets.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Splinter Damage: 25% of damage dealt`,
+        effect: (rank, level) => `Splinter Damage: 70% of damage dealt`,
       },
       "Full Can of Whoop-Ass": {
         text: "Entering Iron Bear causes Moze's and her allies' shields to immediately begin recharging at an increased Shield Recharge Rate.",
@@ -453,7 +453,7 @@ const skills = {
       "Corrosive Sabot Round": {
         text: "Railgun now fires a specialty round that deals reduced damage and explodes after a short delay. Railgun shots have reduced Fuel Drain and the Magazine Size is increased.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Railgun Element:Corrosive\nRailgun Damage: -33%\nRailgun Fuel Drain: -33%\nRailgun Magazine Size: +2`,
+        effect: (rank, level) => `Railgun Element:Corrosive\nRailgun Damage: -15%\nRailgun Fuel Drain: -33%\nRailgun Magazine Size: +2`,
       },
       "Behind the Iron Curtain": {
         text: "Moze's Shield Recharge Delay is reduced, and her Shield Recharge Rate is increased.",
@@ -485,7 +485,7 @@ const skills = {
       "Shockhammer": {
         text: "Bear Fist is now capable of sustained rapid fire punching. Additionally, Bear Fist has reduced Fuel Drain and deals Bonus Shock Damage with each hit.",
         type: SKILLS.AUGMENT_CHEVRON,
-        effect: (rank, level) => `Bear Fist Bonus Shock Damage: +19% of damage dealt\nBear Fist Fuel Drain: -40%`,
+        effect: (rank, level) => `Bear Fist Bonus Shock Damage: +60% of damage dealt\nBear Fist Fuel Drain: -40%`,
       },
     },
     "6": {
