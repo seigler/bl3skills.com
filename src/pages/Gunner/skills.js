@@ -147,9 +147,9 @@ const skills = {
         effect: (rank, level) => `Effects are triggered every ${9 - rank} shots\nBonus Incendiary Damage: +${percentTwoDecimals(rank, 2.25)}%`,
       },
       "Dakka Bear": {
-        text: "Adds a manned turret to the back of Iron Bear.",
+        text: "Adds a manned turret to the back of Iron Bear. While manned, Iron Bear and its rider gain Increased Damage.",
         ranks: 1,
-        effect: (rank, level) => `Fasten your seatbelt, it's going to be a bumpy ride.`,
+        effect: (rank, level) => `Iron Bear Damage: +50%`,
       },
       "Matched Set": {
         text: "Moze's currently equipped weapon gains a stacking bonus to Magazine Size and Decreased Heat Per Shot for every piece of equipped gear that has a matching manufacturer.",
@@ -169,14 +169,14 @@ const skills = {
         effect: (rank, level) => `Incendiary Damage: +${percent(rank, 10)}%`,
       },
       "Redistribution": {
-        text: "After Moze scores a Critical Hit, she regenerates ammo for a few seconds.",
+        text: "After Moze scores a Critical Hit, she regenerates ammo and health for a few seconds.The lower her health, the more powerful the regeneration.",
         ranks: 1,
-        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec\nDuration: 3 seconds`,
+        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec\nHealth Regen: Up to +2.5% of Missing Health/sec\nDuration: 3 seconds`,
       },
       "Scrappy": {
-        text: "While moving, Moze's Handling, Weapon Swap and Mode Switch Speed are increased.",
+        text: "While moving, Moze's Weapon Damage, Handling, Weapon Swap, and Mode Switch Speed are increased.",
         ranks: 5,
-        effect: (rank, level) => `Handling: +${getScrappyHandling(rank)}%\nWeapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%\nMode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
+        effect: (rank, level) => `Weapon Damage: +${percent(rank, 6)}%\nHandling: +${getScrappyHandling(rank)}%\nWeapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%\nMode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
       },
       "Salamander": {
         text: "The Salamander is a flamethrower that deals Incendiary Damage to enemies at close range. Though the Salamander has infinite ammo, it drains Fuel with use.",
@@ -191,9 +191,9 @@ const skills = {
         effect: (rank, level) => `Minigun Element: Cryo\nCryo Efficiency: +20%\nMinigun Fuel Drain: -40%`,
       },
       "Rushin' Offensive": {
-        text: "Moze can sprint and shoot at the same time.",
+        text: "Moze can sprint and shoot at the same time. While sprinting, Moze's weapons gain Life Steal.",
         ranks: 1,
-        effect: (rank, level) => `I don't want any messages saying "I'm holding my position."`,
+        effect: (rank, level) => `Life Steal: 8% of damage dealt"`,
       },
       "Scorching RPM's": {
         text: "Moze gains increased Fire Rate and Critical Hit Damage. Iron Bear gains increased Hard Point damage.",
@@ -291,9 +291,9 @@ const skills = {
         effect: (rank, level) => `Ammo Chance: +${percent(rank, 3.333)}%\nGrenade Chance: +${percent(rank, 2)}%\nCooldown: 0.3 seconds`,
       },
       "Torgue Cross-Promotion": {
-        text: "All Splash Damage dealt by Moze has a chance to double in size.",
+        text: "All Splash Damage dealt by Moze has a chance to double in size. Additionally, Moze and Iron Bear deal increased Splash Damage.",
         ranks: 5,
-        effect: (rank, level) => `Chance to Double Splash Radius: +${percent(rank, 3)}%`,
+        effect: (rank, level) => `Splash Damage: +${percent(rank, 6)}%\nChance to Double Splash Radius: +${percent(rank, 3)}%`,
       },
       "Stainless Steel Bear": {
         text: "Iron Bear gains additional armor, increased Maximum Fuel, and increased Damage.",
@@ -417,9 +417,9 @@ const skills = {
         effect: (rank, level) => `${percent(rank, 20)}% Max Health Reserved and Added to Max Shield`,
       },
       "Vladof Ingenuity": {
-        text: "Moze's Maximum Shield is increased, and she gains resistance to Shock Damage.",
+        text: "Moze's Maximum Shield and Shield Recharge Rate are increased, and she gains resistance to Shock Damage.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
+        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShield Recharge Rate: +${percent(rank, 4)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
       },
       "Bear Fist": {
         text: "The Bear Fist is a pneumatic-driven fist that deals massive damage to a single target at close range. Element: Non-Elemental.",
@@ -478,9 +478,9 @@ const skills = {
         effect: (rank, level) => `Maximum Shield: +${percent(rank, 3)}% per stack\nGun Damage: +${percent(rank, 2)}% per stack\nDuration: 30 seconds`,
       },
       "Force Feedback": {
-        text: "Whenever Moze scores a Critical Kill, her shields immediately begin recharging.",
+        text: "Whenever Moze scores a Critical Kill, her shields immediately begin recharging and she instantly regains a portion of her shield.",
         ranks: 1,
-        effect: (rank, level) => `Just click on their heads.`,
+        effect: (rank, level) => `Shields Restored: 10% of Maximum Shield`,
       },
       "Shockhammer": {
         text: "Bear Fist is now capable of sustained rapid fire punching. Additionally, Bear Fist has reduced Fuel Drain and deals Bonus Shock Damage with each hit.",
