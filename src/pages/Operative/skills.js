@@ -334,7 +334,7 @@ const skills = {
         effect: (rank, level) => `Gun Damage: +${percent(rank, 4)}% per active Action Skill`,
       },
       "Praemunitus": {
-        text: "Zane and his Dig-Clone gain increased Magazine Size.",
+        text: "Zane and his Digi-Clone gain increased Magazine Size.",
         ranks: 3,
         effect: (rank, level) => `Magazine Size: +${percent(rank, 8.333)}%\nDigi-Clone Magazine Size: +${percent(rank, 8.333)}%`,
       },
