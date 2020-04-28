@@ -147,7 +147,7 @@ const skills = {
         effect: (rank, level) => `Effects are triggered every ${9 - rank} shots\nBonus Incendiary Damage: +${percentTwoDecimals(rank, 2.25)}%`,
       },
       "Dakka Bear": {
-        text: "Adds a manned turret to the back of Iron Bear. While manned, Iron Bear and its rider gain Increased Damage.",
+        text: "Adds a manned turret to the back of Iron Bear. While manned, Iron Bear and its rider gain increased damage.",
         ranks: 1,
         effect: (rank, level) => `Iron Bear Damage: +50%`,
       },
@@ -193,7 +193,7 @@ const skills = {
       "Rushin' Offensive": {
         text: "Moze can sprint and shoot at the same time. While sprinting, Moze's weapons gain Life Steal.",
         ranks: 1,
-        effect: (rank, level) => `Life Steal: 8% of damage dealt"`,
+        effect: (rank, level) => `Life Steal: 8% of damage dealt`,
       },
       "Scorching RPM's": {
         text: "Moze gains increased Fire Rate and Critical Hit Damage. Iron Bear gains increased Hard Point damage.",
