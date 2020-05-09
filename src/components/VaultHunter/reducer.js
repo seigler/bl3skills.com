@@ -7,8 +7,8 @@ export default function reducer (state, action) {
     case 'skillChange':
       var newSkills = deepmerge(state.skills, {
         [action.treeName]: {
-          [action.tierIndex + '']: {
-            [action.skillName]: {
+          [action.tierIndex]: {
+            [action.skillIndex]: {
               invested: action.newValue,
             }
           }

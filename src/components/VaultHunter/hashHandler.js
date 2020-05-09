@@ -3,7 +3,7 @@ export function setHash (skillsState) {
   for (let tree of Object.values(skillsState)) {
     for (let tier of Object.values(tree)) {
       for (let skill of Object.values(tier)) {
-        if (skill.type == null) {
+        if (skill && skill.type == null) {
           hashparts.push(skill.invested || 0);
         }
       };
@@ -20,10 +20,12 @@ export function getHash (skillsState) {
   for (let tree of Object.keys(skills)) {
     for (let tier of Object.keys(skills[tree])) {
       for (let skill of Object.keys(skills[tree][tier])) {
-        if (skills[tree][tier][skill].type == null) {
-          skills[tree][tier][skill] = { invested: parseInt(hashparts.shift() || 0) };
-        } else {
-          skills[tree][tier][skill] = {};
+        if (skills[tree][tier][skill]) {
+          if (skills[tree][tier][skill].type == null) {
+            skills[tree][tier][skill] = { invested: parseInt(hashparts.shift() || 0) };
+          } else {
+            skills[tree][tier][skill] = {};
+          }
         }
       };
     };

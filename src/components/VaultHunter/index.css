@@ -109,6 +109,16 @@
   color: rgba(255,255,255,0.8);
 }
 
+.space {
+  position: relative;
+  flex: 0 1 auto;
+  margin: 0.5rem;
+  padding: 0rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1;
+}
+
 .skills {
   position: relative;
   user-select: none;
