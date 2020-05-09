@@ -242,7 +242,7 @@ const skills = {
         name: "Personal Space",
         ranks: 3,
         text: "Amara's weapon shots deal Bonus Damage based on the distance to her target. The closer the target, the greater the bonus.",
-        effect: (rank, level) => `Bonus Damage: Up to +${percent(rank, 12)}% of damage dealt`,
+        effect: (rank, level) => `Bonus Damage: Up to +${percent(rank, 18)}% of damage dealt`,
       },
       "3": {
         name: "Clarity",

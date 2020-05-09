@@ -150,9 +150,9 @@ const skills = {
       },
       "2": {
         name: "Dakka Bear",
-        text: "Adds a manned turret to the back of Iron Bear.",
+        text: "Adds a manned turret to the back of Iron Bear. While manned, Iron Bear and its rider gain increased damage.",
         ranks: 1,
-        effect: (rank, level) => `Fasten your seatbelt, it's going to be a bumpy ride.`,
+        effect: (rank, level) => `Iron Bear Damage: +50%`,
       },
       "3": {
         name: "Matched Set",
@@ -176,15 +176,15 @@ const skills = {
       },
       "2": {
         name: "Redistribution",
-        text: "After Moze scores a Critical Hit, she regenerates ammo for a few seconds.",
+        text: "After Moze scores a Critical Hit, she regenerates ammo and health for a few seconds.The lower her health, the more powerful the regeneration.",
         ranks: 1,
-        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec\nDuration: 3 seconds`,
+        effect: (rank, level) => `Ammo Regeneration: +5% of Magazine Size/sec\nHealth Regen: Up to +2.5% of Missing Health/sec\nDuration: 3 seconds`,
       },
       "3": {
         name: "Scrappy",
-        text: "While moving, Moze's Handling, Weapon Swap and Mode Switch Speed are increased.",
+        text: "While moving, Moze's Weapon Damage, Handling, Weapon Swap, and Mode Switch Speed are increased.",
         ranks: 5,
-        effect: (rank, level) => `Handling: +${getScrappyHandling(rank)}%\nWeapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%\nMode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
+        effect: (rank, level) => `Weapon Damage: +${percent(rank, 6)}%\nHandling: +${getScrappyHandling(rank)}%\nWeapon Swap Speed: +${getScrappyWeaponSwapSpeed(rank)}%\nMode Switch Speed: +${getScrappyModeSwitchSpeed(rank)}%`,
       },
       "4": {
         name: "Salamander",
@@ -202,9 +202,9 @@ const skills = {
       },
       "1": {
         name: "Rushin' Offensive",
-        text: "Moze can sprint and shoot at the same time.",
+        text: "Moze can sprint and shoot at the same time. While sprinting, Moze's weapons gain Life Steal.",
         ranks: 1,
-        effect: (rank, level) => `I don't want any messages saying "I'm holding my position."`,
+        effect: (rank, level) => `Life Steal: 8% of damage dealt`,
       },
       "2": {
         name: "Scorching RPM's",
@@ -322,9 +322,9 @@ const skills = {
       },
       "2": {
         name: "Torgue Cross-Promotion",
-        text: "All Splash Damage dealt by Moze has a chance to double in size.",
+        text: "All Splash Damage dealt by Moze has a chance to double in size. Additionally, Moze and Iron Bear deal increased Splash Damage.",
         ranks: 5,
-        effect: (rank, level) => `Chance to Double Splash Radius: +${percent(rank, 3)}%`,
+        effect: (rank, level) => `Splash Damage: +${percent(rank, 6)}%\nChance to Double Splash Radius: +${percent(rank, 3)}%`,
       },
       "3": {
         name: "Stainless Steel Bear",
@@ -473,9 +473,9 @@ const skills = {
       },
       "3": {
         name: "Vladof Ingenuity",
-        text: "Moze's Maximum Shield is increased, and she gains resistance to Shock Damage.",
+        text: "Moze's Maximum Shield and Shield Recharge Rate are increased, and she gains resistance to Shock Damage.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
+        effect: (rank, level) => `Maximum Shield: +${percent(rank, 6)}%\nShield Recharge Rate: +${percent(rank, 4)}%\nShock Damage Resistance: +${getVladofIngenuityShockDamageResistance(rank)}%`,
       },
       "4": {
         name: "Bear Fist",
@@ -547,9 +547,9 @@ const skills = {
       },
       "2": {
         name: "Force Feedback",
-        text: "Whenever Moze scores a Critical Kill, her shields immediately begin recharging.",
+        text: "Whenever Moze scores a Critical Kill, her shields immediately begin recharging and she instantly regains a portion of her shield.",
         ranks: 1,
-        effect: (rank, level) => `Just click on their heads.`,
+        effect: (rank, level) => `Shields Restored: 10% of Maximum Shield`,
       },
       "3": null,
       "4": {
