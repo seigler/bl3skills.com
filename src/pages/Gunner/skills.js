@@ -9,7 +9,7 @@ function percentTwoDecimals (rank, unit) {
 }
 
 // Matched Set Heat Per Shot
-function getMatchedSetHeatPerShot(rank) {
+function getMatchedSetHeatPerShot (rank) {
   switch (rank) {
     case 1:
       return 2;
@@ -27,7 +27,7 @@ function getMatchedSetHeatPerShot(rank) {
 }
 
 // Scrappy Handling
-function getScrappyHandling(rank) {
+function getScrappyHandling (rank) {
   switch (rank) {
     case 1:
       return 10.7;
@@ -45,7 +45,7 @@ function getScrappyHandling(rank) {
 }
 
 // Scrappy Weapon Swap Speed
-function getScrappyWeaponSwapSpeed(rank) {
+function getScrappyWeaponSwapSpeed (rank) {
   switch (rank) {
     case 1:
       return 16;
@@ -63,7 +63,7 @@ function getScrappyWeaponSwapSpeed(rank) {
 }
 
 // Scrappy Mode Switch Speed
-function getScrappyModeSwitchSpeed(rank) {
+function getScrappyModeSwitchSpeed (rank) {
   switch (rank) {
     case 1:
       return 16;
@@ -81,7 +81,7 @@ function getScrappyModeSwitchSpeed(rank) {
 }
 
 // Armored Infantry Damage Resistance
-function getArmoredInfantryDamageResistance(rank) {
+function getArmoredInfantryDamageResistance (rank) {
   switch (rank) {
     case 1:
       return 3;
@@ -99,7 +99,7 @@ function getArmoredInfantryDamageResistance(rank) {
 }
 
 // Vladof Ingenuity Shock Damage Resistance
-function getVladofIngenuityShockDamageResistance(rank) {
+function getVladofIngenuityShockDamageResistance (rank) {
   switch (rank) {
     case 1:
       return 15;
@@ -117,7 +117,7 @@ function getVladofIngenuityShockDamageResistance(rank) {
 }
 
 // Behind the Iron Curtain Shield Recharge Delay
-function getBehindTheIronCurtainShieldRechargeDelay(rank) {
+function getBehindTheIronCurtainShieldRechargeDelay (rank) {
   switch (rank) {
     case 1:
       return 12;
