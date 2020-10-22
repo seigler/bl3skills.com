@@ -496,6 +496,112 @@ const skills = {
       },
     },
   },
+  "Bear Mother": {
+    "0": {
+      "Iron Cub": {
+        text: `Moze summons Iron Cub in place of Iron Bear. Iron Cub equips two of whatever weapon is equipped in the remaining Action Skill slot. While deployed, Iron Cub follows Moze and will target and attack enemies for the duration.\nSkills that affect Iron Bear affect Iron Cub. Iron Cub still uses Fuel, but uses less of it and deals less damage (because it's smaller).`,
+        type: SKILLS.ACTION_SKILL,
+        effect: (rank, level) => `Oppress not the cubs of the stranger.`,
+      },
+    },
+    "1": {
+      "Biofuel": {
+        text: "Whenever Moze or Iron Bear ignites an enemy, they both regenerate health for a short time.",
+        ranks: 5,
+        effect: (rank, _level) => `Health Regen: Up to +${percent(rank, 0.7)}% per sec\nIron Bear Armor Regen: Up to +${percent(rank, 0.5)}% per sec\nDuration: 8 seconds`,
+      },
+      "Big Surplus": {
+        text: "While Moze's Action Skill is cooling down, she deals bonus Incendiary Damage",
+        ranks: 3,
+        effect: (rank, _level) => `Bonus Damage: ${percent(rank, 4)}% of Gun Damage`,
+      },
+      "Really Big Guns": {
+        text: "Iron Bear gains increased Damage.",
+        ranks: 5,
+        effect: (rank, _level) => `Iron Bear Damage: +${percent(rank, 5)}%`,
+      },
+    },
+    "2": {
+      "Double Time": {
+        text: "While Moze's Action Skill is active, she and Iron Bear gain increased Movement Speed.",
+        ranks: 3,
+        effect: (rank, _level) => `Movement Speed: +${percent(rank, 4)}%`,
+      },
+      "Harmonious Havoc": {
+        text: "Moze gains increased Gun Damage for each weapon, shield, and grenade that matches the element of her gun.",
+        ranks: 5,
+        effect: (rank, _level) => `Gun Damage: +${percent(rank, 2)}% per matching item`,
+      },
+      "Explosive Fury": {
+        text: "Moze and Iron Bear gain increased Status Effect Damage and Status Effect Chance.",
+        ranks: 5,
+        effect: (rank, _level) => `Status Effect Chance: +${percent(rank, 5)}%\nStatus Effect Damage: +${percent(rank, 5)}%`,
+      },
+      "Fuel For The Fire": {
+        text: "Whenever Moze or Iron Cub inflicts a Status Effect on an enemy, Iron Cub's armor is restored.",
+        type: SKILLS.AUGMENT_ACTION_SKILL,
+        effect: (_rank, _level) => `Armor Restore: 12% of Max Armor`,
+      },
+    },
+    "3": {
+      "Baby Nukes": {
+        text: "Whenever Iron Cub is deployed or destroyed, it triggers a nuclear explosion, dealing massive Radiation Damage.",
+        type: SKILLS.AUGMENT_CHEVRON,
+        effect: (_rank, _level) => ``,
+      },
+      "Fired Up": {
+        text: "Whenever Moze or Iron Bear applies a Status Effect to an enemy, she gains increased Fire Rate for a short time. This effect stacks.",
+        ranks: 1,
+        effect: (rank, _level) => `Fire Rate: +${percent(rank, 5)}%\nDuration: 12 seconds\nMax Stacks: 5`,
+      },
+    },
+    "4": {
+      "Nitrotrinadium Engines": {
+        text: "Iron Bear gains increased Maximum Fuel and Action Skill Cooldown Rate.",
+        ranks: 5,
+        effect: (rank, _level) => `Maximum Fuel: +${percent(rank, 5)}%\nAction Skill Cooldown Rate: +${percent(rank, 4)}%`,
+      },
+      "Never Going to Give You Up": {
+        text: "Whenever Moze or Iron Bear applies a Status Effect to an enemy, Iron Bear gains Fuel. This skill has diminishing returns.",
+        ranks: 5,
+        effect: (rank, _level) => `Fuel Returned: Up to +${percent(rank, 5)}%`,
+      },
+      "My Little Friend": {
+        text: "Iron Cub spawns with an Incendiary Vladof Assault Rifle in addition to Iron Cub's other weapons.",
+        type: SKILLS.AUGMENT_CHEVRON,
+        effect: (_rank, _level) => `Say Hello`,
+      },
+    },
+    "5": {
+      "Efficiency Engine": {
+        text: "Moze gains increased Gun Damage. The longer Iron Cub has been active, the greater the bonus.",
+        type: SKILLS.AUGMENT_CHEVRON,
+        effect: (_rank, _level) => `Gun Damage: +0.5% per second`,
+      },
+      "Feature Creep": {
+        text: "Iron Bear gains increased Damage and Damage Resistance.",
+        ranks: 1,
+        effect: (rank, _level) => `Iron Bear Damage: +${percent(rank, 18)}%\nIron Bear Damage Resistance: +${percent(rank, 45)}%`,
+      },
+      "Limit Break": {
+        text: "Moze gains increased Action Skill Cooldown Rate whenever she or Iron Bear inflicts a Status Effect on an enemy. This effect stacks.",
+        ranks: 3,
+        effect: (rank, _level) => `Cooldown Rate: +${percent(rank, 4)}%\nDuration: 12 seconds\nMax Stacks: 10`,
+      },
+      "Superior Firepower": {
+        text: "Whenever Moze or Iron Bear inflicts a Status Effect on an enemy, they gain increased Status Effect Damage.",
+        ranks: 1,
+        effect: (rank, _level) => `Status Effect Damage: +${percent(rank, 20)}%\nDuration: 8 seconds\nMax Stacks: 5`,
+      },
+    },
+    "6": {
+      "Running On Fumes": {
+        text: "Whenever Moze or Iron Bear ignites an enemy, Iron Bear does not consume fuel for a short time.",
+        ranks: 1,
+        effect: (_rank, _level) => `Duration: 6 seconds\n\nI've been in the slash many times.`,
+      },
+    },
+  },
 };
 
 export default skills;
