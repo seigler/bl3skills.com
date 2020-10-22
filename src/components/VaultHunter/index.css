@@ -147,6 +147,9 @@
 .red {
   --themeHue: 18;
 }
+.pink {
+  --themeHue: 325;
+}
 
 a {
   color: inherit;
