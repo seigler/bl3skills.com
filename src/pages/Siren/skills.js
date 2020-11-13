@@ -47,11 +47,11 @@ function getHelpingHandsDamageResistance(rank) {
 function getMindfulnessShieldRegenerationDelay(rank) {
   switch (rank) {
     case 1:
-      return 9;
+      return 3;
     case 2:
-      return 17;
+      return 6;
     case 3:
-      return 23;
+      return 8;
     default:
       return 0;
   }
@@ -243,8 +243,8 @@ const skills = {
       },
       "Clarity": {
         ranks: 5,
-        text: "Amara constantly regenerates health. The lower her health, the more powerful the regeneration. After using an Action Skill, this bonus is doubled for a few seconds.",
-        effect: (rank, level) => `Health Regen: Up to +${percent(rank, 1)}% of Missing Health/sec\nAdditional Regen: Up to +${percent(rank, 1)}% of Missing Health/sec\nDuration: 5 seconds`,
+        text: "Amara constantly regenerates health. The lower her health, the more powerful the regeneration.\n\nAfter using an Action Skill, this bonus is doubled for a few seconds.",
+        effect: (rank, level) => `Health Regen: Up to +${percent(rank, 1)}% of Missing Health/sec\nDuration: 5 seconds`,
       },
     },
     "2": {
@@ -256,7 +256,7 @@ const skills = {
       "Samsara": {
         ranks: 3,
         text: "Whenever Amara deals damage to an enemy with her Action Skill, she adds a stack of Samsara. For every stack of Samsara, Amara gains increased Gun Damage and Health Regeneration for a few seconds. Stacks decay after a few seconds.",
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 1.7)}% per stack\nHealth Regen: +${percent(rank, 1.7)}% of Missing Health/sec per stack\nMaximum Stacks: 5\nDuration: 20 seconds`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 1.66)}% per stack\nHealth Regen: +${percent(rank, 1.66)}% of Missing Health/sec per stack\nMaximum Stacks: 5\nDuration: 20 seconds`,
       },
       "Helping Hand(s)": {
         ranks: 5,
@@ -280,7 +280,7 @@ const skills = {
       "Mindfulness": {
         ranks: 3,
         text: "Whenever Amara takes damage, she gains a stack of Mindfulness. For every stack of Mindfulness, Amara gains improved Shield Regeneration Delay and Movement Speed. Stacks decay after a few seconds.",
-        effect: (rank, level) => `Shield Regeneration Delay: -${getMindfulnessShieldRegenerationDelay(rank)}% per stack\nMovement Speed: +${percent(rank, 1.4)}% per stack\nMaximum Stacks: 25\nDuration: 5 seconds`,
+        effect: (rank, level) => `Movement Speed: +${percent(rank, 1)}% per stack\nShield Regeneration Delay: -${getMindfulnessShieldRegenerationDelay(rank)}% per stack\nMaximum Stacks: 25\nDuration: 5 seconds`,
       },
       "Find Your Center": {
         ranks: 1,
@@ -302,7 +302,7 @@ const skills = {
     "4": {
       "Downfall": {
         ranks: 0,
-        text: "Amara leaps into the air and shoots an Elemental Beam below her, followed by a Slam. Element: Shock.",
+        text: "Amara leaps into the air and shoots an Elemental Beam below her briefly, followed by a Slam.",
         effect: (rank, level) => `Beam Damage: ${flat(rank, level, 14)} per second (increases with character level)\nSlam Damage: ${flat(rank, level, 95)} (increases with character level)\nCooldown: 47 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -321,7 +321,7 @@ const skills = {
       "Jab Cross": {
         ranks: 5,
         text: "Whenever Amara deals melee damage to an enemy, she gains increased Action Skill Damage and increased Gun Damage for a few seconds.",
-        effect: (rank, level) => `Action Skill Damage: +${percent(rank, 15)}%\nGun Damage: +${percent(rank, 3)}%\nDuration: 10 seconds`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\neAction Skill Damage: +${percent(rank, 15)}%\nDuration: 10 seconds`,
       },
       "Guardian Angel": {
         ranks: 1,
@@ -331,14 +331,14 @@ const skills = {
       "Glamour": {
         ranks: 0,
         text: "Enemies damaged by Amara's Action Skill become confused and temporarily attack their allies. However, Action Skill Cooldown is increased. If Amara targets an enemy with Phasegrasp, enemies near the Grasped target are confused as well.",
-        effect: (rank, level) => `Confuse Duration: 8 seconds\nAction Skill Damage: -10%\nAction Skill Cooldown: +20%`,
+        effect: (rank, level) => `Action Skill Damage: -10%\nConfuse Duration: 8 seconds\nAction Skill Cooldown: +20%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "6": {
       "Blitz": {
         ranks: 1,
-        text: "Melee Override. Press [Melee key] while aiming at an enemy to make Amara dash a short distance forward and perform a special melee strike, dealing Elemental Melee Damage. If a Blitz melee attack kills an enemy, Blitz's cooldown is immediately reset.",
+        text: "Melee Override. Press [Melee key] while aiming at an enemy to make Amara dash a short distance forward and perform a special melee strike, dealing Elemental Melee Damage.\n\nIf a Blitz melee attack kills an enemy, Blitz's cooldown is immediately reset.",
         effect: (rank, level) => `Melee Damage: +100%\nCooldown: 8 seconds`,
       },
     },
