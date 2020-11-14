@@ -148,6 +148,10 @@
   --themeHue: 18;
 }
 
+.purple {
+  --themeHue: 287;
+}
+
 a {
   color: inherit;
 }
