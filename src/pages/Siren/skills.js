@@ -581,7 +581,7 @@ const skills = {
   "Enlightened Force": {
     "0": {
       "Phaseflare": {
-        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies.\n\nPressing [Melee key] near the Orb causes it to fly towards toward an enemy and damage them. Addiontally, every time Amara uses a melee attack on the Orb, it gains Increased Damage based on the damage she dealt to it.\n\nPressing (action skill key) causes the Orb to return to Amara.",
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies.\n\nPressing [Melee key] near the Orb causes it to fly towards toward an enemy and damage them. Addiontally, every time Amara uses a melee attack on the Orb, it gains Increased Damage based on the damage she dealt to it.\n\nPressing [Action Skill key] causes the Orb to return to Amara.",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 27)} (increases with character level)\nArea Damage: ${flat(rank, level, 5)} per second (increases with character level)\nDuration: 30 seconds\nCooldown:48seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0
