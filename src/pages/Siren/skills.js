@@ -581,7 +581,7 @@ const skills = {
   "Enlightened Force": {
     "0": {
       "Phaseflare": {
-        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies.\n\nPressing (melee attack key) near the Orb causes it to fly towards toward an enemy and damage them. Addiontally, every time Amara uses a melee attack on the Orb, it gains Increased Damage based on the damage she dealt to it.\n\nPressing (action skill key) causes the Orb to return to Amara.",
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies.\n\nPressing [Melee key] near the Orb causes it to fly towards toward an enemy and damage them. Addiontally, every time Amara uses a melee attack on the Orb, it gains Increased Damage based on the damage she dealt to it.\n\nPressing (action skill key) causes the Orb to return to Amara.",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 27)} (increases with character level)\nArea Damage: ${flat(rank, level, 5)} per second (increases with character level)\nDuration: 30 seconds\nCooldown:48seconds`,
         type: SKILLS.ACTION_SKILL,
         ranks: 0
@@ -590,7 +590,7 @@ const skills = {
     "1": {
       "Trust In Yourself": {
         ranks: 5,
-        text: "Whenever an enemy breaks Amara's shield, she gains increased Reload Speed, Charge Speed, and Weapon Swap Speed for a short time. This effect is doubled if Amara's shield is broken by a melee attack.",
+        text: "Whenever an enemy breaks Amara's shield, she gains increased Reload Speed, Charge Speed, and Weapon Swap Speed for a short time. This effect is doubled if Amara's shield is broken by a melee attack.",
         effect: (rank, level) => `Reload Speed: ${percent(rank, 4)}%\nCharge Speed: +${percent(rank, 8)}%\nWeapon Swap Speed: +${percent(rank, 16)}\nDuration: 24 seconds`,
       },
       "No Mistakes In Nature": {
@@ -607,7 +607,7 @@ const skills = {
     "2": {
       "Glow Up": {
         ranks: 0,
-        text: "Instead of dealing Splash Damage to enemies, Amara's Orb grants nearby allies Health Regeneration. Amara my also press (melee attack) while near the orb to send it to a downed ally, granting them a Second Wind.",
+        text: "Instead of dealing Splash Damage to enemies, Amara's Orb grants nearby allies Health Regeneration. Amara my also press [Melee key] while near the orb to send it to a downed ally, granting them a Second Wind.",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 29)}\nHealing: ${flat(rank, level, 6)} health per second\nDuration: 34 seconds\n Cooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -636,7 +636,7 @@ const skills = {
     "3": {
       "Shooting Star": {
         ranks: 0,
-        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Pressing (melee attack) near the Orb causes it to fly forwards toward an enemy and damage them which also increases the amount of Overal Damage the ORb deals to enemies. Additionally, the Elemental Orb continually fires Elemental Projectiles at the last enemy Amara damaged. Pressing (action skill) causes the ORb to return to Amara. ",
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Pressing [Melee key] near the Orb causes it to fly forwards toward an enemy and damage them which also increases the amount of Overal Damage the Orb deals to enemies. Additionally, the Elemental Orb continually fires Elemental Projectiles at the last enemy Amara damaged. Pressing [Action Skill key] causes the ORb to return to Amara. ",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 21)}\nArea Damage: ${flat(rank, level, 4)} per second\nDuration: 26 seconds\nCooldown: 44 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
@@ -667,7 +667,7 @@ const skills = {
     "5": {
       "Light Fantastic": {
         ranks: 0,
-        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Whenever Amara damages an enemy, the Elemental Orb automatically travels to that enemy, the Elemental Orb gains Increased Damage. Pressing (action skill) causes the Orb to return to Amara.",
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Whenever Amara damages an enemy, the Elemental Orb automatically travels to that enemy, the Elemental Orb gains Increased Damage. Pressing [Action Skill key] causes the Orb to return to Amara.",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 18)}\nArea Damage: ${flat(rank, level, 4)} per second\nDuration: 24 seconds\nCooldown: 44 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
