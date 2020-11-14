@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import SKILLS from '@constants/skills';
 
 function percent(rank, unit) {
@@ -604,18 +605,18 @@ const skills = {
       }
     },
     "2": {
-      "Glow Up": {  
+      "Glow Up": {
         ranks: 0,
-        text: "Instead of dealing Splash Damage to enemies, Amara's Orb grants nearby allies Health Regeneration. Amara my also press (melee attack) while near the orb to send it to a downed ally, granting them a Second Wind.", 
+        text: "Instead of dealing Splash Damage to enemies, Amara's Orb grants nearby allies Health Regeneration. Amara my also press (melee attack) while near the orb to send it to a downed ally, granting them a Second Wind.",
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 29)}\nHealing: ${flat(rank, level, 6)} health per second\nDuration: 34 seconds\n Cooldown: 28 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
-      "Go With The Flow": {  
+      "Go With The Flow": {
         ranks: 3,
         text: "Whenever Amara Freezes an enemy, she gains increased Movement Speed and Weapon Damage for a short time.",
         effect: (rank, level) => `Gun Damage: +${percent(rank, 7)}%\nMovement Speed: +${percent(rank, 3)}%\nDuration: 16 seconds`
       },
-      "Unweave The Rainbow": {  
+      "Unweave The Rainbow": {
         ranks: 3,
         text: "Amara deals Bonus Damage of her attuned element whenever she deals Melee Damage or Splash Damage to frozen enemies.",
         effect: (rank, level) => `Bonus Damage: ${percent(rank, 11)}% of damage dealt`
@@ -639,20 +640,20 @@ const skills = {
         effect: (rank, level) => `Impact Damage: ${flat(rank, level, 21)}\nArea Damage: ${flat(rank, level, 4)} per second\nDuration: 26 seconds\nCooldown: 44 seconds`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
-      "Combo Breaker": {  
+      "Combo Breaker": {
         ranks: 1,
         text: "Killing an enemy with Melee Damage has a chance to reset Amara's Action Skill Cooldown.",
         effect: (rank, level) => `Reset Chance: ${percent(rank, 20)}%`
       },
-      "Expedite": {  
+      "Expedite": {
         ranks: 0,
-        text: "Whenever Amara kills an enemy with her Action Skill, she gains increased Action Skill Cooldown Rate until she activates her Action Skill again.", 
+        text: "Whenever Amara kills an enemy with her Action Skill, she gains increased Action Skill Cooldown Rate until she activates her Action Skill again.",
         effect: (rank, level) => `Cooldown Rate: +30% per enemy killed`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "4": {
-      "Joyful Freedom": {  
+      "Joyful Freedom": {
         ranks: 5,
         text: "After activating her Action Skill, Amara gains increased Melee Damage for a short time.",
         effect: (rank, level) => `Melee Damage: ${percent(rank, 14)}%\nDuration: 12 seconds`
@@ -672,7 +673,7 @@ const skills = {
       },
       "Body And Mind": {
         ranks: 3,
-        text: "Kill Skill. Amara's melee attacks deal Bonus Splash Damage for a short time.", 
+        text: "Kill Skill. Amara's melee attacks deal Bonus Splash Damage for a short time.",
         effect: (rank, level) => `Splash Damage: ${flat(rank, level, 4)}\nDuration: 12 seconds`
       },
       "Free The Soul": {
