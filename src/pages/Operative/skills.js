@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import SKILLS from '@constants/skills';
 
 function percent (rank, unit) {
@@ -84,6 +85,42 @@ function getCoolHandAfterKillReloadSpeed(rank) {
       return 14;
     case 5:
       return 17;
+    default:
+      return 0;
+  }
+}
+
+// Man Of Focus Accuracy
+function getManOfFocusAccuracy(rank) {
+  switch (rank) {
+    case 1:
+      return 7;
+    case 2:
+      return 14;
+    case 3:
+      return 19;
+    case 4:
+      return 24;
+    case 5:
+      return 29;
+    default:
+      return 0;
+  }
+}
+
+// Man Of Focus Handling
+function getManOfFocusHandling(rank) {
+  switch (rank) {
+    case 1:
+      return 7.4;
+    case 2:
+      return 13.8;
+    case 3:
+      return 19.4;
+    case 4:
+      return 24.2;
+    case 5:
+      return 28.6;
     default:
       return 0;
   }
@@ -440,6 +477,114 @@ const skills = {
       },
     },
   },
+  "The Professional": {
+    "0": {
+      "MNTIS Shoulder Cannon": {
+        ranks: 0,
+        text: "Zane equips a Shoulder Mount ed Cannon. Pressing [Action Skill key] causes Zane to fire his cannon at his crosshairs and consume one charge.",
+        type: SKILLS.ACTION_SKILL,
+        effect: (rank, level) => `Max Charges: 3\nCooldown: 12 seconds\nDamage: 46`
+      },
+    },
+    "1": {
+      "Man Of Focus": {
+        ranks: 5,
+        text: "Activating an Action Skill grants Zane increased Accuracy and Handling for a short time. This effect stacks.",
+        effect: (rank, level) => `Accuarcy: +${percent(rank, getManOfFocusAccuracy(rank))}%\nHandling: +${percent(rank, getManOfFocusHandling(rank))}%\nDuration: 12 seconds\nMax Stacks: 10`
+      },
+      "Renegade": {
+        ranks: 3,
+        text: "After scoring a Critical Hit, Zane Regenerates Health for a short time.",
+        effect: (rank, level) => `Health Regeneration: up to +${percent(rank, 0.5)}% Max Health / sec\nDuration: 12 seconds`
+      },
+      "Déjà Vu": {
+        ranks: 5,
+        text: "Whenever Zane kills an enemy with a Critical Hit, there is a chance for 1 ammo to be added to his magazine.",
+        effect: (rank, level) => `Chance to add ammo: ${percent(rank, 9)}%`
+      },
+    },
+    "2": {
+      "Colder Shoulder": {
+        ranks: 0,
+        text: "Converts Zane's MNTIS Shoulder Cannon damage to Cryo Damage but deals reduced damage. Additionally, Zane gains Increased Cryo Freeze Rate.",
+        type: SKILLS.AUGMENT_CHEVRON,
+        effect: (rank, level) => `Cannon Damage: -10%\nFreeze Rate: +20%`
+      },
+      "Headman's Hand": {
+        ranks: 5,
+        text: "Kill Skill. Zane gains increased Critical Hit Damage. This effect stacks twice.",
+        effect: (rank, level) => `Critical Hit Damage: +${percent(rank, 4)}%\nDuration: 8 seconds`
+      },
+      "Tunnel Vision": {
+        ranks: 3,
+        text: "While moving, Zane gains increased Accuracy and Handling. The quicker Zane moves, the greater the bonus.",
+        effect: (rank, level) => `Accuracy: up to +${percent(rank, 10)}% at default walk speed\nHandling: up to +${percent(rank, 11)}% at default walk speed`
+      },
+      "Commitment": {
+        ranks: 5,
+        text: "Kill Skill. Zane gains increased Gun Damage and Action Skill Cooldown Rate.",
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 4)}%\nCooldown Rate: +${percent(rank, 4)}%`
+      },
+    },
+    "3": {
+      "Wetwork": {
+        ranks: 0,
+        text: "Whenever Zane kills an enemy with his Shoulder Cannon, that enemy explodes into an Elemental Puddle.",
+        effect: (rank, level) => `Explosion Damage: 32 (increases with character level)\nPuddle Damage: 18 per second (increases with character level)`
+      },
+      "Fugitive": {
+        ranks: 1,
+        text: "Zane can sprint and shoot at the same time.",
+        effect: (rank, level) => ``
+      },
+      "Brain Drain": {
+        ranks: 0,
+        text: "Whenever Zane kills an enemy with a Critical Hit from his Shoulder Cannon, two charges are instantly returned.",
+        effect: (rank, level) => ``
+      },
+    },
+    "4": {
+      "No Way Out": {
+        ranks: 0,
+        text: "Whenever Zane damages an enemy with his Shoulder Cannon, that enemy is pulled to him and takes Increased Damage for a short time. Additionally, Zane's MNTIS Shoulder Cannon cooldown time is increased.",
+        effect: (rank, level) => `Cooldown: +20%\nDamage Increase: +25%\nDuration: 6 seconds`
+      },
+      "Domino Effect": {
+        ranks: 5,
+        text: "Whenever Zane scores a Critical Hit, he gains increased Fire Rate and Reload Speed for a short time. If he scores a Critical Hit with his Action Skill, he doubles this effect.",
+        effect: (rank, level) => `Reload Speed: +${percent(rank, 4)}%\nFire Rate: +${percent(rank, 3)}%\nDuration: 8 seconds`
+      },
+      "The Art Of War": {
+        ranks: 5,
+        text: "After activating an Action Skill or Action Skill Ability, Zane's next short fired from his weapon deals Increased Damage. This effect stacks.",
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nMax Stacks: 10`
+      },
+    },
+    "5": {
+      "Sheer Will": {
+        ranks: 3,
+        text: "Zane gains increased Action Skill Cooldown Rate. Scoring a Critical Hit increases this effect. This effect stacks.",
+        effect: (rank, level) => `Cooldown Rate: +${percent(rank, 5)}%\nCooldown Rate: +${percent(rank, 2.5)}% after Critical Hit\nDuration: 8 seconds\nMax Stacks: 15`
+      },
+      "Eraser": {
+        ranks: 3,
+        text: "Zane's Critical Hits pierce through enemies for all weapons, dealing Increased Damage for every enemy pierced.",
+        effect: (rank, level) => `Pierced Shot Damage: +${percent(rank, 40)}%`
+      },
+      "Proliferation": {
+        ranks: 0,
+        text: "Zane's MNTIS Shoulder Cannon gains Additional Charges and deals Increased Damage based on the number of charges remaining.",
+        effect: (rank, level) => `Additional Charges: +2\nCannon Damage: +20% per charge`
+      },
+    },
+    "6": {
+      "Our Man Flint": {
+        ranks: 1,
+        text: "While aiming down sights, Zane's weapons deal Bonus Damage and automatically apply their Status Effect when he scores a Critical Hit.",
+        effect: (rank, level) => `Bonus Damage: 25% of damage dealt`
+      },
+    }
+  }
 };
 
 export default skills;
