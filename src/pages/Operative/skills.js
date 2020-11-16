@@ -530,7 +530,8 @@ const skills = {
       "Wetwork": {
         ranks: 0,
         text: "Whenever Zane kills an enemy with his Shoulder Cannon, that enemy explodes into an Elemental Puddle.",
-        effect: (rank, level) => `Explosion Damage: 32 (increases with character level)\nPuddle Damage: 18 per second (increases with character level)`
+        effect: (rank, level) => `Explosion Damage: 32 (increases with character level)\nPuddle Damage: 18 per second (increases with character level)`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
       "Fugitive": {
         ranks: 1,
@@ -540,14 +541,16 @@ const skills = {
       "Brain Drain": {
         ranks: 0,
         text: "Whenever Zane kills an enemy with a Critical Hit from his Shoulder Cannon, two charges are instantly returned.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "4": {
       "No Way Out": {
         ranks: 0,
         text: "Whenever Zane damages an enemy with his Shoulder Cannon, that enemy is pulled to him and takes Increased Damage for a short time. Additionally, Zane's MNTIS Shoulder Cannon cooldown time is increased.",
-        effect: (rank, level) => `Cooldown: +20%\nDamage Increase: +25%\nDuration: 6 seconds`
+        effect: (rank, level) => `Cooldown: +20%\nDamage Increase: +25%\nDuration: 6 seconds`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
       "Domino Effect": {
         ranks: 5,
@@ -574,7 +577,8 @@ const skills = {
       "Proliferation": {
         ranks: 0,
         text: "Zane's MNTIS Shoulder Cannon gains Additional Charges and deals Increased Damage based on the number of charges remaining.",
-        effect: (rank, level) => `Additional Charges: +2\nCannon Damage: +20% per charge`
+        effect: (rank, level) => `Additional Charges: +2\nCannon Damage: +20% per charge`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "6": {
