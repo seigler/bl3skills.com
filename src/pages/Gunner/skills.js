@@ -540,19 +540,21 @@ const skills = {
       "Fuel For The Fire": {
         ranks: 0,
         text: "Whenever Moze or Iron Cub inflicts a Status Effect on an enemy, Iron Cub's armor is restored.", 
-        effect: (rank, level) => `12% of Max Armor`
+        effect: (rank, level) => `12% of Max Armor`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "3": {
       "Baby Nukes": {
         ranks: 0,
         text: "Whenever Iron Cub is deployed or destroyed, it triggers a nuclear explosion, dealing massive Radation Damage.", 
-        effect: (rank, level) => `Damage: 123 (scales with level)`
+        effect: (rank, level) => `Damage: 123 (scales with level)`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
       "Fired Up": {
         ranks: 1,
         text: "Whenever Moze or Iron Bear applies a Status Effect to an enemy, she gains increased Fire Rate for a short time. This effect stacks.", 
-        effect: (rank, level) => `Fire Rate: +5%\nDuration: 12 seconds\nMax Stacks: 5`
+        effect: (rank, level) => `Fire Rate: +5%\nDuration: 12 seconds\nMax Stacks: 5`,
       },  
     },
     "4": {
@@ -569,14 +571,16 @@ const skills = {
       "My Little Friend": {
         ranks: 0,
         text: "Iron Cub spawns with Incendiary Vladof Assault Riffle in addition to Iron Cub's other weapons.", 
-        effect: (rank, level) => ``
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
     },
     "5": {
       "Efficiency Engine": {
         ranks: 0,
         text: "Moze gains increased Gun Damage. The longer Iron Cub has been active, the greater the bonus.", 
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 0.5)}% per second`
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 0.5)}% per second`,
+        type: SKILLS.AUGMENT_CHEVRON,
       },
         "Feature Creep": {
         ranks: 1,
