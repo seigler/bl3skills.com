@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import SKILLS from '@constants/skills';
 
 function percent (rank, unit) {
@@ -122,6 +123,24 @@ function getSecondIntentionCriticalKillReloadSpeed(rank) {
       return 19;
     case 5:
       return 23;
+    default:
+      return 0;
+  }
+}
+
+// Success Imminent Damage
+function getSuccessImminetDamage(rank) {
+  switch (rank) {
+    case 1:
+      return 6;
+    case 2:
+      return 11;
+    case 3:
+      return 17;
+    case 4:
+      return 22;
+    case 5:
+      return 28;
     default:
       return 0;
   }
@@ -506,6 +525,141 @@ const skills = {
       },
     },
   },
+  "Trapper": {
+    "0": {
+      "Pet Ion Loader": {
+        ranks: 0,
+        text: "FL4K is joined by a loyal Mini ION Loader Bot companion, armed with a Shock Sniper Rifle and Homing Shock Orbs that can be shot to trigger a Shock Nova. While accompanied by the ION Loader, FL4K gains increased Elemental Damage Resistance.\nHold [Pet Skill key] to issue an Attack Command, which causes the ION Loader to fire a powerful Eye Laser at the enemy.",
+        effect: (rank, level) => `Elemental Resistance: +30%`,
+        type: SKILLS.AUGMENT_DIAMOND,
+      },
+      "Gravity Snare": {
+        ranks: 0,
+        text: "FL4K tosses out a Trap that Knocks Up and temporarily Stuns nearby enemies. After being deployed, the Trap periodically continues to Knock Up and Stun enemies for the duration. While standing near the Trap, pressing [Action Skill key] will pick up the Trap, ending the action skill early and refunding a portion of the remaining duration.",
+        effect: (rank, level) => `Duration: 16 seconds\nCooldown: 36 seconds`,
+        type: SKILLS.ACTION_SKILL,
+      }
+    },
+    "1": {
+      "Gotta Go Fast": {
+        ranks: 5,
+        text: "FL4K's pet gains increased Movement Speed and Damage.",
+        effect: (rank, level) => `Pet Damage: +${percent(rank, 7)}%\nPet Movement Speed: +${percent(rank, 8)}%`
+      },
+      "Success Imminent": {
+        ranks: 5,
+        text: "Whenever FL4K's or their pet's shield breaks or is filled, they and their pet create a Radation Nova. This skill has a short cooldown.",
+        effect: (rank, level) => `Nova Damage: ${percent(rank, level, 6)}\nCooldown: 3 seconds`
+      },
+      "Agility Training": {
+        ranks: 5,
+        text: "FL4K and their pet gain increased Reload Speed.",
+        effect: (rank, level) => ``
+      },
+    },
+    "2": {
+      "Forage": {
+        ranks: 0,
+        text: "Whenever an enemy trapped by FL4K is knocked into the air, they drop ammo, health boosters, and shield boosters.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Better Toys": {
+        ranks: 3,
+        text: "FL4K and their pet gain increased Shield Recharge Rate and improved Shield Recharge Delay.",
+        effect: (rank, level) => ``
+      },
+      "Combat Veterinarian": {
+        ranks: 1,
+        text: "Whenever FL4K shoots the same enemy their pet is attacking, FL4K's Pet gains a portion of the damage dealt back as health.",
+        effect: (rank, level) => ``
+      },
+      "Throatripper": {
+        ranks: 3,
+        text: "Hunter Skill. FL4K's pet's acttacks have a chance to score a Critical Hit, dealing increased damage.",
+        effect: (rank, level) => ``
+      },
+    },
+    "3": {
+      "Wide Net": {
+        ranks: 0,
+        text: "FL4K's Trap gains increased Duration and increased Radius.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Lethal Force Authorized": {
+        ranks: 1,
+        text: "Whenever Fl4K's Loader Bot pet would go into Fight For Your Life, it turns into an EXP Loader instead and seeks out a nearby enemy before self-destructing, dealing damage to all nearby enemies.\nFL4K's pet's respawn time is reduced.",
+        effect: (rank, level) => ``
+      },
+      "Take This!": {
+        ranks: 1,
+        text: "FL4K's pet gains a copy of FL4K's shield.",
+        effect: (rank, level) => ``
+      },
+      "Bul Loader": {
+        ranks: 0,
+        text: "FL4K's ION Loader upgrades into a BUL Loader, discarding it's sniper rifle and equipping a Shotgun. FL4K's BUL Loader also gains increased Damage Resistance and a powerful Roundhouse Melee Attack. While accompanies by the BUL Loader, FL4K's Shield Capacity is increased.\n\nWhen FL4K issues an Attack Command, the BUL Loader Briefly turns into a BullDozer to charge at enemies and knocks them up.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_DIAMOND,
+      },
+    },
+    "4": {
+      "Trap Card": {
+        ranks: 0,
+        text: "If FL4K would go into Fight For Your Life while their Trap is readied, they automatically throw a Trap at the enemy that downed them.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Monkey Do!": {
+        ranks: 5,
+        text: "FL4K's pet gains increased Critical Hit Damage.\n\nWhenever FL4K's Pet scores a Critical Hit, FL4K's next shot deals Bonus Damage based on their weapon's damage.",
+        effect: (rank, level) => ``
+      },
+      "Wooly Armor": {
+        ranks: 1,
+        text: "While FL4K's shields are full, their pet gains Damage Reduction.",
+        effect: (rank, level) => ``
+      },
+      "Not Even A Challenge": {
+        ranks: 5,
+        text: "Whenever FL4K's pet kills an enemy, FL4K gains increased Action Skill Duration and Action Skill Cooldown Rate for a short time. This effect stacks.",
+        effect: (rank, level) => ``
+      },
+      "War Loader": {
+        ranks: 0,
+        text: "FL4K's ION Loader Upgrades into a WAR Loader, discarding it's sniper rifle and equipping an Incendiary Shotgun and Grenades. While accompanied by the WAR Loader, FL4K gains increased Fire Rate.\n\nWhen FL4K issues an Attack Command, the WAR loader unleashes a barrage of missles at the target.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_DIAMOND,
+      },
+    },
+    "5": {
+      "Blind With Anger": {
+        ranks: 0,
+        text: "FL4K's Trap no longer Knocks Up or Stuns enemies. Instead, the Trap confuses nearby enemies, causing them to attack their allies for a short time. Once deployed, the Trap continues to periodically confuse enemies for the duration.",
+        effect: (rank, level) => ``,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+      "Fuzzy Math": {
+        ranks: 5,
+        text: "Whenever FL4K or their pet scores a Critical Hit, a portion of FL4K's and their pet's shields are restored.",
+        effect: (rank, level) => ``
+      },
+      "Keep Them Safe": {
+        ranks: 5,
+        text: "Whenever FL4K issues an Attack Command, if FL4K's or their pet's shield is less than half full a portion of FL4K's and their pet's shields are restored. This has a short cooldown.",
+        effect: (rank, level) => ``
+      },
+    },
+    "6": {
+      "Capacitance": {
+        ranks: 1,
+        text: "Whenever FL4K activiates their Action Skill, they gain greatly increased Shield Capacity for a short time and immediately begin rechargin their shields. This skill has a short cooldown.",
+        effect: (rank, level) => ``
+      },
+
+    }
+  }
 };
 
 export default skills;
