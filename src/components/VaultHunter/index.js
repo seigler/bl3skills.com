@@ -17,7 +17,7 @@ export default class VaultHunter extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      invested: [0, 0, 0],
+      invested: [0, 0, 0, 0],
       skills: props.skills || {},
     };
   }
@@ -52,7 +52,7 @@ export default class VaultHunter extends Component {
     const resetSkills = () => {
       setHash(initialSkills);
       this.setState({
-        invested: [0, 0, 0],
+        invested: [0, 0, 0, 0],
         skills: initialSkills || {},
       });
     };
