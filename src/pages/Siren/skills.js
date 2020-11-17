@@ -403,7 +403,7 @@ const skills = {
       "Ascendant": {
         ranks: 1,
         text: "All Action Skill Augments gain increased effects.",
-        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nStillness of Mind: Breaks 0.75 sec after taking dmg\nRevelation Damage: +25%`,
+        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nRevelation Damage: +25%\nStillness of Mind: Breaks 0.75 sec after taking dmg`,
       },
       "Stillness of Mind": {
         ranks: 0,
@@ -456,7 +456,7 @@ const skills = {
     "6": {
       "Avatar": {
         ranks: 1,
-        text: "Amara's Action Skill can be activated while it's cooling down. This skill may only be used once per completed cooldown. Additionally, increases Amara's Maximum Rush Stacks. Additionally, if Amara's Action Skill kills an enemy, it refunds half of her Rush stacks.",
+        text: "Amara's Action Skill can be activated while it's cooling down. This skill may only be used once per completed cooldown.\n\nAdditionally, increases Amara's Maximum Rush Stacks.\n\nAdditionally, if Amara's Action Skill kills an enemy, it refunds half of her Rush stacks.",
         effect: (rank, level) => `Maximum Rush Stacks: +10`,
       },
     },
@@ -474,7 +474,7 @@ const skills = {
       "Anima": {
         ranks: 5,
         text: "Amara's Status Effects deal increased damage over time and have increased duration. Her Action Skill Status Effect deals further increased damage.",
-        effect: (rank, level) => `Action Skill Status Effect Damage: +${percent(rank, 8)}%\nOther Status Effect Damage: +${percent(rank, 4)}%\nStatus Effect Duration: +${percent(rank, 20)}%`,
+        effect: (rank, level) => `Setatus Effect Damage: +${percent(rank, 4)}%\nStatus Effect Duration: +${percent(rank, 20)}%\nAction Skill Status Effect Damage: +${percent(rank, 8)}%`,
       },
       "Steady Hands": {
         ranks: 3,
@@ -491,7 +491,7 @@ const skills = {
       "Tempest": {
         ranks: 5,
         text: "Amara deals increased Elemental Damage. Shock Damage is further increased.",
-        effect: (rank, level) => `Shock Damage: +${percent(rank, 8)}%\nOther Elemental Damage: +${percent(rank, 6)}%`,
+        effect: (rank, level) => `Other Elemental Damage: +${percent(rank, 6)}%\nShock Damage: +${percent(rank, 4)}%`,
       },
       "Illuminated Fist": {
         ranks: 1,
@@ -514,7 +514,7 @@ const skills = {
       "The Eternal Fist": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
-        effect: (rank, level) => `Bonus Targets: Up to +4\nDuration: 7 seconds\nCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
+        effect: (rank, level) => `Bonus Targets: Up to +4\nnCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Dread": {
@@ -533,7 +533,7 @@ const skills = {
       "Indiscriminate": {
         ranks: 3,
         text: "Amara's bullets that damage enemies have a chance to ricochet and deal decreased damage to other nearby enemies. Ricochet Chance and Damage are increased if target is affected by Phasegrasp or Stillness of Mind.",
-        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: 50% of damage dealt\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: 75% of damage dealt`,
+        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: -50%\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: -25%`,
       },
       "Deep Well": {
         ranks: 1,
