@@ -549,12 +549,12 @@ const skills = {
       "Success Imminent": {
         ranks: 5,
         text: "Whenever FL4K's or their pet's shield breaks or is filled, they and their pet create a Radation Nova. This skill has a short cooldown.",
-        effect: (rank, level) => `Nova Damage: ${percent(rank, level, 6)}\nCooldown: 3 seconds`
+        effect: (rank, level) => `Nova Damage: ${percent(rank, 6)} (scales with level)\nCooldown: 3 seconds`
       },
       "Agility Training": {
         ranks: 5,
         text: "FL4K and their pet gain increased Reload Speed.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Reload Speed: +${percent(rank, 8)}%`
       },
     },
     "2": {
@@ -567,30 +567,30 @@ const skills = {
       "Better Toys": {
         ranks: 3,
         text: "FL4K and their pet gain increased Shield Recharge Rate and improved Shield Recharge Delay.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Shield Recharge Rate: +${percent(rank, 6)}%\nShield Recharge Delay: -${percent(rank, 8)}%`
       },
       "Combat Veterinarian": {
         ranks: 1,
         text: "Whenever FL4K shoots the same enemy their pet is attacking, FL4K's Pet gains a portion of the damage dealt back as health.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Life Steal: 30% of damage dealt`
       },
       "Throatripper": {
         ranks: 3,
         text: "Hunter Skill. FL4K's pet's acttacks have a chance to score a Critical Hit, dealing increased damage.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Critical Chance: +${percent(rank, 5)}%`
       },
     },
     "3": {
       "Wide Net": {
         ranks: 0,
         text: "FL4K's Trap gains increased Duration and increased Radius.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Trap Duration: +25%\nTrap Radius: +100%`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Lethal Force Authorized": {
         ranks: 1,
         text: "Whenever Fl4K's Loader Bot pet would go into Fight For Your Life, it turns into an EXP Loader instead and seeks out a nearby enemy before self-destructing, dealing damage to all nearby enemies.\nFL4K's pet's respawn time is reduced.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Pet Respawn Time: -50%\nEXP Loader Damage: 89 (scales with level)`
       },
       "Take This!": {
         ranks: 1,
@@ -600,7 +600,7 @@ const skills = {
       "Bul Loader": {
         ranks: 0,
         text: "FL4K's ION Loader upgrades into a BUL Loader, discarding it's sniper rifle and equipping a Shotgun. FL4K's BUL Loader also gains increased Damage Resistance and a powerful Roundhouse Melee Attack. While accompanies by the BUL Loader, FL4K's Shield Capacity is increased.\n\nWhen FL4K issues an Attack Command, the BUL Loader Briefly turns into a BullDozer to charge at enemies and knocks them up.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Shield Capacity: +20.0%`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
@@ -608,28 +608,28 @@ const skills = {
       "Trap Card": {
         ranks: 0,
         text: "If FL4K would go into Fight For Your Life while their Trap is readied, they automatically throw a Trap at the enemy that downed them.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Duration: 16 seconds`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Monkey Do!": {
         ranks: 5,
         text: "FL4K's pet gains increased Critical Hit Damage.\n\nWhenever FL4K's Pet scores a Critical Hit, FL4K's next shot deals Bonus Damage based on their weapon's damage.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Pet Critical Hit Damage: +${percent(rank, 14)}%\nBonus Damage: ${percent(rank, 14)}% of weapon damage`
       },
       "Wooly Armor": {
         ranks: 1,
         text: "While FL4K's shields are full, their pet gains Damage Reduction.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Pet Damage Reduction: +75%`
       },
       "Not Even A Challenge": {
         ranks: 5,
         text: "Whenever FL4K's pet kills an enemy, FL4K gains increased Action Skill Duration and Action Skill Cooldown Rate for a short time. This effect stacks.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Cooldown Rate: +${percent(rank, 7)}%\nAction Skill Duration: +${percent(rank, 7)}%\nDuration: 12 seconds\nMax Stacks: 10`
       },
       "War Loader": {
         ranks: 0,
         text: "FL4K's ION Loader Upgrades into a WAR Loader, discarding it's sniper rifle and equipping an Incendiary Shotgun and Grenades. While accompanied by the WAR Loader, FL4K gains increased Fire Rate.\n\nWhen FL4K issues an Attack Command, the WAR loader unleashes a barrage of missles at the target.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Fire Rate: +12.0%`,
         type: SKILLS.AUGMENT_DIAMOND,
       },
     },
@@ -637,25 +637,25 @@ const skills = {
       "Blind With Anger": {
         ranks: 0,
         text: "FL4K's Trap no longer Knocks Up or Stuns enemies. Instead, the Trap confuses nearby enemies, causing them to attack their allies for a short time. Once deployed, the Trap continues to periodically confuse enemies for the duration.",
-        effect: (rank, level) => ``,
+        effect: (rank, level) => `Confuse Duration: 8 seconds`,
         type: SKILLS.AUGMENT_CHEVRON,
       },
       "Fuzzy Math": {
         ranks: 5,
         text: "Whenever FL4K or their pet scores a Critical Hit, a portion of FL4K's and their pet's shields are restored.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Shield REstore: +${percent(rank, 3)}% of Max Shields`
       },
       "Keep Them Safe": {
         ranks: 5,
         text: "Whenever FL4K issues an Attack Command, if FL4K's or their pet's shield is less than half full a portion of FL4K's and their pet's shields are restored. This has a short cooldown.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Shield Restore: ${percent(rank, 10)}% of Max Shields\nCooldown: 12 seconds`
       },
     },
     "6": {
       "Capacitance": {
         ranks: 1,
         text: "Whenever FL4K activiates their Action Skill, they gain greatly increased Shield Capacity for a short time and immediately begin rechargin their shields. This skill has a short cooldown.",
-        effect: (rank, level) => ``
+        effect: (rank, level) => `Shield Capacity: +100%\nDuration: 16 seconds\nCooldown: 16 seconds`
       },
 
     }
