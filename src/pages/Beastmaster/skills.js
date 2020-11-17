@@ -151,23 +151,23 @@ const skills = {
   "Stalker": {
     "0": {
       "Jabber Sidekick": {
-        text: "FL4K is joined by a loyal Jabber companion, armed with a Pistol. While accompanied by the Jabber, FL4K's Movement Speed is increased. Hold [Pet Skill key] to issue an Attack Command, which will cause the Jabber to throw a Radiation Barrel at enemies.",
+        text: "FL4K is joined by a loyal Jabber companion, armed with a Pistol. While accompanied by the Jabber, FL4K's Movement Speed is increased.\n\nHold [Pet Skill key] to issue an Attack Command, which will cause the Jabber to throw a Radiation Barrel at enemies.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
-        effect: (rank, level) => `Movement Speed: +5%`,
+        effect: (rank, level) => `Movement Speed: +5.0%`,
       },
       "Fade Away": {
         text: "FL4K cloaks, turning invisible. FL4K can fire 3 shots while cloaked, and each shot is automatically a Critical Hit. While cloaked, FL4K has increased Movement Speed and Health Regeneration.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
-        effect: (rank, level) => `Fade Away Bonus Damage: 200% of damage dealt\nCloaked Movement Speed: +25%\nHealth Regeneration: +3% of Max Health per second\nDuration: 15 seconds\nCooldown: 45 seconds`,
+        effect: (rank, level) => `Fade Away Bonus Damage: 200% of damage dealt\nCloaked Movement Speed: +25%\nHealth Regeneration: +3% of Max Health per second\nCooldown: 45 seconds\nDuration: 15 seconds`,
       },
     },
     "1": {
       "Self-Repairing System": {
         text: "FL4K's Maximum Health is increased, and they constantly regenerate health.",
         ranks: 5,
-        effect: (rank, level) => `Maximum Health: +${percent(rank, 6)}%\nHealth Regeneration: +${percent(rank, 0.3)}% of Max Health/sec`,
+        effect: (rank, level) => `Health Regeneration: ${percent(rank, 0.3)}% of Max Health/sec\nMaximum Health: +${percent(rank, 6)}%`,
       },
       "Sic'Em": {
         text: "Attack Command has lowered Cooldown and increased Damage.",
@@ -175,7 +175,7 @@ const skills = {
         effect: (rank, level) => `Attack Command Damage: +${percent(rank, 10)}%\nAttack Command Cooldown: -${percent(rank, 10)}%`,
       },
       "Furious Attack": {
-        text: "Hunter Skill. After shooting an enemy, FL4K gains a stack of Furious Attack. For each stack of Furious Attack, FL4K's Handling and Gun Damage are increased, and their pet gains increased Damage per stack. Stacks decay after a few seconds.",
+        text: "Hunter Skill. After shooting an enemy, FL4K gains a stack of Furious Attack.\n\nFor each stack of Furious Attack, FL4K's Handling and Gun Damage are increased, and their pet gains increased Damage per stack. Stacks decay after a few seconds.",
         ranks: 5,
         effect: (rank, level) => `Gun Damage: +${percent(rank, 0.4)}% per stack\nHandling: +${getFuriousAttackHandling(rank)}% per stack\nPet Damage: +${percent(rank, 0.6)}% per stack\nMaximum Stacks: 10\nDuration: 4 seconds`,
       },
@@ -185,10 +185,10 @@ const skills = {
         text: "Fade Away no longer ends after FL4K attacks, at the cost of Critical Hit Damage and Fade Away duration being reduced.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Fade Away Bonus Damage: 25% of damage dealt\nFade Away Duration: 5 seconds`,
+        effect: (rank, level) => `Critical Hit Damage: 25% of damage dealt\nFade Away Duration: 5 seconds`,
       },
       "Eager To Impress": {
-        text: "Kill Skill. Whenever FL4K kills an enemy, Action Skill Cooldown Time is reduced. Whenever FL4K's pet kills an enemy, Action Skill Cooldown Time is reduced even more and Attack Command's duration is refreshed.",
+        text: "Kill Skill. Whenever FL4K kills an enemy, Action Skill Cooldown Time is reduced.\n\nWhenever FL4K's pet kills an enemy, Action Skill Cooldown Time is reduced even more and Attack Command's duration is refreshed.",
         ranks: 5,
         effect: (rank, level) => `FL4K Kill Action Skill Cooldown: -${percent(rank, 0.25)} seconds\nPet Kill Action Skill Cooldown: -${percent(rank, 0.5)} seconds`,
       },
@@ -200,15 +200,15 @@ const skills = {
       "Overclocked": {
         text: "FL4K gains increased Fire Rate. FL4K gains even more Fire Rate after reloading.",
         ranks: 5,
-        effect: (rank, level) => `Fire Rate: +${percent(rank, 2)}%\nAdditional Fire Rate: +${percent(rank, 2)}%\nDuration: 4 seconds`,
+        effect: (rank, level) => `Fire Rate after Reloading: +${percent(rank, 2)}%\nFire Rate : +${percent(rank, 2)}%\nDuration: 4 seconds`,
       },
     },
     "3": {
       "Not My Circus": {
-        text: "After Fade Away ends, FL4K's pet will Taunt, drawing the attention of all enemies in a huge radius. For a few seconds after Taunting, the pet gains powerful Damage Resistance.",
+        text: "After Fade Away ends, FL4K's pet will Taunt, drawing the attention of all enemies in a huge radius.\nFor a few seconds after Taunting, the pet gains powerful Damage Resistance.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Pet Taunt Duration: 6 seconds\nPet Damage Resistance: +80%`,
+        effect: (rank, level) => `Pet Damage Resistance: +80%\nPet Taunt Duration: 6 seconds`,
       },
       "Lick The Wounds": {
         text: "When FL4K is in Fight For Your Life, their pet will attempt to revive them. If it does, it gains increased Damage for a short time.",
@@ -216,9 +216,9 @@ const skills = {
         effect: (rank, level) => `Pet Damage: +30%\nDuration: 60 seconds`,
       },
       "Turn Tail And Run": {
-        text: "While moving, FL4K constantly regenerates health and gains Damage Resistance. While still, FL4K gains Gun Damage and Fire Rate.",
+        text: "While moving, FL4K constantly regenerates health and gains Damage Resistance.\n\nWhile still, FL4K gains Gun Damage and Fire Rate.",
         ranks: 3,
-        effect: (rank, level) => `Damage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nHealth Regen: +${percent(rank, 0.3)}% Max Health/sec while moving\nGun Damage: +${percent(rank, 8.333)}% while still\nFire Rate: +${percent(rank, 4)}% while still`,
+        effect: (rank, level) => `Health Regen While Moving: +${percent(rank, 0.3)}% Max Health/sec\nDamage Resistance: +${getTurnTailAndRunDamageResistance(rank)}% while moving\nGun Damage While Still: +${percent(rank, 8.333)}%\nFire Rate While Still: +${percent(rank, 4)}%`,
       },
       "Beefcake Jabber": {
         text: "FL4K's Jabber evolves into a Beefcake, discarding its pistol and equipping a Shotgun. While accompanied by the Beefcake, FL4K gains increased Movement Speed and Maximum Health. When FL4K issues an Attack Command, the Beefcake will summon a melee weapon to deliver a powerful attack that knocks enemies back.",
@@ -232,12 +232,12 @@ const skills = {
         text: "The Health Regeneration and Movement Speed of Fade Away persists for a short time after the skill has ended.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Duration: 10 seconds after Fade Away ends`,
+        effect: (rank, level) => `Post Cloak Duration: 10 seconds`,
       },
       "The Fast And The Furryous": {
         text: "While above half health, FL4K's Gun Damage and Movement Speed are increased, and their pet gains increased Damage.",
         ranks: 3,
-        effect: (rank, level) => `Gun Damage: +${Math.round(percent(rank, 8.333))}%\nMovement Speed: +${percent(rank, 3.333)}%\nPet Damage: +${percent(rank, 10)}%`,
+        effect: (rank, level) => `Gun Damage: +${Math.round(percent(rank, 8.333))}%\nPet Damage: +${percent(rank, 10)}%\nMovement Speed: +${percent(rank, 3.333)}%e`,
       },
       "Hidden Machine": {
         text: "When an enemy has no target or is attacking a different target, FL4K deals increased damage against them.",
@@ -261,14 +261,14 @@ const skills = {
       "Rage And Recover": {
         text: "Kill Skill. After killing an enemy, FL4K and FL4K's pet regenerate health for a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Health Regeneration: +${percent(rank, 1.6)}% of Missing Health/sec\nPet Health Regen: +${percent(rank, 1.6)}% of Missing Health/sec\nDuration: 3 seconds`,
+        effect: (rank, level) => `Health Regeneration: +${percent(rank, 1.6)}% of Missing Health/sec\nDuration: 3 seconds`,
       },
     },
     "6": {
       "The Power Inside": {
         text: "FL4K and FL4K's pet gain increased Damage when FL4K activates an Action Skill. If FL4K is at full health, the increased Damage is doubled.",
         ranks: 1,
-        effect: (rank, level) => `Damage: +25%\nPet Damage: +25%\nDuration: 15 seconds`,
+        effect: (rank, level) => `Damage: +25%\nDuration: 15 seconds`,
       },
     },
   },
@@ -324,7 +324,7 @@ const skills = {
       "Frenzy": {
         text: "Hunter Skill. When FL4K's pet deals damage, FL4K and their pet gain a stack of Frenzy. Each stack of Frenzy increases Damage. The stacks decay after a few seconds.",
         ranks: 5,
-        effect: (rank, level) => `Damage: +${percent(rank, 0.8)}% per stack\nPet Damage: +${percent(rank, 0.8)}% per stack\nMaximum Stacks: 10`,
+        effect: (rank, level) => `Damage: +${percent(rank, 0.8)}% per stack\nMaximum Stacks: 10`,
       },
     },
     "3": {
@@ -340,12 +340,12 @@ const skills = {
         effect: (rank, level) => `Pet Damage: +20%\nPet Movement Speed: +12%\nDuration: 8 seconds`,
       },
       "Hive Mind": {
-        text: "When FL4K takes damage, a portion of all damage they take is inflicted on their pet instead.",
+        text: "When FL4K takes damage, a portion of all damage they take is inflicted on their pet instead and their pet deals Bonus Damage for a short time.",
         ranks: 3,
-        effect: (rank, level) => `Damage Shared: ${percent(rank, 5)}%`,
+        effect: (rank, level) => `Damage Shared: ${percent(rank, 5)}%\nPet Bonus Damage: +${percent(rank, 7.5)}%`,
       },
       "Great Horned Skag": {
-        text: "FL4K's Skag evolves into a larger Great Horned Skag, which will increase FL4K's Damage and Gun Damage. When FL4K issues an Attack Command, the Great Horned Skag will charge at enemies and knock them into the air.",
+        text: "FL4K's Skag evolves into a larger Great Horned Skag, which will increase FL4K's Damage and Gun Damage.\n\nWhen FL4K issues an Attack Command, the Great Horned Skag will charge at enemies and knock them into the air.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
         effect: (rank, level) => `Damage: +5%\nGun Damage: +10%`,
@@ -356,7 +356,7 @@ const skills = {
         text: "When FL4K or FL4K's pet kills an enemy while Gamma Burst is active, the duration of Gamma Burst is extended and pet damage is increased. These effects can stack up to 5 times.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Gamma Burst Duration: +3 seconds per kill\nPet Damage: +10% per kill\nMaximum Stacks: 5`,
+        effect: (rank, level) => `Gamma Burst Duration: +3 seconds per kill\nPet Damage: +10% per kill`,
       },
       "Barbaric Yawp": {
         text: "Increases the power of Pet Bonuses granted to FL4K.",
@@ -364,12 +364,12 @@ const skills = {
         effect: (rank, level) => `Pet Bonuses: +${percent(rank, 40)}%`,
       },
       "Mutated Defenses": {
-        text: "When FL4K's pet is at low health, it gains Damage Resistance and regenerates health. This skill has a long cooldown.",
+        text: "When FL4K's pet is at low health, it gains Damage Reduction and regenerates health. This skill has a long cooldown.",
         ranks: 1,
-        effect: (rank, level) => `Pet Damage Resistance: +30%\nPet Health Regen: +6.667% of Max Health/sec\n Duration: 6 seconds\nCooldown: 15 seconds`,
+        effect: (rank, level) => `Health Regeneration: +40% of Max Health Pet Health over 6 seconds\nPet Damage Resistance: +30% for 6s\nCooldown: 15 seconds`,
       },
       "Eridian Skag": {
-        text: "FL4K's Skag evolves into an Eridian Skag, which will increase FL4K's Damage and Fire Rate. When FL4K issues an Attack Command, their Eridian Skag pulls nearby enemies in by generating a Singularity.",
+        text: "FL4K's Skag evolves into an Eridian Skag, which will increase FL4K's Damage and Fire Rate.\n\nWhen FL4K issues an Attack Command, their Eridian Skag pulls nearby enemies in by generating a Singularity.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
         effect: (rank, level) => `Damage: +5%\nFire Rate: +5%`,
@@ -380,31 +380,31 @@ const skills = {
         text: "After using Gamma Burst, the Rift remains for the duration of the skill. While standing near the Rift, FL4K and their allies rapidly Regenerate Health.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Team Health Regeneration: +20% of Max Health/sec`,
+        effect: (rank, level) => `Health Regeneration: +20% of Max Health/sec`,
       },
       "Pack Tactics": {
-        text: "All damage dealt by FL4K and their pet is increased. Additionally, the Maximum Health of both FL4K and their pet is increased.",
+        text: "All damage dealt by FL4K and their pet is increased.\n\nAdditionally, the Maximum Health of both FL4K and their pet is increased.",
         ranks: 3,
-        effect: (rank, level) => `Damage: +${percent(rank, 7)}%\nMaximum Health: +${percent(rank, 5)}%\nPet Damage: +${percent(rank, 7)}%\nPet Maximum Health: +${percent(rank, 5)}%`,
+        effect: (rank, level) => `Pet and FL4K Damage: +${percent(rank, 7)}%\nPet and FL4K Maximum Health: +${percent(rank, 5)}%`,
       },
       "Shared Spirit": {
-        text: "While FL4K is at low health, a portion of all damage they take is inflicted on their pet instead.",
+        text: "While FL4K is at low health, a portion of all damage they take is converted into healing for their pet instead.",
         ranks: 1,
-        effect: (rank, level) => `Damage Shared: 50%`,
+        effect: (rank, level) => `Damage Converted: 50%`,
       },
     },
     "6": {
       "Dominance": {
-        text: "Melee Override Skill. FL4K establishes dominance over an enemy, turning it into an ally for a short time. If the enemy is a Beast, the duration is doubled. While under the effects of Dominance, the enemy constantly loses health until it dies or the effect ends. Only one enemy can be dominated at a time. An enemy can only be dominated once.",
+        text: "Whenever FL4K attacks an enemy with a melee attack or scores a Critical Hit with a weapon while aiming down sights they establish Dominance over that enemy turning it into an ally for a short time. if the enemy is a Beast, the duration is doubled.\n\nWhile under the effect of Dominance, other enemies are more likely to attack it and it constantly loses health until it dies or the effect ends. Once Dominance ends, a Radiation Nova is created centered around that enemy. Only one enemy can be under the effect of Dominance at a time and an enemy may only be affected once.",
         ranks: 1,
-        effect: (rank, level) => `Duration: 12 seconds\nTarget Loses 2% of Maximum Health per second`,
+        effect: (rank, level) => `Duration: 12 seconds\nTarget Loses 2% of Maximum Health per second\nNova Damage: 12 (scales with level)`,
       },
     },
   },
   "Hunter": {
     "0": {
       "Spiderant Centurion": {
-        text: "FL4K is joined by a loyal Spiderant companion, which will cause FL4K to constant regenerate health. Hold [Pet Skill key] to issue an Attack Command, which will cause the Spiderant to charge into enemies.",
+        text: "FL4K is joined by a loyal Spiderant companion, which will cause FL4K to constant regenerate health.\n\nHold [Pet Skill key] to issue an Attack Command, which will cause the Spiderant to charge into enemies.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
         effect: (rank, level) => `Health Regeneration: 1% of Max Health per second`,
@@ -413,14 +413,14 @@ const skills = {
         text: "FL4K sends forward 2 Rakk to dive-bomb enemies. This skill has multiple charges. Element: Incendiary.",
         type: SKILLS.ACTION_SKILL,
         ranks: 0,
-        effect: (rank, level) => `Damage: 35 (increases with character level)\nElement Status Effect Chance: 100%\nCooldown: 18 seconds`,
+        effect: (rank, level) => `Damage: 35 (increases with character level)\nCooldown: 18 seconds\nSkill Charges: 2\nDeals Incendiary Elemental Damage`,
       },
     },
     "1": {
       "Interplanetary Stalker": {
-        text: "Hunter Kill Skill. Whenever FL4K kills an enemy, they gain a stack of Interplanetary Stalker. For each stack of Interplanetary Stalker, they and their pet gain a bonus to all damage dealt. Additionally, they gain a unique stacking bonus depending on the type of enemy killed. Each unique bonus can stack up to 3 times. Each stack decays after a short time.",
+        text: "Hunter Kill Skill. Whenever FL4K kills an enemy, they gain a stack of Interplanetary Stalker. For each stack of Interplanetary Stalker, they and their pet gain a bonus to all damage dealt\n\nAdditionally, they gain a unique stacking bonus depending on the type of enemy killed. Each unique bonus can stack up to 3 times. Each stack decays after a short time.",
         ranks: 5,
-        effect: (rank, level) => `Damage: +${percent(rank, 2)}% per stack\nPet Damage: +${percent(rank, 1)}% per stack\nHuman Bonus: +${percent(rank, 3)}% Action Skill Damage per stack\nRobot Bonus: +${percent(rank, 1.5)}% Corrosive Damage per stack\nBeast Bonus: +${getInterplanetaryStalkerBeastMovementSpeed(rank)}% Movement Speed per stack\nMaximum Stacks: 3`,
+        effect: (rank, level) => `Damage: +${percent(rank, 2)}% per stack\nPet Damage: +${percent(rank, 1)}% per stack\nRobot Bonus: +${percent(rank, 1.5)}% Corrosive Damage per stack\nHuman Bonus: +${percent(rank, 3)}% Action Skill Damage per stack\nBeast Bonus: +${getInterplanetaryStalkerBeastMovementSpeed(rank)}% Movement Speed per stack\nMaximum Stacks: 3`,
       },
       "Leave No Trace": {
         text: "When FL4K scores a Critical Hit, there is a chance for 1 ammo to be added to their magazine.",
@@ -453,7 +453,7 @@ const skills = {
       "Ambush Predator": {
         text: "While there are no enemies nearby, FL4K's Weapon Handling and Critical Hit Damage are increased.",
         ranks: 5,
-        effect: (rank, level) => `Critical Hit Damage: +${percent(rank, 4)}%\nHandling: +${getAmbushPredatorHandling(rank)}%`,
+        effect: (rank, level) => `Handling: +${getAmbushPredatorHandling(rank)}%\nCritical Hit Damage: +${percent(rank, 4)}%`,
       },
     },
     "3": {
@@ -469,7 +469,7 @@ const skills = {
         effect: (rank, level) => `Extra Projectile Chance: +${percent(rank, 5)}%`,
       },
       "Spiderant Scorcher": {
-        text: "FL4K's Spiderant evolves into a Scorcher, occasionally dealing Incendiary Damage to all enemies nearby. While accompanied by the Scorcher, FL4K constantly regenerates health and deals increased Elemental Damage. When FL4K issues an Attack Command, the Scorcher will charge enemies.",
+        text: "FL4K's Spiderant evolves into a Scorcher, occasionally dealing Incendiary Damage to all enemies nearby. While accompanied by the Scorcher, FL4K constantly regenerates health and deals increased Elemental Damage.\n\nWhen FL4K issues an Attack Command, the Scorcher will charge enemies.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
         effect: (rank, level) => `Health Regeneration: +1% of Max Health per second\nElemental Damage: +10%`,
@@ -485,15 +485,15 @@ const skills = {
       "Big Game": {
         text: "FL4K's Hunter Skills become much more effective and have a longer duration.",
         ranks: 3,
-        effect: (rank, level) => `Hunter Skill Effects: +${percent(rank, 10)}%\nHunter Skill Duration: +${Math.round(percent(rank, 33.333))}%`,
+        effect: (rank, level) => `Hunter Skill Duration: +${Math.round(percent(rank, 33.333))}%\nHunter Skill Effects: +${percent(rank, 10)}%`,
       },
       "The Most Dangerous Game": {
-        text: "Hunter Kill Skill. Whenever FL4K kills a Badass or stronger enemy, they gain increased Critical Hit Damage, Gun Damage, and Handling for a long time and their pet receives increased Damage for a long time. Additionally, they receive a cash reward from the Intergalactic Bureau of Bounty Hunting.",
+        text: "Hunter Kill Skill. Whenever FL4K kills a Badass or stronger enemy, they gain increased Critical Hit Damage, Gun Damage, and Handling for a long time and their pet receives increased Damage for a long time.\n\nAdditionally, they receive a cash reward from the Intergalactic Bureau of Bounty Hunting.",
         ranks: 3,
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 3.333)}%\nCritical Hit Damage: +${Math.round(percent(rank, 8.333))}%\nHandling: +${getMostDangerousGameHandling(rank)}%\nPet Damage: +${percent(rank, 9)}%\nDuration: 120 seconds`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 8.33)}%\nCritical Hit Damage: +${Math.round(percent(rank, 3.333))}%\nHandling: +${getMostDangerousGameHandling(rank)}%\nPet Damage: +${percent(rank, 9)}%\nDuration: 120 seconds`,
       },
       "Spiderant Countess": {
-        text: "FL4K's Spiderant evolves into a Countess, which will cause FL4K to constantly regenerate health and gain Damage Resistance. When FL4K issues an Attack Command, the Countess will burrow underground and then emerge dealing Corrosive Damage in an area.",
+        text: "FL4K's Spiderant evolves into a Countess, which will cause FL4K to constantly regenerate health and gain Damage Resistance.\n\nWhen FL4K issues an Attack Command, the Countess will burrow underground and then emerge dealing Corrosive Damage in an area.",
         type: SKILLS.AUGMENT_DIAMOND,
         ranks: 0,
         effect: (rank, level) => `Health Regeneration: +1% of Max Health per second\nDamage Resistance: +5%`,
@@ -504,7 +504,7 @@ const skills = {
         text: "FL4K's Rakk have increased Cooldown Rate and gain an Additional Charge.",
         type: SKILLS.AUGMENT_CHEVRON,
         ranks: 0,
-        effect: (rank, level) => `Rakk Attack! Cooldown Rate: +20%\nMaximum Rakk Attack! Charges: +1`,
+        effect: (rank, level) => `Skill Charges: +1\nCooldown Rate: +20%`,
       },
       "Galactic Shadow": {
         text: "FL4K deals increased Critical Hit Damage, and enemies are less likely to attack them.",
@@ -514,7 +514,7 @@ const skills = {
       "Grim Harvest": {
         text: "FL4K gains increased Gun Damage and Action Skill Damage. FL4K's pet gains increased Damage.",
         ranks: 5,
-        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nAction Skill Damage: +${percent(rank, 5)}%\nPet Damage: +${percent(rank, 7)}%`,
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 3)}%\nAction Skill Damage: +${percent(rank, 10)}%\nPet Damage: +${percent(rank, 7)}%`,
       },
     },
     "6": {
