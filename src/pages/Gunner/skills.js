@@ -496,6 +496,113 @@ const skills = {
       },
     },
   },
+  "Bear Mother": {
+    "0": {
+      "Iron Cub": {
+        ranks: 0,
+        text: "Moze Summons Iron Cub in place of Iron Bear. Iron Cub equips two of whatever weapon is equipped in the remaining Action Skill slot. While deployed, Iron Cub follows Moze and will target and attack enemies for the duration.\nSkills that affect Iron Bear affect Iron Cub. Iron Cub still uses Fuel, but usses less of it and deals less damage (because it's smaller).", 
+        effect: (rank, level) => ``
+      },
+    },
+    "1": {
+      "Biofuel": {
+        ranks: 5,
+        text: "Whenever Moze or Iron Bear ignites an enemy, they both regenerate health for a short time.", 
+        effect: (rank, level) => ``
+      },
+      "Big Surplus": {
+        ranks: 3,
+        text: "While Moze's Action Skill is cooling down, she deals bonus Incendiary Damage.", 
+        effect: (rank, level) => ``
+      },
+      "Really Big Guns": {
+        ranks: 5,
+        text: "Iron Bear gains increased Damage.", 
+        effect: (rank, level) => ``
+      },
+        
+    },
+    "2": {
+      "Double Time": {
+        ranks: 3,
+        text: "While Moze's Action Skill is active, she and Iron Bear gain increased Movement Speed.", 
+        effect: (rank, level) => ``
+      },
+      "Harmonious Havoc": {
+        ranks: 5,
+        text: "Moze gains increased Gun Damage for each weapon, shield, and grenade that matches the element of her gun.", 
+        effect: (rank, level) => ``
+      },
+      "Explosive Fury": {
+        ranks: 3,
+        text: "Moze and Iron Bear gain increased Status Effect Damage and Status Effect Chance.", 
+        effect: (rank, level) => ``
+      },
+      "Fuel For The Fire": {
+        ranks: 0,
+        text: "Whenever Moze or Iron Cub inflicts a Status Effect on an enemy, Iron Cub's armor is restored.", 
+        effect: (rank, level) => ``
+      },
+    },
+    "3": {
+      "Baby Nukes": {
+        ranks: 0,
+        text: "Whenever Iron Cub is deployed or destroyed, it triggers a nuclear explosion, dealing massive Radation Damage.", 
+        effect: (rank, level) => ``
+      },
+      "Fired Up": {
+        ranks: 1,
+        text: "Whenever Moze or Iron Bear applies a Status Effect to an enemy, she gains increased Fire Rate for a short time. This effect stacks.", 
+        effect: (rank, level) => ``
+      },  
+    },
+    "4": {
+      "Nitrotrinadium Engines": {
+        ranks: 5,
+        text: "Iron Bear gains increased Maximum Fuel and Action Skill Cooldown Rate.", 
+        effect: (rank, level) => ``
+      },
+      "Never Going To Give You Up": {
+        ranks: 5,
+        text: "Whenever Moze or Iron Bear applies a Status Effect to an enemy, Iron Bear gains Fuel. This skill had diminishing returns.", 
+        effect: (rank, level) => ``
+      },
+      "My Little Friend": {
+        ranks: 0,
+        text: "Iron Cub spawns with Incendiary Vladof Assault Riffle in addition to Iron Cub's other weapons.", 
+        effect: (rank, level) => ``
+      },
+    },
+    "5": {
+      "Efficiency Engine": {
+        ranks: 0,
+        text: "Moze gains increased Gun Damage. The longer Iron Cub has been active, the greater the bonus.", 
+        effect: (rank, level) => ``
+      },
+        "Feature Creep": {
+        ranks: 1,
+        text: "Iron Bear gains increased Damage and Damage Resistance.", 
+        effect: (rank, level) => ``
+      },
+      "Limit Break": {
+        ranks: 3,
+        text: "Moze gains increased Action Skill Cooldown Rate whenever she or Iron Bear inflicts a Status Effect on an enemy. This effect stacks.", 
+        effect: (rank, level) => ``
+      },
+      "Superior Firepower": {
+        ranks: 1,
+        text: "Whenever Moze or Iron Bear inflicts a Status Effect on an enemy, they gain increased Status Effect Damage.", 
+        effect: (rank, level) => ``
+      },
+    },
+    "6": {
+      "Running On Fumes": {
+        ranks: 1,
+        text: "Whenever Moze or Iron Bear ignites an enemy, Iron Bear does not consume fuel for a short time.", 
+        effect: (rank, level) => ``
+      },
+    },
+  }
 };
 
 export default skills;
