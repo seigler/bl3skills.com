@@ -100,7 +100,7 @@
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  padding: 0 3.5rem;
+  padding: 0 3rem;
   background-image: linear-gradient(0deg, var(--themeColor), var(--themeColor));
   background-size: 100% calc(100% - 1.5rem);
   background-repeat: no-repeat;
@@ -112,11 +112,12 @@
 .skills {
   position: relative;
   user-select: none;
-  height: calc(3.5rem * 7)
+  height: calc(3rem * 7)
 }
 
 .skills:before {
-  --gradientStop: calc(var(--invested)* 0.7rem + 3.5rem + 1.65rem);
+  /* --gradientStop: calc(var(--invested)* 0.7rem + 3.5rem + 1.65rem); */
+  --gradientStop: calc(var(--invested)* 0.6rem + 3rem + 1rem);
   content: '';
   position: absolute;
   top: 1.85rem;
@@ -133,7 +134,7 @@
 }
 
 .tier {
-  width: calc(3.5rem * 3 + 0.5em);
+  width: calc(3.5rem * 3);
   justify-content: center;
   position: relative;
 }
@@ -146,6 +147,10 @@
 }
 .red {
   --themeHue: 18;
+}
+
+.purple {
+  --themeHue: 287;
 }
 
 a {

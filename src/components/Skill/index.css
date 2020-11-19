@@ -3,8 +3,8 @@
   flex: 0 1 auto;
   margin: 0.5rem;
   padding: 0rem;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   line-height: 1;
   display: flex;
   text-align: center;
@@ -80,12 +80,13 @@
 .augment, .actionSkill {
   margin: 0;
   padding: 0.5rem;
-  height: 3.5em;
-  width: 3.5em;
+  height: 3em;
+  width: 3em;
 }
 
 .augment {
   background-color: var(--themeColor);
+  z-index: 0;
 }
 
 .augment:first-child {
@@ -111,7 +112,7 @@
   mix-blend-mode: luminosity;
 }
 .image > img {
-  width: 2.3em;
+  width: 1.8em;
   opacity: 0.5;
 }
 

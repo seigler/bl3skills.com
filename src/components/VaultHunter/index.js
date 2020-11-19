@@ -17,7 +17,7 @@ export default class VaultHunter extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      invested: [0, 0, 0],
+      invested: [0, 0, 0, 0],
       skills: props.skills || {},
     };
   }
@@ -52,7 +52,7 @@ export default class VaultHunter extends Component {
     const resetSkills = () => {
       setHash(initialSkills);
       this.setState({
-        invested: [0, 0, 0],
+        invested: [0, 0, 0, 0],
         skills: initialSkills || {},
       });
     };
@@ -60,7 +60,7 @@ export default class VaultHunter extends Component {
     const trees =
       Object.keys(this.state.skills).map((treeName, treeIndex) => {
         return (
-          <div class={`${style.tree} ${[style.green, style.blue, style.red][treeIndex]}`}>
+          <div class={`${style.tree} ${[style.green, style.blue, style.red, style.purple][treeIndex]}`}>
             <style>{`.${style.tree}:nth-child(${treeIndex + 1}) { --invested: ${this.state.invested[treeIndex]}; --treeindex: ${treeIndex};}`}</style>
             <h2 class={style.treeName}>{ treeName }</h2>
             <div class={style.skills}>
