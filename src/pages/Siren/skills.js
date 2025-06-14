@@ -1,9 +1,10 @@
+/* eslint-disable space-before-function-paren */
 import SKILLS from '@constants/skills';
 
-function percent (rank, unit) {
+function percent(rank, unit) {
   return Math.round(rank * unit * 10) / 10;
 }
-function flat (rank, level, unit) {
+function flat(rank, level, unit) {
   return Math.floor(rank * unit);
 }
 
@@ -402,7 +403,7 @@ const skills = {
       "Ascendant": {
         ranks: 1,
         text: "All Action Skill Augments gain increased effects.",
-        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nStillness of Mind: Breaks 0.75 sec after taking dmg\nRevelation Damage: +25%`,
+        effect: (rank, level) => `Soul Sap Life Steal: +20%\nAllure Radius: +100%\nGlamour Duration: +50%\nRevelation Damage: +25%\nStillness of Mind: Breaks 0.75 sec after taking dmg`,
       },
       "Stillness of Mind": {
         ranks: 0,
@@ -455,7 +456,7 @@ const skills = {
     "6": {
       "Avatar": {
         ranks: 1,
-        text: "Amara's Action Skill can be activated while it's cooling down. This skill may only be used once per completed cooldown. Additionally, increases Amara's Maximum Rush Stacks. Additionally, if Amara's Action Skill kills an enemy, it refunds half of her Rush stacks.",
+        text: "Amara's Action Skill can be activated while it's cooling down. This skill may only be used once per completed cooldown.\n\nAdditionally, increases Amara's Maximum Rush Stacks.\n\nAdditionally, if Amara's Action Skill kills an enemy, it refunds half of her Rush stacks.",
         effect: (rank, level) => `Maximum Rush Stacks: +10`,
       },
     },
@@ -473,7 +474,7 @@ const skills = {
       "Anima": {
         ranks: 5,
         text: "Amara's Status Effects deal increased damage over time and have increased duration. Her Action Skill Status Effect deals further increased damage.",
-        effect: (rank, level) => `Action Skill Status Effect Damage: +${percent(rank, 8)}%\nOther Status Effect Damage: +${percent(rank, 4)}%\nStatus Effect Duration: +${percent(rank, 20)}%`,
+        effect: (rank, level) => `Setatus Effect Damage: +${percent(rank, 4)}%\nStatus Effect Duration: +${percent(rank, 20)}%\nAction Skill Status Effect Damage: +${percent(rank, 8)}%`,
       },
       "Steady Hands": {
         ranks: 3,
@@ -490,7 +491,7 @@ const skills = {
       "Tempest": {
         ranks: 5,
         text: "Amara deals increased Elemental Damage. Shock Damage is further increased.",
-        effect: (rank, level) => `Shock Damage: +${percent(rank, 8)}%\nOther Elemental Damage: +${percent(rank, 6)}%`,
+        effect: (rank, level) => `Other Elemental Damage: +${percent(rank, 6)}%\nShock Damage: +${percent(rank, 4)}%`,
       },
       "Illuminated Fist": {
         ranks: 1,
@@ -513,7 +514,7 @@ const skills = {
       "The Eternal Fist": {
         ranks: 0,
         text: "Amara summons a giant fist that bursts from the ground and locks the targeted enemy in place for a few seconds. Whenever the Grasped enemy is killed, a new fist seeks out and Grasps a new target. Some enemies are immune to being Grasped and instantly take damage instead. Element: Shock.",
-        effect: (rank, level) => `Bonus Targets: Up to +4\nDuration: 7 seconds\nCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
+        effect: (rank, level) => `Bonus Targets: Up to +4\nnCooldown: 20 seconds\nGrasp Immune Damage: ${flat(rank, level, 28)} (increases with character level)`,
         type: SKILLS.AUGMENT_ACTION_SKILL,
       },
       "Dread": {
@@ -532,7 +533,7 @@ const skills = {
       "Indiscriminate": {
         ranks: 3,
         text: "Amara's bullets that damage enemies have a chance to ricochet and deal decreased damage to other nearby enemies. Ricochet Chance and Damage are increased if target is affected by Phasegrasp or Stillness of Mind.",
-        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: 50% of damage dealt\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: 75% of damage dealt`,
+        effect: (rank, level) => `Ricochet Chance: +${percent(rank, 10)}%\nRicochet Damage: -50%\nAction Skill Ricochet Chance: +${percent(rank, 20)}%\nAction Skill Ricochet Damage: -25%`,
       },
       "Deep Well": {
         ranks: 1,
@@ -577,6 +578,123 @@ const skills = {
       },
     },
   },
+  "Enlightened Force": {
+    "0": {
+      "Phaseflare": {
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies.\n\nPressing [Melee key] near the Orb causes it to fly towards toward an enemy and damage them. Addiontally, every time Amara uses a melee attack on the Orb, it gains Increased Damage based on the damage she dealt to it.\n\nPressing [Action Skill key] causes the Orb to return to Amara.",
+        effect: (rank, level) => `Impact Damage: ${flat(rank, level, 27)} (increases with character level)\nArea Damage: ${flat(rank, level, 5)} per second (increases with character level)\nDuration: 30 seconds\nCooldown:48seconds`,
+        type: SKILLS.ACTION_SKILL,
+        ranks: 0
+      }
+    },
+    "1": {
+      "Trust In Yourself": {
+        ranks: 5,
+        text: "Whenever an enemy breaks Amara's shield, she gains increased Reload Speed, Charge Speed, and Weapon Swap Speed for a short time. This effect is doubled if Amara's shield is broken by a melee attack.",
+        effect: (rank, level) => `Reload Speed: ${percent(rank, 4)}%\nCharge Speed: +${percent(rank, 8)}%\nWeapon Swap Speed: +${percent(rank, 16)}\nDuration: 24 seconds`,
+      },
+      "No Mistakes In Nature": {
+        ranks: 5,
+        text: "Whenever Amara inflicts a Status Effect on an enemy, she gains increased Melee Damage for a short time.",
+        effect: (rank, level) => `Melee Damage: +${percent(rank, 13)}%\nDuration: 12 seconds`
+      },
+      "Heavy Rain": {
+        ranks: 5,
+        text: "Amara's weapons gain increased Projectile Speed and Splash Damage.",
+        effect: (rank, level) => `Projectile Speed: +${percent(rank, 14)}%\nSplash Damage: +${percent(rank, 7)}%`
+      }
+    },
+    "2": {
+      "Glow Up": {
+        ranks: 0,
+        text: "Instead of dealing Splash Damage to enemies, Amara's Orb grants nearby allies Health Regeneration. Amara my also press [Melee key] while near the orb to send it to a downed ally, granting them a Second Wind.",
+        effect: (rank, level) => `Impact Damage: ${flat(rank, level, 29)}\nHealing: ${flat(rank, level, 6)} health per second\nDuration: 34 seconds\n Cooldown: 28 seconds`,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
+      },
+      "Go With The Flow": {
+        ranks: 3,
+        text: "Whenever Amara Freezes an enemy, she gains increased Movement Speed and Weapon Damage for a short time.",
+        effect: (rank, level) => `Gun Damage: +${percent(rank, 7)}%\nMovement Speed: +${percent(rank, 3)}%\nDuration: 16 seconds`
+      },
+      "Unweave The Rainbow": {
+        ranks: 3,
+        text: "Amara deals Bonus Damage of her attuned element whenever she deals Melee Damage or Splash Damage to frozen enemies.",
+        effect: (rank, level) => `Bonus Damage: ${percent(rank, 11)}% of damage dealt`
+      },
+      "Ebb And Flow": {
+        ranks: 3,
+        text: "Whenever Amara kills an enemy with a melee attack, she gains a portion of the damage dealt back as health.",
+        effect: (rank, level) => `Life Steal: ${percent(rank, 21)}% of damage dealt`
+      },
+      "Cold Hearted": {
+        ranks: 0,
+        text: "Converts Amara's Action Skill to Cryo Damage.",
+        effect: (rank, level) => `Action Skill Element: Cryo.`,
+        type: SKILLS.AUGMENT_DIAMOND,
+      },
+    },
+    "3": {
+      "Shooting Star": {
+        ranks: 0,
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Pressing [Melee key] near the Orb causes it to fly forwards toward an enemy and damage them which also increases the amount of Overal Damage the Orb deals to enemies. Additionally, the Elemental Orb continually fires Elemental Projectiles at the last enemy Amara damaged. Pressing [Action Skill key] causes the ORb to return to Amara. ",
+        effect: (rank, level) => `Impact Damage: ${flat(rank, level, 21)}\nArea Damage: ${flat(rank, level, 4)} per second\nDuration: 26 seconds\nCooldown: 44 seconds`,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
+      },
+      "Combo Breaker": {
+        ranks: 1,
+        text: "Killing an enemy with Melee Damage has a chance to reset Amara's Action Skill Cooldown.",
+        effect: (rank, level) => `Reset Chance: ${percent(rank, 20)}%`
+      },
+      "Expedite": {
+        ranks: 0,
+        text: "Whenever Amara kills an enemy with her Action Skill, she gains increased Action Skill Cooldown Rate until she activates her Action Skill again.",
+        effect: (rank, level) => `Cooldown Rate: +30% per enemy killed`,
+        type: SKILLS.AUGMENT_CHEVRON,
+      },
+    },
+    "4": {
+      "Joyful Freedom": {
+        ranks: 5,
+        text: "After activating her Action Skill, Amara gains increased Melee Damage for a short time.",
+        effect: (rank, level) => `Melee Damage: ${percent(rank, 14)}%\nDuration: 12 seconds`
+      },
+      "Burn Both Ends": {
+        ranks: 5,
+        text: "After activating her Action Skill, Amara gains Increased Threat for a short time, drawing the attention of all enemies in a huge radius.\n\nWhenever Amara is dealt damage by an enemy, she gains Increased Damage for a short time. This effect stacks.",
+        effect: (rank, level) => `Damage: +${percent(rank, 1)}%\nMax Stacks: 15\nDuration: 8 seconds`
+      },
+    },
+    "5": {
+      "Light Fantastic": {
+        ranks: 0,
+        text: "Amara summons an Orb of Elemental Energy that deals constant elemental damage to nearby enemies. Whenever Amara damages an enemy, the Elemental Orb automatically travels to that enemy, the Elemental Orb gains Increased Damage. Pressing [Action Skill key] causes the Orb to return to Amara.",
+        effect: (rank, level) => `Impact Damage: ${flat(rank, level, 18)}\nArea Damage: ${flat(rank, level, 4)} per second\nDuration: 24 seconds\nCooldown: 44 seconds`,
+        type: SKILLS.AUGMENT_ACTION_SKILL,
+      },
+      "Body And Mind": {
+        ranks: 3,
+        text: "Kill Skill. Amara's melee attacks deal Bonus Splash Damage for a short time.",
+        effect: (rank, level) => `Splash Damage: ${flat(rank, level, 4)}\nDuration: 12 seconds`
+      },
+      "Free The Soul": {
+        ranks: 1,
+        text: "Kill Skill. Whenever Amara kills a frozen enemy, splinters fly out from that enemy and home to nearby enemies, dealing Cryo Damage. This skill has a short cooldown.",
+        effect: (rank, level) => `Damage: ${flat(rank, level, 35)}\nCooldown: 3 seconds`
+      },
+      "Atman": {
+        ranks: 3,
+        text: "Amara gains increased Skill Damage.",
+        effect: (rank, level) => `Skill Damage: +${percent(rank, 9)}%`
+      },
+    },
+    "6": {
+      "Clear The Mind": {
+        ranks: 1,
+        text: "Kill Skill. After killing an enemy, Amara ignores enemie's Elemental Damage Resistance for a short time. This does not affect Elemental Immunity.",
+        effect: (rank, level) => `Duration: 8 seconds`
+      },
+    }
+  }
 };
 
 export default skills;
