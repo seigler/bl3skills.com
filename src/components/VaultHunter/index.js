@@ -60,8 +60,10 @@ export default class VaultHunter extends Component {
     const trees =
       Object.keys(this.state.skills).map((treeName, treeIndex) => {
         return (
-          <div class={`${style.tree} ${[style.green, style.blue, style.red, style.purple][treeIndex]}`}>
-            <style>{`.${style.tree}:nth-child(${treeIndex + 1}) { --invested: ${this.state.invested[treeIndex]}; --treeindex: ${treeIndex};}`}</style>
+          <div
+            class={`${style.tree} ${[style.green, style.blue, style.red, style.purple][treeIndex]}`}
+            style={`--invested: ${this.state.invested[treeIndex]}; --treeindex: ${treeIndex};`}
+          >
             <h2 class={style.treeName}>{ treeName }</h2>
             <div class={style.skills}>
               { Object.keys(this.state.skills[treeName]).map((tier, tierIndex) =>

@@ -86,7 +86,6 @@
 
 .augment {
   background-color: var(--themeColor);
-  z-index: 0;
 }
 
 .augment:first-child {
@@ -169,7 +168,7 @@
   position: absolute;
   bottom: 100%;
   width: 20rem;
-  transform: translateX(calc((1 - var(--treeindex)) * 40%));
+  transform: translateX(calc((0.5 - var(--treeindex) / 3) * 80%));
 }
 
 .actionSkill:hover .description {
