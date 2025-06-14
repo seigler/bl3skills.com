@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "pwa build",
+    "build": "npx pwa build",
     "start": "sirv build -s",
     "watch": "pwa watch",
     "deploy": "npm run build && mkdir build/operative build/siren build/beastmaster build/gunner && cp build/index.html build/operative/ && cp build/index.html build/siren/ && cp build/index.html build/beastmaster/ && cp build/index.html build/gunner/ && echo 'bl3skills.com' > build/CNAME && npm run push-gh-pages",
